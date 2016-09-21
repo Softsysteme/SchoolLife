@@ -1,69 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    
 <html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p= "http://primefaces.org/ui">
 
 <h:head>
-	<f:facet name="first">
+	
 		<meta charset="utf-8"></meta>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		</meta>
 		<meta name="description" content=""></meta>
 		<meta name="author" content=""></meta>
 		<meta content="fa fa-gears"></meta>
-		<title>School life - vue administrateurs</title>
+		
+		<title>SchoolLife - vue administrateurs</title>
 
 		<!-- PACE LOAD BAR PLUGIN - This creates the subtle load bar effect at the top of the page. -->
-		<link href="css/plugins/pace/pace.css" rel="stylesheet"></link>
-		<script src="js/plugins/pace/pace.js"></script>
+		
+		<h:outputStylesheet library="css" name="pace.css" />
+		 <link href="css/plugins/pace/pace.css" rel="stylesheet"/>
+		<h:outputScript library="js" name="pace.js" />
+		<script src="js/plugins/pace/pace.js"/>
+		
+		
 
 		<!-- GLOBAL STYLES - Include these on every page. -->
-		<link href="css/plugins/bootstrap/css/bootstrap.min.css"
-			rel="stylesheet"></link>
-		<link
-			href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic'
-			rel="stylesheet" type="text/css"></link>
-		<link
-			href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-			rel="stylesheet" type="text/css"></link>
-		<link href="icons/font-awesome/css/font-awesome.min.css"
-			rel="stylesheet"></link>
-		<!-- PAGE LEVEL PLUGIN STYLES -->
-		<link href="css/plugins/messenger/messenger.css" rel="stylesheet">
-		</link>
-		<link href="css/plugins/messenger/messenger-theme-flat.css"
-			rel="stylesheet"></link>
-		<link href="css/plugins/daterangepicker/daterangepicker-bs3.css"
-			rel="stylesheet"></link>
-		<link href="css/plugins/morris/morris.css" rel="stylesheet"></link>
-		<link href="css/plugins/jvectormap/jquery-jvectormap-1.2.2.css"
-			rel="stylesheet"></link>
-		<link href="css/plugins/datatables/datatables.css" rel="stylesheet">
-		</link>
-		<!-- THEME STYLES - Include these on every page. -->
-		<link href="css/style.css" rel="stylesheet"></link>
-		<link href="css/plugins.css" rel="stylesheet"></link>
-		<!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
-		<link href="css/demo.css" rel="stylesheet"></link>
+			<h:outputStylesheet  name="css/bootstrap.min.css" />
+			 <link href="css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+			<h:outputStylesheet name="icons/font-awesome.min.css" />
+			<link href="icons/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+			<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel="stylesheet" type="text/css"/><link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel="stylesheet" type="text/css"/>
+    
 
-		<!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
-		<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
-		<h:outputScript name="bootstrap/js/bootstrap.js" />
-	</f:facet>
+			
+		<!-- PAGE LEVEL PLUGIN STYLES -->
+		<h:outputStylesheet  name="css/messenger.css" />
+		<link href="css/plugins/messenger/messenger.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/messenger-theme-flat.css" />
+		<link href="css/plugins/messenger/messenger-theme-flat.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/daterangepicker-bs3.css" />
+		<link href="css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/morris.css" />
+		<link href="css/plugins/morris/morris.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/jquery-jvectormap-1.2.2.css" />
+	    <link href="css/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/datatables.css" />
+		<link href="css/plugins/datatables/datatables.css" rel="stylesheet"/>
+	
+		<!-- THEME STYLES - Include these on every page. -->
+	    <h:outputStylesheet  name="css/style.css" />
+	    <link href="css/style.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/plugins.css" />
+		<link href="css/plugins.css" rel="stylesheet"/>
+	
+     
+		
+		<!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
+		<h:outputStylesheet  name="css/demo.css" />
+		<link href="css/demo.css" rel="stylesheet"/>
+
+	
 
 </h:head>
 
 
 
 <h:body>
+ <f:view>
 
 	<div id="wrapper">
 
@@ -75,7 +82,7 @@
 				<i class="fa fa-bars"></i> Menu
 			</button>
 			<div class="navbar-brand">
-				<a href="index.html"> <font color="Yellow"> School Life </font>
+				<a href="index.xhtml"> <font color="Yellow"> SchoolLife </font>
 				</a>
 
 
@@ -413,7 +420,7 @@
 						<li><a href="#"> <i class="fa fa-gear"></i> Parametres
 						</a></li>
 						<li>
-							<!--class="logout_open"--> <a href="login.html"> <i
+							<!--class="logout_open"--> <a href="login.xhtml"> <i
 								class="fa fa-sign-out"></i> Déconnection <strong>Thierry
 									Mpouma</strong>
 						</a>
@@ -443,7 +450,7 @@
 						</p>
 						<p class="name tooltip-sidebar-logout">
 							Thierry <span class="last-name">Mpouma</span> <a
-								style="color: inherit" href="login.html" data-toggle="tooltip"
+								style="color: inherit" href="login.xhtml" data-toggle="tooltip"
 								data-placement="top" title="Déconnection"><i
 								class="fa fa-sign-out"></i></a>
 						</p>
@@ -1270,7 +1277,7 @@
 						session. 
 				</p>
 				<ul class="list-inline">
-					<li><a href="login.html" class="btn btn-green"> <strong>Logout</strong>
+					<li><a href="login.xhtml" class="btn btn-green"> <strong>Logout</strong>
 					</a></li>
 					<li>
 						<button class="logout_close btn btn-green">Cancel</button>
@@ -1280,41 +1287,88 @@
 	</div>
 	<!-- /#logout -->
 	<!-- Logout Notification jQuery -->
-	<script src="js/plugins/popupoverlay/logout.js"></script>
+	
+		<h:outputScript library="js" name="logout.js" />
 	<!-- HISRC Retina Images -->
-	<script src="js/plugins/hisrc/hisrc.js"></script>
+		<h:outputScript library="js" name="hisrc.js" />
 
 	<!-- PAGE LEVEL PLUGIN SCRIPTS -->
 	<!-- HubSpot Messenger -->
-	<script src="js/plugins/messenger/messenger.min.js"></script>
-	<script src="js/plugins/messenger/messenger-theme-flat.js"></script>
+		<h:outputScript library="js" name="messenger.min.js" />
+			<h:outputScript library="js" name="messenger-theme-flat.js" />
 	<!-- Date Range Picker -->
-	<script src="js/plugins/daterangepicker/moment.js"></script>
-	<script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+		<h:outputScript library="js" name="moment.js" />
+			<h:outputScript library="js" name="daterangepicker.js" />
+	
 	<!-- Morris Charts -->
-	<script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
-	<script src="js/plugins/morris/morris.js"></script>
+		<h:outputScript library="js" name="raphael-2.1.0.min.js" />
+		<h:outputScript library="js" name="morris.js" />
 	<!-- Flot Charts -->
-	<script src="js/plugins/flot/jquery.flot.js"></script>
-	<script src="js/plugins/flot/jquery.flot.resize.js"></script>
+		<h:outputScript library="js" name="flot.js" />
+		<h:outputScript library="js" name="jquery.flot.resize.js" />
+		
 	<!-- Sparkline Charts -->
-	<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+		<h:outputScript library="js" name="jquery.sparkline.min.js" />
+		
 	<!-- Moment.js -->
-	<script src="js/plugins/moment/moment.min.js"></script>
+		<h:outputScript library="js" name="moment.min.js" />
 	<!-- jQuery Vector Map -->
-	<script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-	<script
-		src="js/plugins/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
-	<script src="js/demo/map-demo-data.js"></script>
+	
+		<h:outputScript library="js" name="jquery-jvectormap-1.2.2.min.js" />
+		<h:outputScript library="js" name="jquery-.jvectormap-world-mill-en.js" />
+		<h:outputScript library="js" name="logout.js" />
+	    <h:outputScript library="js" name="map-demo-data.js" />
+	
 	<!-- Easy Pie Chart -->
-	<script src="js/plugins/easypiechart/jquery.easypiechart.min.js"></script>
+	<h:outputScript library="js" name="jquery.easypiechart.min.js" />
+	
 	<!-- DataTables -->
-	<script src="js/plugins/datatables/jquery.dataTables.js"></script>
-	<script src="js/plugins/datatables/datatables-bs3.js"></script>
+	<h:outputScript library="js" name="jquery.dataTables.js" />
+	<h:outputScript library="js" name="datatables-bs3.js" />
+	<h:outputScript library="js" name="datatables-bs3.js" />
+	</f:view>
+	
 
 	<!-- THEME SCRIPTS -->
-	<script src="js/flex.js"></script>
-	<script src="js/demo/dashboard-demo.js"></script>
+	<script src="resources/js/flex.js"></script>
+	<h:outputScript library="js" name="flex.js" />
+	<h:outputScript library="js" name="dashboard-demo.js" />
+	 <!-- Logout Notification jQuery -->
+    <script src="js/plugins/popupoverlay/logout.js"></script>
+    <!-- HISRC Retina Images -->
+    <script src="js/plugins/hisrc/hisrc.js"></script>
+
+    <!-- PAGE LEVEL PLUGIN SCRIPTS -->
+    <!-- HubSpot Messenger -->
+    <script src="js/plugins/messenger/messenger.min.js"></script>
+    <script src="js/plugins/messenger/messenger-theme-flat.js"></script>
+    <!-- Date Range Picker -->
+    <script src="js/plugins/daterangepicker/moment.js"></script>
+    <script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Morris Charts -->
+    <script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="js/plugins/morris/morris.js"></script>
+    <!-- Flot Charts -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <!-- Sparkline Charts -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- Moment.js -->
+    <script src="js/plugins/moment/moment.min.js"></script>
+    <!-- jQuery Vector Map -->
+    <script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="js/plugins/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="js/demo/map-demo-data.js"></script>
+    <!-- Easy Pie Chart -->
+    <script src="js/plugins/easypiechart/jquery.easypiechart.min.js"></script>
+    <!-- DataTables -->
+    <script src="js/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="js/plugins/datatables/datatables-bs3.js"></script>
+
+    <!-- THEME SCRIPTS -->
+    <script src="js/flex.js"></script>
+    <script src="js/demo/dashboard-demo.js"></script>
+	
 
 </h:body>
 
