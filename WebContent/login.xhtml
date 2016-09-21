@@ -1,116 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p= "http://primefaces.org/ui">
 
-<h:head>
-  
-    <meta charset="utf-8"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <meta name="description" content=""></meta>
-    <meta name="author" content=""></meta>
+<!DOCTYPE html>
+<html lang="en">
 
-    <h:title>SchoolLife - connection</h:title>
-    
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>School life - connection</title>
 
     <!-- GLOBAL STYLES -->
-    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel="stylesheet" type="text/css"></link>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel="stylesheet" type="text/css"></link>
-    <h:outputStylesheet library="css" name="font-awesome.min.css" />
-    <link href="css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="icons/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel="stylesheet" type="text/css">
+    <link href="icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- PAGE LEVEL PLUGIN STYLES -->
 
     <!-- THEME STYLES -->
-    <h:outputStylesheet library="css" name="style.css" />
-    <h:outputStylesheet library="css" name="plugins.css" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins.css" rel="stylesheet">
 
     <!-- THEME DEMO STYLES -->
-    <h:outputStylesheet library="css" name="demo.css" />
-    <h:outputStylesheet  name="icons/font-awesome/css/font-awesome.min.css" />
-    <h:outputStylesheet  name="webjars/font-awesome/5.0/css/font-awesome.css" />
-    <link href="css/style.css" rel="stylesheet"/>
-    <link href="css/plugins.css" rel="stylesheet"/>
-    
+    <link href="css/demo.css" rel="stylesheet">
 
-   <!--  [if lt IE 9]
+    <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
-    <h:outputScript library="js" name="html5shiv.js" />
     <script src="js/respond.min.js"></script>
-    <h:outputScript library="js" name="respond.min.js" />
-    [endif]-->
-    
-</h:head>
+    <![endif]-->
 
-<h:body class="login">
-<f:view>
+</head>
+
+<body class="login">
 
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-banner text-center">
-                    <h1><i class="fa fa-gears"></i> SchoolLife</h1>
+                    <h1><i class="fa fa-gears"></i> School life</h1>
                 </div>
                 <div class="portlet portlet-green">
                     <div class="portlet-heading login-heading">
                         <div class="portlet-title">
-                            <h4><strong>Bienvenue dans SchoolLife!</strong>
+                            <h4><strong>Bienvenue dans School life!</strong>
                             </h4>
                         </div>
                         <div class="portlet-widgets">
-                      
-                            <button  class="btn btn-white btn-xs" ><i class="fa fa-plus-circle"></i> Nouvel utilisateur</button>
+                            <button class="btn btn-white btn-xs"><i class="fa fa-plus-circle"></i> Nouvel utilisateur</button>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="portlet-body">
-                        <h:form accept-charset="UTF-8" role="form">
+                        <form accept-charset="UTF-8" role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Identifiant" name="email" type="text"></input>
+                                    <input class="form-control" placeholder="Identifiant" name="email" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Mot de passe" name="password" type="password" value=""></input>
+                                    <input class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input name="remember" type="checkbox" value="Remember Me"> Me rappeler</input>
+                                        <input name="remember" type="checkbox" value="Remember Me">Me rappeler
                                     </label>
                                 </div>
-                                <br></br>
-                                <a href="vueEleve.xhtml" class="btn btn-lg btn-green btn-block">Se connecter</a>
+                                <br>
+                                <a href="index.html" class="btn btn-lg btn-green btn-block">Se connecter</a>
                             </fieldset>
-                            <br></br>
+                            <br>
                             <p class="small">
                                 <a href="#">Mot de passe oublié?</a>
                             </p>
-                        </h:form>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </f:view>
+
     <!-- GLOBAL SCRIPTS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <h:outputScript library="js" name="bootstrap.min.js" />
-    <h:outputScript library="js" name="jquery.slimscroll.min.js" />
+    <script src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <!-- HISRC Retina Images -->
-    <h:outputScript library="js" name="hisrc.js" />
+    <script src="js/plugins/hisrc/hisrc.js"></script>
 
     <!-- PAGE LEVEL PLUGIN SCRIPTS -->
 
     <!-- THEME SCRIPTS -->
-    <h:outputScript library="js" name="flex.js" />
+    <script src="js/flex.js"></script>
 
-</h:body>
-
+</body>
 
 </html>
