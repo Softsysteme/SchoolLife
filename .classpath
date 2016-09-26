@@ -23,6 +23,7 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -50,5 +51,7 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
+=======
+>>>>>>> refs/remotes/origin/developer
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

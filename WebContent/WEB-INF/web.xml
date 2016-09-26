@@ -24,6 +24,7 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
 </web-app>
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -52,5 +53,7 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> refs/remotes/origin/developer
 </web-app>
 
