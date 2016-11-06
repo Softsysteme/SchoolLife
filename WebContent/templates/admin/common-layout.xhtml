@@ -8,57 +8,58 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<f:facet name="first">
 		<meta charset="utf-8"></meta>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		</meta>
 		<meta name="description" content=""></meta>
 		<meta name="author" content=""></meta>
 		<meta content="fa fa-gears"></meta>
-		<title>Schoollife - Template</title>
+		
+		<title>SchoolLife - vue administrateurs</title>
 
 		<!-- PACE LOAD BAR PLUGIN - This creates the subtle load bar effect at the top of the page. -->
-		<link href="css/plugins/pace/pace.css" rel="stylesheet"></link>
-		<script src="js/plugins/pace/pace.js"></script>
+		
+		<h:outputStylesheet library="css" name="pace.css" />
+		 <link href="css/plugins/pace/pace.css" rel="stylesheet"/>
+		<h:outputScript library="js" name="pace.js" />
+		<script src="js/plugins/pace/pace.js"/>
+		
+		
 
 		<!-- GLOBAL STYLES - Include these on every page. -->
-		<link href="/schoolLife/bootstrap/css/bootstrap.min.css"
-			rel="stylesheet"></link>
-		<link
-			href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic'
-			rel="stylesheet" type="text/css"></link>
-		<link
-			href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-			rel="stylesheet" type="text/css"></link>
-		<link href="icons/font-awesome/css/font-awesome.min.css"
-			rel="stylesheet"></link>
-		<!-- PAGE LEVEL PLUGIN STYLES -->
-		<link href="css/plugins/messenger/messenger.css" rel="stylesheet">
-		</link>
-		<link href="css/plugins/messenger/messenger-theme-flat.css"
-			rel="stylesheet"></link>
-		<link href="css/plugins/daterangepicker/daterangepicker-bs3.css"
-			rel="stylesheet"></link>
-		<link href="css/plugins/morris/morris.css" rel="stylesheet"></link>
-		<link href="css/plugins/jvectormap/jquery-jvectormap-1.2.2.css"
-			rel="stylesheet"></link>
-		<link href="css/plugins/datatables/datatables.css" rel="stylesheet">
-		</link>
-		<!-- THEME STYLES - Include these on every page. -->
-		<link href="css/style.css" rel="stylesheet"></link>
-		<link href="css/plugins.css" rel="stylesheet"></link>
-		<!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
-		<link href="css/demo.css" rel="stylesheet"></link>
+			<h:outputStylesheet  name="css/bootstrap.min.css" />
+			 <link href="css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+			<h:outputStylesheet name="icons/font-awesome.min.css" />
+			<link href="icons/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+			<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel="stylesheet" type="text/css"/><link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel="stylesheet" type="text/css"/>
+    
 
-		<!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
-		<h:outputStylesheet name="/schoolLife/bootstrap/css/bootstrap.css" />
-		<h:outputScript name="/schoolLife/bootstrap/js/bootstrap.js" />
-	</f:facet>
+			
+		<!-- PAGE LEVEL PLUGIN STYLES -->
+		<h:outputStylesheet  name="css/messenger.css" />
+		<link href="css/plugins/messenger/messenger.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/messenger-theme-flat.css" />
+		<link href="css/plugins/messenger/messenger-theme-flat.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/daterangepicker-bs3.css" />
+		<link href="css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/morris.css" />
+		<link href="css/plugins/morris/morris.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/jquery-jvectormap-1.2.2.css" />
+	    <link href="css/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/datatables.css" />
+		<link href="css/plugins/datatables/datatables.css" rel="stylesheet"/>
+	
+		<!-- THEME STYLES - Include these on every page. -->
+	    <h:outputStylesheet  name="css/style.css" />
+	    <link href="css/style.css" rel="stylesheet"/>
+		<h:outputStylesheet  name="css/plugins.css" />
+		<link href="css/plugins.css" rel="stylesheet"/>
+	
+     
+		
+		<!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
+		<h:outputStylesheet  name="css/demo.css" />
+		<link href="css/demo.css" rel="stylesheet"/>
 </h:head>
 
 <h:body>
