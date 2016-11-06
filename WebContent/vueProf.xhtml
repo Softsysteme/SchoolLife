@@ -7,7 +7,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-<head>
+<h:head>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,9 +56,9 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 
-</head>
+</h:head>
 
-<body>
+<h:body>
 
 	<div id="wrapper">
 
@@ -605,17 +605,17 @@
                     <div class="col-lg-2 col-sm-6">
                         <div class="circle-tile">
                             <a href="#">
-                                <div class="circle-tile-heading light-gray">
-                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                <div class="circle-tile-heading blue">
+                                    <i class="fa fa-bell fa-fw fa-3x"></i>
                                 </div>
                             </a>
-                            <div class="circle-tile-content light-gray">
+                            <div class="circle-tile-content blue">
                                 <div class="circle-tile-description text-faded">
-                                    Visiteurs
+                                    Notifications
                                 </div>
                                 <div class="circle-tile-number text-faded">
-                                    265
-                                    <span id="sparklineA"></span>
+                                    12
+<!--                                     <span id="sparklineA"></span> -->
                                 </div>
                                 <a href="#" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
                             </div>
@@ -662,15 +662,15 @@
                         <div class="circle-tile">
                             <a href="#">
                                 <div class="circle-tile-heading purple">
-                                    <i class="fa fa-comments fa-fw fa-3x"></i>
+                                    <i class="fa fa-bar-chart-o fa-fw fa-3x"></i>
                                 </div>
                             </a>
                             <div class="circle-tile-content purple">
                                 <div class="circle-tile-description text-faded">
-                                    Popularité
+                                    Statistiques
                                 </div>
                                 <div class="circle-tile-number text-faded">
-                                    96%
+                                    %
                                     <span id="sparklineD"></span>
                                 </div>
                                 <a href="#" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
@@ -898,15 +898,19 @@
                                                             <td>1/31/14</td>
                                                             <td>4:32 PM</td>
                                                             <td>5.17 FCFA</td>
-                                                            <td><a class="btn btn-xs btn-default"/><i class="fa fa-arrow-circle-right"></i> Terminé*>
+                                                            <td><a class="btn btn-xs btn-default"><i class="fa fa-arrow-circle-right"></i> Terminé</a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                            </div>
-                                            <a class="btn btn-green">Voir toutes les  Transactions</a>
+                                             </div>
+                                           <hr></hr>
                                         </div>
-                                    </div>
+                                    
+									<div class="portlet-footer">
+                                             <a class="btn btn-green">Voir toutes les  Transactions</a>
+                                        </div>
+										</div>
                                 </div>
                             </div>
 				   </div>
@@ -1095,6 +1099,6 @@
     <script src="js/flex.js"></script>
     <script src="js/demo/dashboard-demo.js"></script>
 
-</body>
+</h:body>
 
 </html>
