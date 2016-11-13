@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+		<h:form>
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<h1>
+									<h:outputText value="#{msg['menu_principal']}" />
+									<small> <h:outputText value="#{msg['vue_generale']}" />
+									</small>
+								</h1>
+								<ol class="breadcrumb">
+									<li class="active"><i class="fa fa-dashboard"></i> <h:outputText
+											value="#{msg['menu']}" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
+
+					<!-- begin DASHBOARD CIRCLE TILES -->
+					<div class="row">
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading dark-blue">
+										<i class="fa fa-users fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content dark-blue">
+									<div class="circle-tile-description text-faded">Élèves</div>
+									<div class="circle-tile-number text-faded">
+										5000 <span id="sparklineA"></span>
+									</div>
+									<h:commandLink action="#{navigationController.moveToAgenda}"
+										class="circle-tile-footer">
+										<h:outputText value="#{msg['en_savoir_plus']}" />
+										<i class="fa fa-chevron-circle-right"></i>
+									</h:commandLink>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading green">
+										<i class="fa fa-book fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content green">
+									<div class="circle-tile-description text-faded">Candidats
+										aux examens</div>
+									<div class="circle-tile-number text-faded">1000</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="#{msg['en_savoir_plus']}" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading orange">
+										<i class="fa fa-male fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content orange">
+									<div class="circle-tile-description text-faded">Personnel</div>
+									<div class="circle-tile-number text-faded">100</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="#{msg['en_savoir_plus']}" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading green">
+										<i class="fa fa-smile-o fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content green">
+									<div class="circle-tile-description text-faded">Nouvelles
+										Préinscriptions</div>
+									<div class="circle-tile-number text-faded">
+										350 <span id="sparklineC"></span>
+									</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="#{msg['en_savoir_plus']}" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading red">
+										<i class="fa fa-frown-o fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content red">
+									<div class="circle-tile-description text-faded">Départs</div>
+									<div class="circle-tile-number text-faded">
+										100 <span id="sparklineB"></span>
+									</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="#{msg['en_savoir_plus']}" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading purple">
+										<i class="fa fa-thumbs-o-up fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content purple">
+									<div class="circle-tile-description text-faded">
+										Popularité</div>
+									<div class="circle-tile-number text-faded">
+										96% <span id="sparklineD"></span>
+									</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="#{msg['en_savoir_plus']}" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end DASHBOARD CIRCLE TILES -->
+
+
+					<div class="row">
+
+						<div class="col-lg-3">
+							<div class="tile tile-img tile-time" style="height: 200px">
+								<p class="time-widget">
+									<span class="time-widget-heading">It Is Currently</span> <br></br>
+									<strong> <span id="datetime"></span>
+									</strong>
+								</p>
+							</div>
+							<div class="tile dark-blue checklist-tile" style="height: 370px">
+								<h4>
+									<i class="fa fa-check-square-o"></i> Agenda
+								</h4>
+								<div class="checklist">
+									<label class="selected"> <input type="checkbox"
+										checked="true" /> <i class="fa fa-wrench fa-fw text-faded"></i>
+										préinscriptions
+
+									</label> <label class="selected"> <input type="checkbox"
+										checked="true" /> <i class="fa fa-wrench fa-fw text-faded"></i>
+										affecter les professeurs
+									</label> <label class="selected"> <input type="checkbox"
+										checked="true" /> <i class="fa fa-warning fa-fw text-orange"></i>
+										organiser les classes
+									</label> <label> <input type="checkbox" /> <i
+										class="fa fa-warning fa-fw text-orange"></i> discipline
+									</label>
+
+								</div>
+							</div>
+
+							<div class="circle-tile" style="height: 200px">
+								<a href="#">
+									<div class="circle-tile-heading dark-blue">
+										<i class="fa fa-smile-o fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content dark-blue">
+									<div class="circle-tile-description text-faded">Feedbacks</div>
+									<div class="circle-tile-number text-faded">
+										265 <span id="sparklineA"></span>
+									</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="#{msg['en_savoir_plus']}" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-9">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="tile green" style="height: 285px">
+												<h4>
+													<i class="fa fa-money"></i> Finances <a href="javascript:;"><i
+														class="fa fa-refresh pull-right"></i></a>
+												</h4>
+												<div id="morris-chart-dashboard"></div>
+											</div>
+
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="tile light-gray" style="height: 285px">
+												<h4>
+													<i class="fa fa-arrow-up"></i> Réussite <a
+														href="javascript:;"><i
+														class="fa fa-refresh pull-right"></i></a>
+												</h4>
+												<p class="small text-faded">
+													<strong>130 GB </strong>of <strong>1024 GB </strong>used
+												</p>
+												<div class="flot-chart flot-chart-dashboard">
+													<div class="flot-chart-content" id="flot-chart-moving-line"></div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="circle-tile" style="height: 200px">
+												<a href="#">
+													<div class="circle-tile-heading dark-blue">
+														<i class="fa fa-envelope fa-fw fa-3x"></i>
+													</div>
+												</a>
+												<div class="circle-tile-content dark-blue">
+													<div class="circle-tile-description text-faded">Mail</div>
+													<div class="circle-tile-number text-faded">
+														265 <span id="sparklineA"></span>
+													</div>
+													<a href="#" class="circle-tile-footer"><h:outputText
+															value="#{msg['en_savoir_plus']}" /> <i
+														class="fa fa-chevron-circle-right"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="circle-tile" style="height: 200px">
+												<a href="#">
+													<div class="circle-tile-heading dark-blue">
+														<i class="fa fa-smile-o fa-fw fa-3x"></i>
+													</div>
+												</a>
+												<div class="circle-tile-content dark-blue">
+													<div class="circle-tile-description text-faded">?????</div>
+													<div class="circle-tile-number text-faded">
+														265 <span id="sparklineA"></span>
+													</div>
+													<a href="#" class="circle-tile-footer">Reste à décider
+														<i class="fa fa-chevron-circle-right"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="col-lg-6">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="tile blue" style="height: 400px">
+												<h4>
+													<i class="fa fa-info-circle"></i> News <a
+														href="javascript:;"><i
+														class="fa fa-refresh pull-right"></i></a>
+												</h4>
+												<p class="small text-faded">
+													<strong>Hier wird die Newsliste angezeigt</strong>
+
+												</p>
+
+											</div>
+
+										</div>
+									</div>
+									<div class="row" style="height: 200px">
+										<div class="col-lg-12">
+											<div class="portlet portlet-default">
+												<div class="portlet-heading">
+													<div class="portlet-title">
+														<h4>
+															<i class="fa fa-circle text-green"></i> Duclos Ndanji
+														</h4>
+													</div>
+													<div class="portlet-widgets">
+														<div class="btn-group">
+															<button type="button"
+																class="btn btn-white dropdown-toggle btn-xs"
+																data-toggle="dropdown">
+																<i class="fa fa-circle text-green"></i> Status <span
+																	class="caret"></span>
+															</button>
+															<ul class="dropdown-menu" role="menu">
+																<li><a href="#"><i
+																		class="fa fa-circle text-green"></i> En ligne</a></li>
+																<li><a href="#"><i
+																		class="fa fa-circle text-orange"></i> Occupé</a></li>
+																<li><a href="#"><i
+																		class="fa fa-circle text-red"></i> hors ligne</a></li>
+															</ul>
+														</div>
+														<span class="divider"></span> <a data-toggle="collapse"
+															data-parent="#accordion" href="#chat"><i
+															class="fa fa-chevron-down"></i></a>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+												<div id="chat" class="panel-collapse collapse in">
+													<div class="portlet-body chat-widget">
+														<div class="row">
+															<div class="col-lg-12">
+																<p class="text-center text-muted small">1. Janvier
+																	2016, 14h 20</p>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<div class="media">
+																	<a class="pull-left" href="#"> <img
+																		class="media-object img-circle" src="img/Duclos.jpg"
+																		alt="" /></a>
+																	<div class="media-body">
+																		<h4 class="media-heading">
+																			Duclos Dandji <span class="small pull-right">12h
+																				23</span>
+																		</h4>
+																		<p>Salut tu es dispo? si oui rejoins-moi a la
+																			cafet</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<hr></hr>
+
+													</div>
+													<div class="portlet-footer">
+														<form role="form">
+															<div class="form-group">
+																<textarea class="form-control"
+																	placeholder="Enter message..."></textarea>
+															</div>
+															<div class="form-group">
+																<button type="submit" class="btn btn-default pull-right">Envoyer</button>
+																<div class="clearfix"></div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<!-- /.row -->
+
+
+
+				</div>
+				<!-- /.page-content -->
+
+			</div>
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
+		</h:form>
+	</ui:composition>
+</body>
+</html>
