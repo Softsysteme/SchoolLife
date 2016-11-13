@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+		<h:form>
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<h1>
+									Menu principal Eleve Template <small>Vue Générale</small>
+								</h1>
+								<ol class="breadcrumb">
+									<li class="active"><i class="fa fa-dashboard"></i> Menu</li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
+
+					<!-- begin DASHBOARD CIRCLE TILES -->
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="portlet portlet-blue">
+								<div class="portlet-heading">
+									<div class="portlet-title">
+										<h4>Actualité</h4>
+									</div>
+									<div class="portlet-widgets">
+										<span class="label green">Label</span> <span class="divider"></span>
+										<a data-toggle="collapse" data-parent="#accordion"
+											href="#defaultPortlet"><i class="fa fa-chevron-down"></i></a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div id="defaultPortlet" class="panel-collapse collapse in">
+									<div class="portlet-body">
+
+										<p>Bienvenue sur SchoolLife dans cette section tu
+											retrouveras toute les actualites brulantes da la semaine au
+											sein de ton etablissement</p>
+									</div>
+								</div>
+								<div class="portlet-footer"></div>
+							</div>
+
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading blue">
+											<i class="fa fa-user fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content blue">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineA"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">Mon profile <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading purple">
+											<i class="fa fa-book fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content purple">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded"></div>
+										<a href="#" class="circle-tile-footer">Mon CV <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading green">
+											<i class="fa fa-bell fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content green">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded"></div>
+										<a href="#" class="circle-tile-footer">Notifications <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading orange">
+											<i class="fa fa-tasks fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content orange">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineB"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">E-Learning <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading red">
+											<i class="fa fa-legal fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content red">
+										<div></div>
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineC"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">Discipline <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading blue">
+											<i class="fa fa-comments fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content blue">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineD"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">Messages <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading blue">
+											<i class="fa fa-users fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content blue">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineA"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">Social <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading yellow">
+											<i class="fa fa-home fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content yellow">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded"></div>
+										<a href="#" class="circle-tile-footer">Classe <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading blue">
+											<i class="fa fa-signal fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content blue">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded"></div>
+										<a href="#" class="circle-tile-footer">Performances
+											scolaire <i class="fa fa-chevron-circle-right"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading blue">
+											<i class="fa fa-envelope-o fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content blue">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineB"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">News <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading red">
+											<i class="fa fa-calendar fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content red">
+
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineC"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">Emploie du temps<i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="circle-tile">
+									<a href="#">
+										<div class="circle-tile-heading blue">
+											<i class="fa fa-cog fa-fw fa-3x"></i>
+										</div>
+									</a>
+									<div class="circle-tile-content blue">
+										<div class="circle-tile-description text-faded"></div>
+										<div class="circle-tile-number text-faded">
+
+											<span id="sparklineD"></span>
+										</div>
+										<a href="#" class="circle-tile-footer">Parametres <i
+											class="fa fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+
+
+					<hr></hr>
+					<hr></hr>
+					<br></br>
+
+
+
+					<div class="row">
+
+						<div class="col-lg-12">
+							<div class="portlet portlet-blue">
+
+								<div class="portlet-heading">
+									<div class="portlet-title">
+
+										<h4>
+											<i class="fa fa-edit"></i>chat
+										</h4>
+										<h4>
+											<i class="fa fa-circle text-green"></i> Duclos Dandji
+										</h4>
+									</div>
+									<div class="portlet-widgets">
+
+										<div class="btn-group">
+											<button type="button"
+												class="btn btn-white dropdown-toggle btn-xs"
+												data-toggle="dropdown">
+												<i class="fa fa-circle text-green"></i> Status <span
+													class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="#"><i class="fa fa-circle text-green"></i>
+														En ligne</a></li>
+												<li><a href="#"><i class="fa fa-circle text-orange"></i>
+														Occupé</a></li>
+												<li><a href="#"><i class="fa fa-circle text-red"></i>
+														hors ligne</a></li>
+											</ul>
+										</div>
+										<span class="divider"></span> <a data-toggle="collapse"
+											data-parent="#accordion" href="#chat"><i
+											class="fa fa-chevron-down"></i></a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div id="chat" class="panel-collapse collapse in">
+									<div class="portlet-body chat-widget">
+										<div class="row">
+											<div class="col-lg-12">
+												<p class="text-center text-muted small">1. Janvier 2016,
+													14h 20</p>
+											</div>
+										</div>
+
+										<div class="col-lg-12">
+											<div class="media">
+												<a class="pull-left" href="#"> <img
+													class="media-object img-circle" src="img/Duclos.jpg" alt=""></img>
+												</a>
+												<div class="media-body">
+													<h4 class="media-heading">
+														Duclos Dandji <span class="small pull-right">12h 23</span>
+													</h4>
+													<p>Salut tu es dispo? si oui rejoins-moi a la cafet</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr></hr>
+
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="media">
+												<a class="pull-left" href="#"> <img
+													class="media-object img-circle" src="img/Duclos.jpg" alt=""></img>
+
+												</a>
+												<div class="media-body">
+													<h4 class="media-heading">
+														Thierry Mpouma <span class="small pull-right">12h
+															28</span>
+													</h4>
+													<p>Uoi biensur je peux me liberer</p>
+													<p>tu me prends un café?</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr></hr>
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="media">
+												<a class="pull-left" href="#"> <img
+													class="media-object img-circle"
+													src="img/user-profile-2.jpg" alt=""></img>
+												</a>
+												<div class="media-body">
+													<h4 class="media-heading">
+														Jane Smith <span class="small pull-right">12:39 PM</span>
+													</h4>
+													<p>No not yet, the transaction hasn't cleared yet. I
+														will let you know as soon as everything goes through. Any
+														idea where you want to get lunch today?</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr></hr>
+
+								</div>
+								<div class="portlet-footer">
+									<form role="form">
+										<div class="form-group">
+											<textarea class="form-control"
+												placeholder="Entrer un message..."></textarea>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-default pull-right">Envoyer</button>
+											<div class="clearfix"></div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- /.page-content -->
+					<!-- /#page-wrapper -->
+					<!-- end MAIN PAGE CONTENT -->
+				</div>
+			</div>
+		</h:form>
+	</ui:composition>
+</body>
+</html>
