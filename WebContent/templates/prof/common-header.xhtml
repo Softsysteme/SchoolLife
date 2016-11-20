@@ -43,8 +43,8 @@
 
 				<!-- begin MESSAGES/ALERTS/TASKS/USER ACTIONS DROPDOWNS -->
 				<ul class="nav navbar-right">
-					<li><h:form>
-							<h:panelGrid columns="1">
+					<li class="dropdown"><h:form>
+							<h:panelGrid columns="2">
 								<h:selectOneMenu value="#{languageManager.locale}"
 									onchange="submit()"
 									valueChangeListener="#{languageManager.localeChanged}">

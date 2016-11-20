@@ -42,8 +42,8 @@
 
 				<!-- begin MESSAGES/ALERTS/TASKS/USER ACTIONS DROPDOWNS -->
 				<ul class="nav navbar-right">
-					<li><h:form>
-							<h:panelGrid columns="1">
+						<li class="dropdown"><h:form>
+							<h:panelGrid columns="2">
 								<h:selectOneMenu value="#{languageManager.locale}"
 									onchange="submit()"
 									valueChangeListener="#{languageManager.localeChanged}">
@@ -51,6 +51,7 @@
 								</h:selectOneMenu>
 							</h:panelGrid>
 						</h:form></li>
+
 
 					<!-- 	<li>
 				<img class="img-circle  col-xs-3" src="img/icon/france.ico" alt="french"></img>
@@ -60,17 +61,17 @@
 			 -->
 
 					<!-- begin MESSAGES DROPDOWN -->
-					<li class="dropdown"><a href="#"
-						class="messages-link dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-envelope"></i> <span class="number">4</span> <i
-							class="fa fa-caret-down"></i>
-					</a>
-						<ul class="dropdown-menu dropdown-scroll dropdown-messages">
+<!-- 					<li class="dropdown"><a href="#" -->
+<!-- 						class="messages-link dropdown-toggle" data-toggle="dropdown"> -->
+<!-- 							<i class="fa fa-envelope"></i> <span class="number">4</span> <i -->
+<!-- 							class="fa fa-caret-down"></i> -->
+<!-- 					</a> -->
+<!-- 						<ul class="dropdown-menu dropdown-scroll dropdown-messages"> -->
 
-							<!-- Messages Dropdown Heading -->
-							<li class="dropdown-header"><i class="fa fa-envelope"></i> 4
-							<h:outputText value="#{msg['nveau_msg']}" />
-								</li>
+<!-- 							Messages Dropdown Heading -->
+<!-- 							<li class="dropdown-header"><i class="fa fa-envelope"></i> 4 -->
+<!-- 							<h:outputText value="#{msg['nveau_msg']}" /> -->
+<!-- 								</li> -->
 
 							<!-- Messages Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
 							<li id="messageScroll">
