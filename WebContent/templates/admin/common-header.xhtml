@@ -15,11 +15,11 @@
 				<button type="button" class="navbar-toggle pull-right"
 					data-toggle="collapse" data-target=".sidebar-collapse">
 					<i class="fa fa-bars"></i> 
-							<h:outputText value="#{msg['menu']}" />
+							<h:outputText value="{msg['menu']}" />
 				</button>
 				<div class="navbar-brand">
 					<a href="index.xhtml"> <font color="Yellow"> 
-							<h:outputText value="#{msg['title']}" />
+							<h:outputText value="{msg['title']}" />
 					</font>
 					</a>
 
@@ -42,36 +42,19 @@
 
 				<!-- begin MESSAGES/ALERTS/TASKS/USER ACTIONS DROPDOWNS -->
 				<ul class="nav navbar-right">
-						<li class="dropdown"><h:form>
-							<h:panelGrid columns="2">
-								<h:selectOneMenu value="#{languageManager.locale}"
-									onchange="submit()"
-									valueChangeListener="#{languageManager.localeChanged}">
-									<f:selectItems value="#{languageManager.countries}" />
-								</h:selectOneMenu>
-							</h:panelGrid>
-						</h:form></li>
-
-
-					<!-- 	<li>
-				<img class="img-circle  col-xs-3" src="img/icon/france.ico" alt="french"></img>
-				</li>
-				<li>
-				<img class="img-circle col-xs-3" src="img/icon/uk.ico" alt="english"></img>
-			 -->
-
+					
 					<!-- begin MESSAGES DROPDOWN -->
-<!-- 					<li class="dropdown"><a href="#" -->
-<!-- 						class="messages-link dropdown-toggle" data-toggle="dropdown"> -->
-<!-- 							<i class="fa fa-envelope"></i> <span class="number">4</span> <i -->
-<!-- 							class="fa fa-caret-down"></i> -->
-<!-- 					</a> -->
-<!-- 						<ul class="dropdown-menu dropdown-scroll dropdown-messages"> -->
+					<li class="dropdown"><a href="#"
+						class="messages-link dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-envelope"></i> <span class="number">4</span> <i
+							class="fa fa-caret-down"></i>
+					</a>
+						<ul class="dropdown-menu dropdown-scroll dropdown-messages">
 
-<!-- 							Messages Dropdown Heading -->
-<!-- 							<li class="dropdown-header"><i class="fa fa-envelope"></i> 4 -->
-<!-- 							<h:outputText value="#{msg['nveau_msg']}" /> -->
-<!-- 								</li> -->
+							<!-- Messages Dropdown Heading -->
+							<li class="dropdown-header"><i class="fa fa-envelope"></i> 4
+							<h:outputText value="{msg['nveau_msg']}" />
+								</li>
 
 							<!-- Messages Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
 							<li id="messageScroll">
@@ -145,7 +128,7 @@
 
 							<!-- Messages Dropdown Footer -->
 							<li class="dropdown-footer"><a href="mailbox.html">
-							<h:outputText value="#{msg['lire_ts_les_msg']}" />
+							<h:outputText value="{msg['lire_ts_les_msg']}" />
 							</a></li>
 
 						</ul> <!-- /.dropdown-menu --></li>
@@ -162,7 +145,7 @@
 
 							<!-- Alerts Dropdown Heading -->
 							<li class="dropdown-header"><i class="fa fa-bell"></i> 9
-							<h:outputText value="#{msg['nvlle_notification']}" />
+							<h:outputText value="{msg['nvlle_notification']}" />
 								</li>
 
 							<!-- Alerts Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
@@ -208,7 +191,7 @@
 
 							<!-- Alerts Dropdown Footer -->
 							<li class="dropdown-footer"><a href="#">
-											<h:outputText value="#{msg['voire_alertes']}" />
+											<h:outputText value="{msg['voire_alertes']}" />
 			</a>
 							</li>
 
@@ -363,31 +346,31 @@
 					</a>
 						<ul class="dropdown-menu dropdown-user">
 							<li><a href="profile.html"> <i class="fa fa-user"></i>
-							<h:outputText value="#{msg['mon_profil']}" />
+							<h:outputText value="{msg['mon_profil']}" />
 							</a></li>
 							<li><a href="mailbox.html"> <i class="fa fa-envelope"></i>
-							<h:outputText value="#{msg['mes_msg']}" />
+							<h:outputText value="{msg['mes_msg']}" />
 									<span class="badge green pull-right">4</span>
 							</a></li>
 							<li><a href="#"> <i class="fa fa-bell"></i>
-							<h:outputText value="#{msg['mes_alertes']}" />
+							<h:outputText value="{msg['mes_alertes']}" />
 									<span class="badge orange pull-right">9</span>
 							</a></li>
 							<li><a href="#"> <i class="fa fa-tasks"></i> 
-							<h:outputText value="#{msg['mes_applications']}" />
+							<h:outputText value="{msg['mes_applications']}" />
 							<span class="badge blue pull-right">10</span>
 							</a></li>
 							<li><a href="calendar.html"> <i class="fa fa-calendar"></i>
-							<h:outputText value="#{msg['mon_calendrier']}" />
+							<h:outputText value="{msg['mon_calendrier']}" />
 							</a></li>
 							<li class="divider"></li>
 							<li><a href="#"> <i class="fa fa-gear"></i> 
-							<h:outputText value="#{msg['parametres']}" />
+							<h:outputText value="{msg['parametres']}" />
 							</a></li>
 							<li>
 								<!--class="logout_open"--> <a href="login.html"> <i
 									class="fa fa-sign-out"></i> 
-							<h:outputText value="#{msg['deconnection']}" />
+							<h:outputText value="{msg['deconnection']}" />
 									<strong>Thierry
 										Mpouma</strong>
 							</a>
@@ -415,7 +398,7 @@
 						src="img/profile-pic.jpg" alt=""></img>
 						<p class="welcome">
 							<i class="fa fa-key"></i> 
-							<h:outputText value="#{msg['connecte_en_tant_que']}" />
+							<h:outputText value="{msg['connecte_en_tant_que']}" />
 						</p>
 						<p class="name tooltip-sidebar-logout">
 							Christ. <span class="last-name">Essomba</span> <a
@@ -439,9 +422,9 @@
 					<!-- begin DASHBOARD LINK -->
 
 					<li class="active"><h:commandLink
-							action="#{navigationController.moveToDashboard}">
+							action="{navigationController.moveToDashboard}">
 							<i class="fa fa-dashboard" />
-							<h:outputText value="#{msg['dashboard']}" />
+							<h:outputText value="{msg['dashboard']}" />
 						</h:commandLink></li>
 
 					<!-- end DASHBOARD LINK -->
@@ -450,23 +433,23 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#forms"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['espace_prive']}" /> <i class="fa fa-caret-down"></i>
+								value="{msg['espace_prive']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="forms">
 							<li><h:commandLink
-									action="#{navigationController.moveToMonCompte}">
+									action="{navigationController.moveToMonCompte}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['mon_compte']}" />
+									<h:outputText value="{msg['mon_compte']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToAgenda}">
+									action="{navigationController.moveToAgenda}">
 									<i class="fa fa-users"></i>
-									<h:outputText value="#{msg['agenda']}" />
+									<h:outputText value="{msg['agenda']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToParametrage}">
+									action="{navigationController.moveToParametrage}">
 									<i class="fa fa-angle-double-right"></i>
-									<h:outputText value="#{msg['parametrage']}" />
+									<h:outputText value="{msg['parametrage']}" />
 								</h:commandLink></li>
 						</ul></li>
 					<!-- end Espace privé -->
@@ -475,29 +458,29 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#messagerie"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['messagerie']}" /> <i class="fa fa-caret-down"></i>
+								value="{msg['messagerie']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="messagerie">
 							<li><h:commandLink
-									action="#{navigationController.moveToReception}">
+									action="{navigationController.moveToReception}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['reception']}" />
+									<h:outputText value="{msg['reception']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToEcrire}">
+									action="{navigationController.moveToEcrire}">
 
 									<i class="fa fa-users"></i>
-									<h:outputText value="#{msg['ecrire']}" />
+									<h:outputText value="{msg['ecrire']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToBrouillon}">
+									action="{navigationController.moveToBrouillon}">
 									<i class="fa fa-angle-double-right"></i>
-									<h:outputText value="#{msg['brouillon']}" />
+									<h:outputText value="{msg['brouillon']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToEnvoye}">
+									action="{navigationController.moveToEnvoye}">
 									<i class="fa fa-angle-double-right"></i>
-									<h:outputText value="#{msg['message_envoye']}" />
+									<h:outputText value="{msg['message_envoye']}" />
 								</h:commandLink></li>
 						</ul></li>
 					<!-- end Messagerie -->
@@ -506,53 +489,53 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#gestion"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['gestion']}" /> <i class="fa fa-caret-down"></i>
+								value="{msg['gestion']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="gestion">
 							<li><h:commandLink
-									action="#{navigationController.moveToAnneeScolaire}">
+									action="{navigationController.moveToAnneeScolaire}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['annee_scolaire']}" />
+									<h:outputText value="{msg['annee_scolaire']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToEnseignants}">
+									action="{navigationController.moveToEnseignants}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['enseignants']}" />
+									<h:outputText value="{msg['enseignants']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToPersonnel}">
+									action="{navigationController.moveToPersonnel}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['personnel']}" />
+									<h:outputText value="{msg['personnel']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToPreinscription}">
+									action="{navigationController.moveToPreinscription}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['preinscription']}" />
+									<h:outputText value="{msg['preinscription']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToElearning}">
+									action="{navigationController.moveToElearning}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['elearning']}" />
+									<h:outputText value="{msg['elearning']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToClasses}">
+									action="{navigationController.moveToClasses}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['classes']}" />
+									<h:outputText value="{msg['classes']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToMatieres}">
+									action="{navigationController.moveToMatieres}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['matieres']}" />
+									<h:outputText value="{msg['matieres']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToFournitureScolaire}">
+									action="{navigationController.moveToFournitureScolaire}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['fourniture_scolaire']}" />
+									<h:outputText value="{msg['fourniture_scolaire']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToGroupeScolaire}">
+									action="{navigationController.moveToGroupeScolaire}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['groupe_scolaire']}" />
+									<h:outputText value="{msg['groupe_scolaire']}" />
 								</h:commandLink></li>
 
 						</ul></li>
@@ -562,33 +545,33 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#comptabilite"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['comptabilite']}" /> <i class="fa fa-caret-down"></i>
+								value="{msg['comptabilite']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="comptabilite">
 							<li><h:commandLink
-									action="#{navigationController.moveToFicheEtat}">
+									action="{navigationController.moveToFicheEtat}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['fiche_etat']}" />
+									<h:outputText value="{msg['fiche_etat']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToEncaissement}">
+									action="{navigationController.moveToEncaissement}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['encaissement']}" />
+									<h:outputText value="{msg['encaissement']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToRappel}">
+									action="{navigationController.moveToRappel}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['rappel']}" />
+									<h:outputText value="{msg['rappel']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToVacationEns}">
+									action="{navigationController.moveToVacationEns}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['vacation_ens']}" />
+									<h:outputText value="{msg['vacation_ens']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToBoursier}">
+									action="{navigationController.moveToBoursier}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['boursier']}" />
+									<h:outputText value="{msg['boursier']}" />
 								</h:commandLink></li>
 						</ul></li>
 					<!-- end Comptabilité -->
@@ -597,39 +580,39 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#finance"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['finances']}" /> <i class="fa fa-caret-down"></i>
+								value="{msg['finances']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="finance">
 							<li><h:commandLink
-									action="#{navigationController.moveToInscription}">
+									action="{navigationController.moveToInscription}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['inscription']}" />
+									<h:outputText value="{msg['inscription']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToParametrageFinance}">
+									action="{navigationController.moveToParametrageFinance}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['parametrage']}" />
+									<h:outputText value="{msg['parametrage']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToPaiement}">
+									action="{navigationController.moveToPaiement}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['paiements']}" />
+									<h:outputText value="{msg['paiements']}" />
 								</h:commandLink></li>
 						</ul></li>
 					<!-- end Finance -->
 
 					<!-- begin Actualité -->
 					<li><h:commandLink
-							action="#{navigationController.moveToActualite}">
+							action="{navigationController.moveToActualite}">
 							<i class="fa fa-edit"></i>
-							<h:outputText value="#{msg['actualite']}" />
+							<h:outputText value="{msg['actualite']}" />
 						</h:commandLink></li>
 					<!-- end Actualité -->
 
 					<!-- begin News -->
-					<li><h:commandLink action="#{navigationController.moveToNews}">
+					<li><h:commandLink action="{navigationController.moveToNews}">
 							<i class="fa fa-edit"></i>
-							<h:outputText value="#{msg['news']}" />
+							<h:outputText value="{msg['news']}" />
 						</h:commandLink></li>
 					<!-- end News -->
 
@@ -637,33 +620,33 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#eleve"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['eleves']}" /> <i class="fa fa-caret-down"></i>
+								value="{msg['eleves']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="eleve">
 							<li><h:commandLink
-									action="#{navigationController.moveToListing}">
+									action="{navigationController.moveToListing}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['listing']}" />
+									<h:outputText value="{msg['listing']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToFicheTechnique}">
+									action="{navigationController.moveToFicheTechnique}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['fiche_technique']}" />
+									<h:outputText value="{msg['fiche_technique']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToCarnetNote}">
+									action="{navigationController.moveToCarnetNote}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['carnet_note']}" />
+									<h:outputText value="{msg['carnet_note']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToCahierText}">
+									action="{navigationController.moveToCahierText}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['cahier_texte']}" />
+									<h:outputText value="{msg['cahier_texte']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToDossierMedical}">
+									action="{navigationController.moveToDossierMedical}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['dossier_medical']}" />
+									<h:outputText value="{msg['dossier_medical']}" />
 								</h:commandLink></li>
 						</ul></li>
 					<!-- end Élève -->
@@ -673,28 +656,28 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#viescolaire"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['vie_scolaire']}" /> <i class="fa fa-caret-down"></i>
+								value="{msg['vie_scolaire']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="viescolaire">
 							<li><h:commandLink
-									action="#{navigationController.moveToPlaning}">
+									action="{navigationController.moveToPlaning}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['gestion_planing']}" />
+									<h:outputText value="{msg['gestion_planing']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToAbsence}">
+									action="{navigationController.moveToAbsence}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['absences']}" />
+									<h:outputText value="{msg['absences']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToDiscipline}">
+									action="{navigationController.moveToDiscipline}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['discipline']}" />
+									<h:outputText value="{msg['discipline']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToSanction}">
+									action="{navigationController.moveToSanction}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['sanctions']}" />
+									<h:outputText value="{msg['sanctions']}" />
 								</h:commandLink></li>
 						</ul></li>
 					<!-- end Vie scolaire -->
@@ -703,33 +686,33 @@
 					<li class="panel"><a href="javascript:;" data-parent="#side"
 						data-toggle="collapse" class="accordion-toggle"
 						data-target="#etablissement"> <i class="fa fa-edit"></i> <h:outputText
-								value="#{msg['etablissement']}" /><i class="fa fa-caret-down"></i>
+								value="{msg['etablissement']}" /><i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="etablissement">
 							<li><h:commandLink
-									action="#{navigationController.moveToImporter}">
+									action="{navigationController.moveToImporter}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['importer']}" />
+									<h:outputText value="{msg['importer']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToExporter}">
+									action="{navigationController.moveToExporter}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['exporter']}" />
+									<h:outputText value="{msg['exporter']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToArchivage}">
+									action="{navigationController.moveToArchivage}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['archivage']}" />
+									<h:outputText value="{msg['archivage']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToPurgerInfos}">
+									action="{navigationController.moveToPurgerInfos}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['purger_info']}" />
+									<h:outputText value="{msg['purger_info']}" />
 								</h:commandLink></li>
 							<li><h:commandLink
-									action="#{navigationController.moveToNvlleAnnee}">
+									action="{navigationController.moveToNvlleAnnee}">
 									<i class="fa fa-home"></i>
-									<h:outputText value="#{msg['nouvelle_annee']}" />
+									<h:outputText value="{msg['nouvelle_annee']}" />
 								</h:commandLink></li>
 						</ul></li>
 					<!-- end Etablissement -->
