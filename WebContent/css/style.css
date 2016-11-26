@@ -200,7 +200,7 @@ a:focus {
 
  .navbar-top {
     margin-left: 0;
-    background-color: #2c3e50;
+    background-color: #275b76;
 }
 
 .navbar-top .navbar-brand a {
@@ -579,7 +579,7 @@ a:focus {
 .navbar-side .side-nav li,
 .navbar-side .side-nav li.panel {
     border-top: 1px solid #54677a;
-    border-bottom: 1px solid #142638;
+    border-bottom: 1px solid #1c86ee;
 }
 
 .navbar-side .side-nav li.panel ul li {
@@ -655,7 +655,7 @@ a:focus {
 
     .navbar-side .side-nav > li > a:hover {
         color: #fff;
-        background-color: #3d566e;
+        background-color: #1c86ee;
     }
 
     .navbar-side .side-nav li.panel ul li a:hover,
