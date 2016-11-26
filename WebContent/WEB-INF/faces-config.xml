@@ -5,14 +5,15 @@
 	version="2.2">
 	<application>
 		<locale-config>
-		<default-locale>en</default-locale>
+			<default-locale>fr</default-locale>
 
-		<supported-locale>fr</supported-locale>
+			<supported-locale>en</supported-locale>
+			<supported-locale>de</supported-locale>
 
 		</locale-config>
 		<resource-bundle>
-		<base-name>de.schoollife.resources.messages</base-name>
-		<var>msg</var>
+			<base-name>de.schoollife.resources.messages</base-name>
+			<var>msg</var>
 		</resource-bundle>
 	</application>
 </faces-config>

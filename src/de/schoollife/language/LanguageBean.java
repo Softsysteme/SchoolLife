@@ -22,8 +22,10 @@ public class LanguageBean implements Serializable {
    
    static{
       countries = new LinkedHashMap<String,Object>();
+      countries.put("Francais", Locale.FRENCH);
       countries.put("English", Locale.ENGLISH);
-      countries.put("French", Locale.FRENCH);
+      countries.put("Deutsch", Locale.GERMAN);
+      
    }
 
    public Map<String, Object> getCountries() {
@@ -37,6 +39,8 @@ public class LanguageBean implements Serializable {
    public void setLocale(String locale) {
       this.locale = locale;
    }
+   
+  
 
    //value change event listener
    public void localeChanged(ValueChangeEvent e){
