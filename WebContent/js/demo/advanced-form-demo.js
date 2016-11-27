@@ -9,6 +9,22 @@ $('#tokenfield-autocomplete').tokenfield({
     showAutocompleteOnFocus: true
 })
 
+$('#tokenfield-classes').tokenfield({
+    autocomplete: {
+        source: ['6eme', '3eme', '2nd C', '1ere D', 'Tle C2', 'Tle D2'],
+        delay: 100
+    },
+    showAutocompleteOnFocus: true
+})
+
+$('#tokenfield-matieres').tokenfield({
+    autocomplete: {
+        source: ['Anglais', 'Mathematics', 'French', 'History', 'Allemand', 'Sport','TM'],
+        delay: 100
+    },
+    showAutocompleteOnFocus: true
+})
+
 $("#tokenfield-typeahead").tokenfield({
     typeahead: {
         name: "tags",
