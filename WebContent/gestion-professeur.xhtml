@@ -181,176 +181,270 @@
 														</div>
 
 														<!--BEGIN RESPONSABILITIES INFORMATION -->
+
 														<div class="tab-pane fade in" id="responsabilities">
-															<form role="form">
-																<div class="panel-group" id="accordion">
-																	<div class="panel panel-default">
-																		<div class="panel-heading">
-																			<h4 class="panel-title">
-																				<a data-toggle="collapse" data-parent="#accordion"
-																					href="#collapseFather"> Parametrage</a>
-																			</h4>
-																		</div>
-																		<div id="collapseFather"
-																			class="panel-collapse collapse in">
-																			<div class="panel-body">
-																				<div class="row">
-																					<div class="col-lg-5 ">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">Matiere</label>
-																							<div class="col-lg-9">
-																								<input type="text" class="form-control"
-																									id="tokenfield-matieres" value=""
-																									placeholder="Choose a matiere from the dropdown!" />
-																							</div>
-																						</div>
-																					</div>
-																					<div class="col-lg-5 ">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">Classe</label>
-																							<div class="col-lg-9">
-																								<input type="text" class="form-control"
-																									id="tokenfield-classes"
-																									value="#{formController.classe1}"
-																									placeholder="#{formController.classe1}" />
-																							</div>
-																						</div>
-																					</div>
-																					<div class="col-lg-2">
-																						<button class="btn btn-default ">
-																							<i class="fa fa-plus-square"></i>
-																						</button>
-																					</div>
-
-																				</div>
-																				<br></br>
-																				<h:panelGroup layout="block"
-																					rendered="#{formController.classe1}">
-
-																					<div class="row">
-																						<div class="col-lg-5">
-																							<div class="form-group">
-																								<label class="col-lg-3 control-label">Matiere</label>
-																								<div class="col-lg-9">
-																									<input type="text" class="form-control"
-																										id="tokenfield-matieres" value=""
-																										placeholder="Choose a matiere from the dropdown!" />
-																								</div>
-																							</div>
-																						</div>
-																						<div class="col-lg-5">
-																							<div class="form-group">
-																								<label class="col-lg-3 control-label">Classe</label>
-																								<div class="col-lg-9">
-																									<input type="text" class="form-control"
-																										id="tokenfield-classes" value=""
-																										placeholder="Choose a classe from the dropdown!" />
-																								</div>
-																							</div>
-																						</div>
-
-																					</div>
-																				</h:panelGroup>
-																				<br></br>
-
-																				<div class="row">
-																					<div class="col-lg-5">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">Phone
-																								number</label>
-																							<div class="col-lg-9">
-																								<div class="input-group">
-																									<div class="input-group-addon">
-																										<i class="fa fa-phone"></i>
-																									</div>
-
-																									<input type="tel" class="form-control" value=""
-																										placeholder="1+(234) 555-2039"></input>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="col-lg-5">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">Email</label>
-																							<div class="col-lg-9">
-																								<div class="input-group">
-																									<div class="input-group-addon">
-																										<i class="fa fa-envelope"></i>
-																									</div>
-
-																									<input type="email" class="form-control"
-																										value="" placeholder="jsmith@website.com"></input>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-
-																				</div>
-																				<br></br>
-
-																				<div class="row">
-																					<div class="col-lg-5">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">Strasse
-																							</label>
-																							<div class="col-lg-9">
-																								<div class="input-group">
-																									<div class="input-group-addon">
-																										<i class="fa fa-map-marker"></i>
-																									</div>
-
-																									<input type="tel" class="form-control" value=""
-																										placeholder="Antonstr-"></input>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="col-lg-5">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">PLZ</label>
-																							<div class="col-lg-9">
-
-																								<input type="text" class="form-control" value=""
-																									placeholder="2334"></input>
-																							</div>
-																						</div>
-																					</div>
-
-																				</div>
-																				<br></br>
-
-																				<div class="row">
-																					<div class="col-lg-5 ">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">City</label>
-																							<div class="col-lg-9">
-																								<input type="text" class="form-control"
-																									id="tokenfield-matieres" value=""
-																									placeholder="Choose a matiere from the dropdown!" />
-																							</div>
-																						</div>
-																					</div>
-																					<div class="col-lg-5 ">
-																						<div class="form-group">
-																							<label class="col-lg-3 control-label">Pays</label>
-																							<div class="col-lg-9">
-																								<input type="text" class="form-control"
-																									id="tokenfield-classes"
-																									value=""
-																									placeholder="Pays" />
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<br></br>
-
+															<h:form role="form">
+																<br></br>
+																<div class="row">
+																	<div class="col-lg-6 ">
+																		<div class="form-group">
+																			<label class="col-lg-3 control-label">Fonction</label>
+																			<div class="col-lg-7">
+																				<select class="form-control">
+																					<option>Professeur</option>
+																					<option>Directeur</option>
+																					<option>Censeur</option>
+																					<option>Maitresse</option>
+																					<option>Gardien</option>
+																					<option>Menage</option>
+																				</select>
 																			</div>
+																			<div class="col-lg-2">
+																				<h:commandLink class="btn btn-default "
+																					action="#{formController.newField()}">
+																					<i class="fa fa-plus-square"></i>
+																					<f:ajax render="responsabilities" />
+																				</h:commandLink>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<br></br>
+																<div class="row">
+																	<div class="col-lg-6 ">
+																		<div class="form-group">
+																			<label class="col-lg-3 control-label">Fonction</label>
+																			<div class="col-lg-7">
+																				<select class="form-control">
+																					<option>Professeur</option>
+																					<option>Directeur</option>
+																					<option>Censeur</option>
+																					<option>Maitresse</option>
+																					<option>Gardien</option>
+																					<option>Menage</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-2">
+																				<h:commandLink class="btn btn-danger"
+																					action="#{formController.hideField('5')}">
+																					<i class="fa fa-times"></i>
+																					<f:ajax execute="tokenfield-matieres"
+																						render="responsabilities" />
+																				</h:commandLink>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<br></br>
+																<div class="row">
+																	<div class="col-lg-5 ">
+																		<div class="form-group">
+																			<label class="col-lg-3 control-label">Matiere</label>
+																			<div class="col-lg-9">
+																				<input type="text" class="form-control"
+																					id="tokenfield-matieres" value=""
+																					placeholder="Choose a matiere from the dropdown!" />
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-lg-5 ">
+																		<div class="form-group">
+																			<label class="col-lg-3 control-label">Classe</label>
+																			<div class="col-lg-9">
+																				<input type="text" class="form-control"
+																					id="tokenfield-classes"
+																					value="#{formController.classe1}"
+																					placeholder="#{formController.classe1}" />
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-lg-2">
+																		<h:commandLink class="btn btn-default "
+																			action="#{formController.newField()}">
+																			<i class="fa fa-plus-square"></i>
+																			<f:ajax render="responsabilities" />
+																		</h:commandLink>
+																	</div>
+
+																</div>
+																<br></br>
+																<h:panelGroup layout="block"
+																	rendered="#{formController.classe1}">
+
+																	<div class="row">
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Matiere</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-matieres" value=""
+																						placeholder="Choose a matiere from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Classe</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-classes" value=""
+																						placeholder="Choose a classe from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-2">
+																			<h:commandLink class="btn btn-danger"
+																				action="#{formController.hideField('1')}">
+																				<i class="fa fa-times"></i>
+																				<f:ajax render="responsabilities" />
+																			</h:commandLink>
 																		</div>
 
 																	</div>
-																</div>
-															</form>
+																</h:panelGroup>
+																<br></br>
+
+																<h:panelGroup layout="block"
+																	rendered="#{formController.classe2}">
+
+																	<div class="row">
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Matiere</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-matieres" value=""
+																						placeholder="Choose a matiere from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Classe</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-classes" value=""
+																						placeholder="Choose a classe from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-2">
+																			<h:commandLink class="btn btn-danger"
+																				action="#{formController.hideField(2)}">
+																				<i class="fa fa-times"></i>
+																				<f:ajax render="responsabilities" />
+																			</h:commandLink>
+																		</div>
+
+																	</div>
+																</h:panelGroup>
+																<br></br>
+																<h:panelGroup layout="block"
+																	rendered="#{formController.classe3}">
+
+																	<div class="row">
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Matiere</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-matieres" value=""
+																						placeholder="Choose a matiere from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Classe</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-classes" value=""
+																						placeholder="Choose a classe from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-2">
+																			<h:commandLink class="btn btn-danger"
+																				action="#{formController.hideField(3)}">
+																				<i class="fa fa-times"></i>
+																				<f:ajax render="responsabilities" />
+																			</h:commandLink>
+																		</div>
+
+																	</div>
+																</h:panelGroup>
+																<br></br>
+																<h:panelGroup layout="block"
+																	rendered="#{formController.classe4}">
+
+																	<div class="row">
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Matiere</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-matieres" value=""
+																						placeholder="Choose a matiere from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Classe</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-classes" value=""
+																						placeholder="Choose a classe from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-2">
+																			<h:commandLink class="btn btn-danger"
+																				action="#{formController.hideField(4)}">
+																				<i class="fa fa-times"></i>
+																				<f:ajax render="responsabilities" />
+																			</h:commandLink>
+																		</div>
+
+																	</div>
+																</h:panelGroup>
+																<br></br>
+																<h:panelGroup layout="block"
+																	rendered="#{formController.classe5}">
+
+																	<div class="row">
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Matiere</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-matieres" value=""
+																						placeholder="Choose a matiere from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-5">
+																			<div class="form-group">
+																				<label class="col-lg-3 control-label">Classe</label>
+																				<div class="col-lg-9">
+																					<input type="text" class="form-control"
+																						id="tokenfield-classes" value=""
+																						placeholder="Choose a classe from the dropdown!" />
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-lg-2">
+																			<h:commandLink class="btn btn-danger"
+																				action="#{formController.hideField('5')}">
+																				<i class="fa fa-times"></i>
+																				<f:ajax execute="tokenfield-matieres"
+																					render="responsabilities" />
+																			</h:commandLink>
+																		</div>
+
+																	</div>
+																</h:panelGroup>
+															</h:form>
 														</div>
 														<!--END RESPONSABILITIES INFORMATION -->
 

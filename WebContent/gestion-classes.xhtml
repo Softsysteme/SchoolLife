@@ -51,14 +51,47 @@
 																</select>
 															</div>
 															<div class="col-lg-2">
-																<button class="btn btn-default ">
+																<button class="btn btn-green" data-toggle="modal"
+																	data-target="#sectionModal">
 																	<i class="fa fa-plus-square"></i>
 																</button>
 															</div>
-
-
 														</div>
 													</div>
+
+													<!-- Section Modal -->
+													<div class="modal modal-flex fade" id="sectionModal"
+														tabindex="-1" role="dialog"
+														aria-labelledby="flexModalLabel" aria-hidden="true">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close"
+																		data-dismiss="modal" aria-hidden="true">&times;</button>
+																	<h4 class="modal-title" id="flexModalLabel">Créer
+																		une nouvelle Section</h4>
+																</div>
+																<div class="modal-body">
+																	<div class="form-group">
+																		<label>Section</label> <input type="text"
+																			class="form-control" value=""
+																			placeholder="Nom de la section"></input>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default"
+																		data-dismiss="modal">Close</button>
+																	<button type="button" class="btn btn-green">Save
+																	</button>
+																</div>
+															</div>
+															<!-- /.modal-content -->
+														</div>
+														<!-- /.modal-dialog -->
+													</div>
+													<!-- /.modal -->
+
+
 													<div class="col-lg-6 ">
 														<div class="form-group">
 															<label class="col-lg-3 control-label">Cycle</label>
@@ -69,12 +102,46 @@
 																</select>
 															</div>
 															<div class="col-lg-2">
-																<button class="btn btn-default ">
+																<button class="btn btn-green" data-toggle="modal"
+																	data-target="#cycleModal">
 																	<i class="fa fa-plus-square"></i>
 																</button>
 															</div>
 														</div>
 													</div>
+
+													<!-- Section Modal -->
+													<div class="modal modal-flex fade" id="cycleModal"
+														tabindex="-1" role="dialog"
+														aria-labelledby="flexModalLabel" aria-hidden="true">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close"
+																		data-dismiss="modal" aria-hidden="true">&times;</button>
+																	<h4 class="modal-title" id="flexModalLabel">Créer
+																		un nouveau Cycle</h4>
+																</div>
+																<div class="modal-body">
+																	<div class="form-group">
+																		<label>Cycle</label> <input type="text"
+																			class="form-control" value=""
+																			placeholder="Nom du cycle"></input>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default"
+																		data-dismiss="modal">Close</button>
+																	<button type="button" class="btn btn-green">Save
+																	</button>
+																</div>
+															</div>
+															<!-- /.modal-content -->
+														</div>
+														<!-- /.modal-dialog -->
+													</div>
+													<!-- /.modal -->
+
 
 												</div>
 
@@ -95,12 +162,46 @@
 																</select>
 															</div>
 															<div class="col-lg-2">
-																<button class="btn btn-default ">
+																<button class="btn btn-green" data-toggle="modal"
+																	data-target="#intituleModal">
 																	<i class="fa fa-plus-square"></i>
 																</button>
 															</div>
 														</div>
 													</div>
+													<!-- Section Modal -->
+													<div class="modal modal-flex fade" id="intituleModal"
+														tabindex="-1" role="dialog"
+														aria-labelledby="flexModalLabel" aria-hidden="true">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close"
+																		data-dismiss="modal" aria-hidden="true">&times;</button>
+																	<h4 class="modal-title" id="flexModalLabel">Créer
+																		un nouveau Intitule</h4>
+																</div>
+																<div class="modal-body">
+																	<div class="form-group">
+																		<label>Intitule</label> <input type="text"
+																			class="form-control" value=""
+																			placeholder="Nom du Intitule (exemple: 6eme)"></input>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default"
+																		data-dismiss="modal">Close</button>
+																	<button type="button" class="btn btn-green">Save
+																	</button>
+																</div>
+															</div>
+															<!-- /.modal-content -->
+														</div>
+														<!-- /.modal-dialog -->
+													</div>
+													<!-- /.modal -->
+
+
 													<div class="col-lg-6 ">
 														<div class="form-group">
 															<label class="col-lg-3 control-label">Professeur
@@ -137,11 +238,16 @@
 
 												</div>
 												<br></br>
+												<div class="form-group">
+													<label><i class="fa fa-info fa-fw"></i> Note</label>
+													<textarea class="form-control" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
+												</div>
+
+												<br></br>
+
 												<div class="row">
 													<div class="col-lg-6">
-														<div class="col-lg-offset-3 col-lg-9">
-															<button type="submit" class="btn btn-success">Creer</button>
-														</div>
+														<button type="submit" class="btn btn-green">Creer</button>
 													</div>
 												</div>
 											</h:form>
