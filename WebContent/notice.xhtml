@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/prof/common-layout.xhtml">
+		<ui:define name="content">
+
+
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+
+					<!-- begin PAGE TITLE ROW -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<h1>
+									Notes personnelles <small>brouillon</small>
+								</h1>
+								<ol class="breadcrumb">
+									<li><i class="fa fa-dashboard"></i> <a href="vue-prof.html">Menu</a>
+									</li>
+									<li class="active">Profil du Professeur</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					
+					<div class="col-lg-12">
+					<div class="row">
+						<div class="col-lg-10">
+							<h:form>
+							<p:editor id="editor" widgetVar="editorWidget" value="#{editorView.text}"  height="600"/>
+							
+							<h:panelGrid columns="2" style="margin.top:10px">
+							<p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()" icons="ui-icon-disk"/>
+                            <p:commandButton value="Clear" type="button" onclick="PF('editorWidget').clear()" icons="ui-icon-close"/>
+							</h:panelGrid>	
+							
+                           
+                           <p:dialog header="Content" widgetVar="dlg" shoeEffect="fade" hideEffect="fade">
+                           <h:outputText id="display" value="#{editorView.text}" escape="false"/>
+                           </p:dialog>
+
+							</h:form>
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+						
+						   <div class="col-lg-2">
+                        <div class="portlet portlet-">
+                            <div class="portlet-heading">
+                                <div class="portlet-title">
+                                    <h4>Archives</h4>
+                                </div>
+                                <div class="portlet-widgets">
+                                    <a href="#"><i class="fa fa-gear"></i></a>
+                                    <span class="divider"></span>
+                                    <a href="javascript:;"><i class="fa fa-refresh"></i></a>
+                                    <span class="divider"></span>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#redPortlet"><i class="fa fa-chevron-down"></i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="redPortlet" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                    <p>Portlet class:
+                                        <code>.portlet-red</code>.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis tempus libero. Aliquam et dui at augue aliquet gravida at at est. Curabitur mattis sem sed dolor sagittis blandit. Nulla facilisi. Praesent eget nibh nisl. Sed scelerisque ligula sed justo lobortis, at pharetra ipsum ornare. Pellentesque non nisl sit amet erat venenatis semper tincidunt sit amet erat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					</div>
+
+				</div>
+				</div>
+			</div>
+		</ui:define>
+
+
+	</ui:composition>
+
+
+</h:body>
+</html>

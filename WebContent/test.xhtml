@@ -1,0 +1,464 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions">
+
+
+    <o:importConstants type="net.mediasoft.microfina.init.MenusModuleInit" var="item"/>
+
+    <h:form>
+
+        <div id="contenant_menu_h">
+
+            <table border="0" id="menuh_table">
+                <tr>
+                    <td>
+                        <ul id="menu_h">
+                            <li style="margin-left:-35px;">
+                                <a href="pagePrincipale.xhtml"> <img src="../../resources/img/logomicrofina_1.png" /> </a>
+                            </li>
+                          <li>
+                                <i class="fa fa-paperclip" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+                                Fichier
+
+                                <ul class="ss_menu_h">
+                                    <li><a href="comptePartSociale.xhtml">Base de données </a>
+                                    </li>
+                                   <li><a href="comptePartSociale.xhtml">Quitter </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li>
+                                <i class="fa fa-building-o" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+                                Personnel
+
+                                <ul class="ss_menu_h">
+
+                                    <li><a href="#"   class="xss_menu" >Employe</a> 
+                                        <ul class="sss_menu_h">
+                                            <li><a href="banque.xhtml">Enreg. Employe</a> </li>
+                                            <li><a href="banqueInstitution.xhtml">Banque</a></li>
+                                        </ul>
+                                    </li>
+                                     <li><a href="#"   class="xss_menu" >Sanction</a> 
+                                        <ul class="sss_menu_h">
+                                            <li><a href="banque.xhtml">Banque Client</a> </li>
+                                            <li><a href="banqueInstitution.xhtml">Banque Institution</a></li>
+                                        </ul>
+                                    </li>
+                                     <li><a href="#"   class="xss_menu" >Retraite</a> 
+                                        <ul class="sss_menu_h">
+                                            <li><a href="banque.xhtml">Banque Client</a> </li>
+                                            <li><a href="banqueInstitution.xhtml">Banque Institution</a></li>
+                                        </ul>
+                                    </li>
+                                   
+
+                                </ul>
+
+                            </li>
+
+                            <li>
+                                <i class="fa fa-money" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+                                Emplois
+
+                                <ul class="ss_menu_h">
+                                    <li><a href="compteEpargne.xhtml"> #{label.nouveau} #{label.compte} </a> </li>
+                                    <li>#{label.consulter} #{label.compte} </li>
+
+                                    <li><a href="#" class="xss_menu">#{label.depot} #{label.a} #{label.term1}</a>
+
+                                        <ul class="sss_menu_h">
+                                            <li> <a href="miseEnPlaceDepotATerme.xhtml"> Mise en place DAT</a> </li>
+                                            <li> <a href="validationDAT.xhtml"> Validation DAT</a> </li>
+                                            <li> <a href="ruptureDepotATerme.xhtml"> Rupture DAT</a> </li>
+                                            <li> <a href="rechercheMultiCritereDepotATerme.xhtml"> Recherche multi critères DAT</a> </li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li><a href="#" class="xss_menu">#{label.calcul} #{label.interet} #{label.et} #{label.agios} </a>
+                                        <ul class="sss_menu_h">
+                                            <li>#{label.agios}</li>
+                                            <li>#{label.interet}</li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="#" class="xss_menu">#{label.fermeture} #{label.et} #{label.reactivation} </a>
+                                        <ul class="sss_menu_h">
+                                            <li>#{label.fermeture}</li>
+                                            <li>#{label.reactivation}</li>
+                                        </ul>
+                                    </li>
+
+                                    <li> <a href="blocageDeblocageDeCompte.xhtml">#{label.blocage} #{label.compte} #{label.et} #{label.montant}</a></li>
+
+                                    <li><a href="#" class="xss_menu">#{label.rapport} </a>
+                                        <ul class="sss_menu_h">
+                                            <li>#{label.rapport} #{label.de} #{label.base} </li>
+                                            <li>#{label.historique} #{label.de} #{label.compte} </li>
+                                            <li> 
+                                                <a href="rechercheMultipleEpargne.xhtml">#{label.recherchemulticritere}</a>
+                                            </li>
+                                            <li>#{label.autres} #{label.recherches}</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>#{label.souscrire} #{label.au} #{label.sms} </li>
+                                    <li>#{label.transfert} </li>
+                                    <li> <a href="engagementParSignature.xhtml">Création engagement </a> </li>
+                                    <li> <a href="releveCompte.xhtml">Consulation de relevé </a> </li>
+                                    <li><a href="#" class="xss_menu">#{label.plan} #{label.epargne} </a>
+
+                                        <ul class="sss_menu_h">
+                                            <li> <a href="simulationPlanEpargne.xhtml">Simulation </a> </li>
+                                            <li> <a href="creationPlanEpargne.xhtml">#{label.nouveau} </a> </li>
+                                            <li> <a href="consultationTableauAmortissement.xhtml">Consultation du tableau d'amortissement </a> </li>
+                                            <li> <a href="editionCotisationPlanEpargne.xhtml"> Edition des cotisations</a> </li>
+                                            <li> <a href="rupturePlanEpargne.xhtml"> #{label.rupture}</a> </li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li>
+                                <i class="fa fa-dropbox" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+                               Recrutements
+
+                                <ul class="ss_menu_h">
+                                    <li><a href="operations.xhtml">#{label.operation}</a></li>
+                                    <li><a href="billetageCaisse.xhtml">Billetage caisse</a></li>
+                                    <li><a href="billetageOperation.xhtml">Billetage Operation</a></li>
+                                    <li><a href="visaOperationCaisse.xhtml">Visa opérations </a></li>
+                                    <li><a href="#" class="xss_menu">Retrait Plafonné</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="visaRetrait.xhtml">Viser</a></li>
+                                            <li><a href="validerRetraitPlafond.xhtml">Valider</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="xss_menu">#{label.journaux}</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="consultationPieceCaisse.xhtml">#{label.journal} #{label.de} #{label.caisse}</a></li>
+                                            <li><a href="consultationPiece.xhtml">#{label.journal} #{label.administration}</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="#" class="xss_menu">#{label.rapports}</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="#">#{label.rapport} #{label.de} #{label.caisse}</a>
+                                                <ul class="sss_menu_h">
+                                                    <li><a href="billetageCaisse.xhtml">Enregistrer</a></li>
+                                                    <li><a href="validerBilletageCaiss.xhtml">Valider</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">#{label.rapport} #{label.administration} </a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="#">#{label.rapport} #{label.de} #{label.caisse} </a></li>
+
+                                    <li><a href="#" class="xss_menu">Transfert entre caisse </a>
+
+                                        <ul class="sss_menu_h">
+                                            <li><a href="virementCaisseversCaisse.xhtml">#{label.caisse} #{label.vers} #{label.caisse} </a> </li>
+                                            <li><a href="virementCaisseversBanque.xhtml">#{label.caisse} #{label.vers} #{label.banque}</a></li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li><a href="#" class="xss_menu">#{label.autres} #{label.operation}</a>
+
+                                        <ul class="sss_menu_h">
+                                            <li><a href="validationOd.xhtml">#{label.operation} #{label.diverses} </a> </li>
+                                            <li><a href="validationOperationdeplace.xhtml">#{label.operation} #{label.deplace}  </a></li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li>
+                                <i class="fa fa-btc" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+                               Mouvements
+
+                                <ul class="ss_menu_h">
+                                    <li><a href="#" class="xss_menu">Demande et Traitement</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="demandeCredit.xhtml">Demande</a> </li>
+                                            <li><a href="#">Traitement</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="xss_menu">Visa crédit</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="visaResponsableCredit.xhtml">Responsable crédit</a> </li>
+                                            <li><a href="visaCommiteCredit.xhtml">Commité de crédit</a> </li>
+                                            <li><a href="visaServiceFinancier.xhtml">Service financier</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="prelevementDeFrais.xhtml">Prélèvement de frais</a></li>
+
+                                    <li><a href="remboursementCredit.xhtml">Remboursement crédit</a></li>
+                                    <li><a href="#">Consulter prêt</a></li>
+                                    <li><a href="#">Prélèvement pour crédit</a></li>
+                                    <li><a href="#">Journal des opératioons</a></li>
+                                    <li><a href="tableauAmortissement.xhtml">Plan d'amortissement</a></li>
+                                    <li><a href="#">Bloquer intérêt</a></li>
+                                    <li><a href="#">Rééchellonement crédit</a></li>
+                                    <li><a href="#">Aperçus et impressions</a></li>
+                                    <li>
+                                        <a href="#">Rapports</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="rechercheMultipleCredit.xhtml">Rapport multicritère</a> </li>
+                                            <li><a href="#">Rapports de base</a> </li>
+                                        </ul>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa fa-table" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+
+                               Parametrage
+                                <ul class="ss_menu_h">
+
+                                    <li><a href="ficheDeBase.xhtml"   class="xss_menu" >Comptabilité</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="deblocageCredit.xhtml">Virement et prélevement sur comptes</a> </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="#"   class="xss_menu" >Budget</a>
+                                        <ul class="sss_menu_h">
+                                           
+                                            <li><a href="budget.xhtml">Nouveau budget</a> </li>
+                                            <li><a href="#">Modification de budget</a> </li>
+                                            <li><a href="suiviBudgetaire.xhtml">Suivi budgetaire</a> </li>
+                                            <li><a href="centreDeCout.xhtml">Centre de coût</a> </li>
+                                            <li><a href="budgetNomme.xhtml">Budgets nommés</a> </li>
+                                            <li><a href="periode.xhtml">Péiode</a> </li>
+                                            <li><a href="typePeriode.xhtml">Type période</a> </li>
+                                            <li><a href="fiancement.xhtml">Ligne financement</a> </li>
+                                            
+                                        </ul>
+                                    </li>
+
+
+                                    <li ><a href="operationComptabilite.xhtml">Opérations</a></li>
+                                    <li><a href="visaOperationComptabilite.xhtml">Visa opérations</a></li>
+                                    <li ><a href="validationOperationComptabilite.xhtml">Validation opérations</a></li>
+                                    <li ><a href="#" onclick="fenetreModalSaisie();">Saisie ecriture comptable</a></li>
+                                    <li ><a href="modeleSaisie.xhtml">Modele de saisie</a></li>
+                                    <li ><a href="lettrage.xhtml">Lettrage des écritures</a></li>
+                                    <li ><a href="plancomptable.xhtml">Saisie plan comptable</a></li>
+                                    <li ><a href="plans.xhtml">Plan de comptes</a></li>
+                                    <li ><a href="plantiers.xhtml">Saisie plan tiers</a></li>
+                                    <li><a href="modeleplanComptable.xhtml">Modele plan comptable</a></li>
+                                    <li><a href="transfersComptabilite.xhtml">Transfert de fonds vers comptabilité</a></li>
+                                    <li><a href="validationTransfertfonds.xhtml">Validation des transferts</a></li>
+                                    <li>Autres opérations
+                                        <ul class="sss_menu_h">
+                                            <li><a href="od.xhtml">Opérations diverses</a></li>
+                                            <li><a href="operationdeplace.xhtml">Opéraions deplacée</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>Etats
+                                        <ul class="sss_menu_h">
+                                            <li><a href="balances.xhtml">Balances</a></li>
+                                            <li><a href="bilan.xhtml">Bilan</a></li>
+                                            <li><a href="grandsLivres.xhtml">Grands livres</a></li>
+                                            <li><a href="resultat.xhtml">Résultat</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="fa fa-calculator" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+
+                                Statistiques
+                            </li>
+                            <li>
+                                <i class="fa fa-archive" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+
+                                Autres
+                                <ul class="ss_menu_h">
+                                    <li><a href="assistance.xhtml">Assistance</a> </li>
+                                    <li><a href="organe.xhtml">Organe</a> </li>
+                                    <li><a href="poste.xhtml">Poste</a> </li>
+                                    <li><a href="procesVerbalReunion.xhtml">PV</a> </li>  
+                                    <li><a href="statistiqueReunion.xhtml">Statistique</a> </li>    
+                                    <li><a href="validationPerdieme.xhtml">Validation perdieme</a> </li>       
+                                    <li><a href="#" class="xss_menu">Gestion de reunion</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="typeReunion.xhtml">Type Reunion</a> </li>
+                                            <li><a href="categorieReunion.xhtml">Categorie Reunion</a> </li>
+                                            <li><a href="reunion.xhtml">Reunion</a> </li> 
+                                            <li><a href="appartenance.xhtml">Affectation</a> </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="fa fa-gears" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+
+                               Statistiques
+
+                                <ul class="ss_menu_h">
+
+                                    <li><a href="ficheDeBase.xhtml"   class="xss_menu" >Fiche de base</a>
+
+                                        <ul class="sss_menu_h">
+                                            <li><a href="infoBaseSociete.xhtml">Société</a> </li>
+                                            <li><a href="infoBaseAgence.xhtml">Agence</a></li>
+                                            <li><a href="infoBaseClient.xhtml">Client</a></li>
+                                            <li><a href="#">Comptabilité</a></li>
+                                            <li><a href="infoBaseLocalisation.xhtml">Localisation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="infoBaseCredit.xhtml">Info Base credit</a></li>
+
+                                    <li><a href="#" class="xss_menu">produits</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="produit.xhtml">Epargnes</a> </li>
+                                            <li><a href="produitCredit.xhtml">Crédits</a></li>
+                                            <li><a href="produitPartSocial.xhtml">Part sociale</a></li>
+                                        </ul>
+                                        <li><a href="#" class="xss_menu">Plan épargne</a>
+                                            <ul class="sss_menu_h">
+                                                <li><a href="parametragePlanEpargneTauxInteret.xhtml">Taux d'intérêt</a> </li>
+                                                <li><a href="parametragePlanEpargneTauxPenalite.xhtml">Taux pénalité</a></li>
+                                            </ul>
+                                        </li>
+                                    </li>
+                                    <li>
+                                        <a href="modelProduitCredit.xhtml">Model produit crédit</a>
+                                    </li>
+                                    <li ><a href="parametrageProduitsEpargne.xhtml">Parametrage produits epargne</a></li>
+                                    <li ><a href="parametrageEngagementParSignature.xhtml">Engagements par signature</a></li>
+                                    <li ><a href="paramFraisOperation.xhtml">Opération</a></li>
+                                    <li ><a href="parametrageAgence.xhtml">Agence</a></li>
+                                    <li ><a href="parametrageClient.xhtml">Client</a></li>
+                                    <li><a href="#">Solde démarrage</a></li>
+                                    <li ><a href="parametragePiece.xhtml">Numéro de pièce</a></li>
+                                    <li ><a href="journal.xhtml">Journal</a></li>
+                                    <li ><a href="journalOperation.xhtml">Journal Operation</a></li>
+                                    <li ><a href="paramCompteClient.xhtml">Numero de Compte Client</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="fa fa-gavel" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+
+                                #{label.administration} 
+                                <ul class="ss_menu_h">
+                                    <li ><a href="profil.xhtml">Profil</a></li>
+                                    <li ><a href="utilisateur.xhtml">Utilisateur</a></li>
+                                    <li ><a href="guichet.xhtml">Guichet</a></li>
+                                    <li ><a href="journee.xhtml">Ouverture de journée</a></li>
+
+                                    <li><a href="#" class="xss_menu">Gestion de reunion</a>
+                                        <ul class="sss_menu_h">
+                                            <li><a href="assistance.xhtml">Assistance</a> </li>
+                                            <li><a href="categorieReunion.xhtml">Categorie Reunion</a> </li>
+                                            <li><a href="organe.xhtml">Organe</a> </li>
+                                            <li><a href="poste.xhtml">Poste</a> </li>
+                                            <li><a href="procesVerbalReunion.xhtml">PV</a> </li>
+                                            <li><a href="reunion.xhtml">Reunion</a> </li>
+                                            <li><a href="appartenance.xhtml">Appartenance</a> </li>
+                                            <li><a href="statistiqueReunion.xhtml">Statistique</a> </li>
+                                            <li><a href="typeReunion.xhtml">Type Reunion</a> </li>
+                                            <li><a href="validationPerdieme.xhtml">Validation perdieme</a> </li>
+                                            <li><a href="categorieReunion.xhtml">Categorie Reunion</a> </li>
+                                        </ul>
+                                    </li>
+
+                                    <li ><a href="ouvertureFermetureGuichet.xhtml">Ouverture/Fermeture de guichets</a></li>
+                                    <li ><a href="visaRetrait.xhtml">Visa Retrait plafonné</a></li>
+                                    <li ><a href="procedure.xhtml">Test procedure</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="fa fa-magic" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+
+
+                                <ul class="ss_menu_h" style="width:100px">
+
+                                    <li style="width: 100px !important;">Langue
+                                        <ul class="sss_menu_h" style="width: 100px !important; margin-left: 80px !important;">
+                                            <li style="width: 100px !important;">
+                                                <h:commandLink action="#{langue.localchanged('fr')}" >
+                                                    <p:graphicImage value="/resources/img/2.jpg" />
+                                                </h:commandLink>
+                                            </li>
+                                            <li style="width: 100px !important;">
+                                                <h:commandLink action="#{langue.localchanged('en')}" >
+                                                    <p:graphicImage value="/resources/img/1.jpg"/>
+                                                </h:commandLink>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li>Template
+                                        <ul class="sss_menu_h" style="width: 100px !important; margin-left: 80px !important;">
+                                            <li>
+                                                <h:commandLink action="#{templateManagedBean.templatechanged('template')}" value="Blue muse"  >
+
+                                                </h:commandLink>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <li>
+                                <i class="fa fa-question-circle" style="font-size: 15px; color: #2d9ae3; display: block !important; text-align: center; width: 100%" ></i>
+
+
+                            </li>
+
+
+                        </ul>
+
+                    </td>
+                    <td valign="middle"   >
+                        <h:commandLink action="#{logout.submit}" value=""   >
+                            <i class="fa fa-power-off" style="font-size: 15px; color: #2d9ae3;" ></i>
+                        </h:commandLink>
+
+
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </h:form>
+    <script>
+        function fenetreModalSaisie() {
+            dialogSasieEcrit.show();
+        }
+        function fenetreModalModele() {
+            dialogModele.show();
+        }
+        function fenetreBudget(){
+            dialogReconduction.show();
+        }
+    </script>
+</ui:composition>

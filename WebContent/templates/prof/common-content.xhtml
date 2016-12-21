@@ -9,469 +9,544 @@
 <body>
 	<ui:composition>
 		<h:form>
-       <!-- begin MAIN PAGE CONTENT -->
-        <div id="page-wrapper">
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
 
-            <div class="page-content">
+				<div class="page-content">
 
-                <!-- begin PAGE TITLE AREA -->
-                <!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-title">
-                            <h1>Menu principal
-                                <small>Vue Générale</small>
-                            </h1>
-                            <ol class="breadcrumb">
-                                <li class="active"><i class="fa fa-dashboard"></i> Menu</li>
-                                <li class="pull-right">
-                                    <div id="reportrange" class="btn btn-green btn-square date-picker">
-                                        <i class="fa fa-calendar"></i>
-                                        <span class="date-range"></span> <i class="fa fa-caret-down"></i>
-                                    </div>
-                                </li>
-                            </ol>
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<h1>
+									<h:outputText value="menu Principal" />
+									<small> <h:outputText value="du Professeur" />
+									</small>
+								</h1>
+								<ol class="breadcrumb">
+									<li class="active"><i class="fa fa-dashboard"></i> <h:outputText
+											value="Buro" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
+
+					<!-- begin DASHBOARD CIRCLE TILES -->
+					<div class="row">
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading dark-blue">
+										<i class="fa fa-users fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content dark-blue">
+									<div class="circle-tile-description text-faded">E-Learning</div>
+									<div class="circle-tile-number text-faded">
+										+3 <span id="sparklineA"></span>
+									</div>
+									<h:commandLink action="{navigationController.moveToAgenda}"
+										class="circle-tile-footer">
+										<h:outputText value="En savoir plus" />
+										<i class="fa fa-chevron-circle-right"></i>
+									</h:commandLink>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="cv.xhtml">
+									<div class="circle-tile-heading green">
+										<i class="fa fa-book fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content green">
+									<div class="circle-tile-description text-faded">Mon CV</div>
+									<div class="circle-tile-number text-faded">80%</div>
+									<a href="cv.xhtml" class="circle-tile-footer"><h:outputText
+											value="En savoir plus" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading orange">
+										<i class="fa fa-bell fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content orange">
+									<div class="circle-tile-description text-faded">Notifications</div>
+									<div class="circle-tile-number text-faded">+2</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="voir" /> <i class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="gerer-mes-classes.xhtml">
+									<div class="circle-tile-heading green">
+										<i class="fa fa-home fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content green">
+									<div class="circle-tile-description text-faded">Mes
+										classes</div>
+									<div class="circle-tile-number text-faded">
+										3
+										<!--  <span id="sparklineC"></span> -->
+									</div>
+									<a href="gerer-mes-classes.xhtml" class="circle-tile-footer"><h:outputText
+											value="voir" /> <i class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading red">
+										<i class="fa fa-legal fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content red">
+									<div class="circle-tile-description text-faded">Discipline</div>
+									<div class="circle-tile-number text-faded">
+										3+
+										<!--  <span id="sparklineB"></span>-->
+									</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="Consulter" /> <i class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="circle-tile">
+								<a href="#">
+									<div class="circle-tile-heading purple">
+										<i class="fa fa-thumbs-o-up fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content purple">
+									<div class="circle-tile-description text-faded">
+										Popularité</div>
+									<div class="circle-tile-number text-faded">
+										96% <span id="sparklineD"></span>
+									</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="En savoir plus" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end DASHBOARD CIRCLE TILES -->
+<br/>
+<br/>
+
+					<div class="row">
+
+						
+
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="col-lg-8">
+										<div class="row">
+										<div class="col-lg-4">
+											<div class="circle-tile" style="height: 200px">
+												<a href="notice.xhtml">
+													<div class="circle-tile-heading blue">
+														<i class="fa fa-edit fa-fw fa-3x"></i>
+													</div>
+												</a>
+												<div class="circle-tile-content blue">
+													<div class="circle-tile-description text-faded">journal
+														de bord</div>
+													<div class="circle-tile-number text-faded">
+														+22 <span id="sparklineA"></span>
+													</div>
+													<a href="notice.xhtml" class="circle-tile-footer"><h:outputText
+															value="consulter" /> <i
+														class="fa fa-chevron-circle-right"></i></a>
+												</div>
+									
+												
+											</div>
+										</div>
+										<div class="col-lg-4">
+											<div class="circle-tile" style="height: 200px">
+												<a href="#">
+													<div class="circle-tile-heading green">
+														<i class="fa fa-smile-o fa-fw fa-3x"></i>
+													</div>
+												</a>
+												<div class="circle-tile-content green">
+													<div class="circle-tile-description text-faded">?????</div>
+													<div class="circle-tile-number text-faded">
+														265 <span id="sparklineA"></span>
+													</div>
+													<a href="#" class="circle-tile-footer">Reste à décider
+														<i class="fa fa-chevron-circle-right"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-4">
+													<div class="circle-tile" style="height: 200px">
+								<a href="#">
+									<div class="circle-tile-heading dark-blue">
+										<i class="fa fa-envelope fa-fw fa-3x"></i>
+									</div>
+								</a>
+								<div class="circle-tile-content dark-blue">
+									<div class="circle-tile-description text-faded">Messages recus</div>
+									<div class="circle-tile-number text-faded">
+										265 <span id="sparklineA"></span>
+									</div>
+									<a href="#" class="circle-tile-footer"><h:outputText
+											value="voir" /> <i
+										class="fa fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+									</div>
+									</div>
+									<br/>
+									<br/>
+									<div class="row">
+									
+									
+									
+									
+									<div class="col-lg-12">
+                        <div class="portlet portlet-green">
+                            <div class="portlet-heading">
+                                <div class="portlet-title">
+                                 <h4 >Calendrier</h4>
+                                </div>
+                                <div class="portlet-widgets">
+                                    <a href="#"><i class="fa fa-gear"></i></a>
+                                    <span class="divider"></span>
+                                    <a href="javascript:;"><i class="fa fa-refresh"></i></a>
+                                    <span class="divider"></span>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#redPortlet"><i class="fa fa-chevron-down"></i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="redPortlet" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                    							
+											<h:form>
+												<p:growl id="messages" showDetail="true" />
+
+												<h:panelGrid columnClasses="value">
+										
+													<p:schedule id="schedule"
+														value="#{scheduleView.eventModel}" widgetVar="myschedule"
+														timeZone="GMT+2">
+
+														<p:ajax event="dateSelect"
+															listener="#{scheduleView.onDateSelect}"
+															update="eventDetails"
+															oncomplete="PF('eventDialog').show();" />
+														<p:ajax event="eventSelect"
+															listener="#{scheduleView.onEventSelect}"
+															update="eventDetails"
+															oncomplete="PF('eventDialog').show();" />
+														<p:ajax event="eventMove"
+															listener="#{scheduleView.onEventMove}" update="messages" />
+														<p:ajax event="eventResize"
+															listener="#{scheduleView.onEventResize}"
+															update="messages" />
+
+													</p:schedule>
+													 </h:panelGrid>
+													 
+													  <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="clip" hideEffect="clip">
+        <h:panelGrid id="eventDetails" columns="2">
+            <p:outputLabel for="title" value="Titles:" />
+            <p:inputText id="title" value="#{scheduleView.event.title}" required="true" />
+ 
+            <p:outputLabel for="from" value="From:" />
+            <p:calendar id="from" value="#{scheduleView.event.startDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+ 
+            <p:outputLabel for="to" value="To:" />
+            <p:calendar id="to" value="#{scheduleView.event.endDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+ 
+            <p:outputLabel for="allDay" value="All Day:" />
+            <h:selectBooleanCheckbox id="allDay" value="#{scheduleView.event.allDay}" />
+ 
+            <p:commandButton type="reset" value="Reset" />
+            <p:commandButton id="addButton" value="Save" actionListener="#{scheduleView.addEvent}" oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
+        </h:panelGrid>
+    </p:dialog> 
+													
+											</h:form>
+
+										
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-				
-                <!-- /.row -->
-                <!-- end PAGE TITLE AREA -->
+									
 
-                <!-- begin DASHBOARD CIRCLE TILES -->
-				<div class="row">
-				 <div class="col-lg-12 col-lg-offset-0 col-md-12">
-                        <div class="portlet portlet-default">
-                            <div class= "tile dark-blue">
-                <div class="row">
-				
-                     <div class="col-lg-2 col-sm-6">
-                        <div class="circle-tile">
-                            <a href="#">
-                                <div class="circle-tile-heading blue">
-                                    <i class="fa fa-bell fa-fw fa-3x"></i>
-                                </div>
-                            </a>
-                            <div class="circle-tile-content blue">
-                                <div class="circle-tile-description text-faded">
-                                    Notifications
-                                </div>
-                                <div class="circle-tile-number text-faded">
-                                    12
-<!--                                     <span id="sparklineA"></span> -->
-                                </div>
-                                <a href="#" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-lg-2 col-sm-6">
-                        <div class="circle-tile">
-                            <a href="#">
-                                <div class="circle-tile-heading green">
-                                    <i class="fa fa-book fa-fw fa-3x"></i>
-                                </div>
-                            </a>
-                            <div class="circle-tile-content green">
-                                <div class="circle-tile-description text-faded">
-                                    E-Learning
-                                </div>
-                                <div class="circle-tile-number text-faded">
-                                    10
-                                    <span id="sparklineB"></span>
-                                </div>
-                                <a href="#" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-6">
-                        <div class="circle-tile">
-                            <a href="messages-prof.xhtml">
-                                <div class="circle-tile-heading orange">
-                                    <i class="fa fa-envelope-o fa-fw fa-3x"></i>
-                                </div>
-                            </a>
-                            <div class="circle-tile-content orange">
-                                <div class="circle-tile-description text-faded">
-                                    Messages
-                                </div>
-                                <div class="circle-tile-number text-faded">
-                                    9 
-                                </div>
-                                <a href="messages-prof.xhtml" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                   <div class="col-lg-2 col-sm-6">
-                        <div class="circle-tile">
-                            <a href="statistiques-prof.xhtml">
-                                <div class="circle-tile-heading purple">
-                                    <i class="fa fa-bar-chart-o fa-fw fa-3x"></i>
-                                </div>
-                            </a>
-                            <div class="circle-tile-content purple">
-                                <div class="circle-tile-description text-faded">
-                                    Statistiques
-                                </div>
-                                <div class="circle-tile-number text-faded">
-                                    %
-                                    <span id="sparklineD"></span>
-                                </div>
-                                <a href="statistiques-prof.xhtml" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-					 <div class="col-lg-2 col-sm-6">
-                        <div class="circle-tile">
-                            <a href="discipline-prof.xhtml">
-                                <div class="circle-tile-heading red">
-                                    <i class="fa fa-legal fa-fw fa-3x"></i>
-                                </div>
-                            </a>
-                            <div class="circle-tile-content red">
-                                <div class="circle-tile-description text-faded">
-                                    Discipline
-                                </div>
-                                <div class="circle-tile-number text-faded">
-                                   <i class="fa fa-warning fa-fw fa-1x"></i>
-                                    <span id="sparklineB"></span>
-                                </div>
-                                <a href="discipline-prof.xhtml" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-2 col-sm-6">
-                        <div class="circle-tile">
-                            <a href="profilProf.xhtml">
-                                <div class="circle-tile-heading blue">
-                                    <i class="fa fa-user fa-fw fa-3x"></i>
-                                </div>
-                            </a>
-                            <div class="circle-tile-content blue">
-                                <div class="circle-tile-description text-faded">
-                                    Mon profil
-                                </div>
-                                <div class="circle-tile-number text-faded">
-                                    60% 
-                                    <span id="sparklineD"></span>
-                                </div>
-                                <a href="profilProf.xhtml" class="circle-tile-footer">En savoir plus <i class="fa fa-chevron-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>             
-                    
-                </div>
-				<hr></hr>
-                <!-- end DASHBOARD CIRCLE TILES -->
+			
+									</div>
 
-                <div class="row">
+							
 
-                    <div class="col-lg-3">
-                        <div class="tile tile-img tile-time" style="height: 200px">
-                            <p class="time-widget">
-                                <span class="time-widget-heading">It Is Currently</span>
-                                <br></br>
-                                <strong>
-                                    <span id="datetime"></span>
-                                </strong>
-                            </p>
-							 <div id="morris-chart-dashboard"></div>
+								</div>
+								<div class="col-lg-4">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="tile blue" style="height: 400px">
+												<h4>
+													<i class="fa fa-info-circle"></i> News <a
+														href="javascript:;"><i
+														class="fa fa-refresh pull-right"></i></a>
+												</h4>
+												<p class="small text-faded">
+													<strong>Hier wird die Newsliste angezeigt</strong>
+
+												</p>
+
+											</div>
+
+										</div>
+									</div>
+									
+									<div class="row" >
+										<div class="col-lg-12">
+									 <div class="portlet portlet-green">
+                            <div class="portlet-heading">
+                                <div class="portlet-title">
+                                 <h4 >Check Liste</h4>
+                                </div>
+                                <div class="portlet-widgets">
+<!--                                     <a href="#"><i class="fa fa-gear"></i></a> -->
+                                    <button class="btn btn-green" data-toggle="modal" onclick="PF('dlg3').show();"
+																	>
+																	<i class="fa fa-plus-square"></i>
+																</button>
+									<p:dialog header="parametrer" widgetVar="dlg3" modal="true" color="green" >
+							
+																
+																<div class="modal-body">
+																	<div class="form-group">
+																		 <input type="text"
+																			class="form-control" value=""
+																			placeholder="nom de l'activite"></input>
+																					
+														
+											
+
+									
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default"
+																		data-dismiss="modal">Close</button>
+																	<button type="button" class="btn btn-green">Save
+																	</button>
+																	
+																</div>
+														
+																
+																
+													
+									
+									</p:dialog>
+                                    <span class="divider"></span>
+                                    <a href="javascript:;"><i class="fa fa-refresh"></i></a>
+                                    <span class="divider"></span>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#Portlet"><i class="fa fa-chevron-down"></i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="Portlet" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                <div class="row">
+				                     <div class="col-lg-12">
+                                  <div class=" checklist-tile" >
+								<h4>
+									<i class="fa fa-check-square-o"></i> Agenda
+								</h4>
+								<div class="checklist">
+									<label class="selected"> <input type="checkbox"
+										checked="true" /> <i class="fa fa-wrench fa-fw text-faded"></i>
+										cours de maths 7h30-10h00
+
+									</label> <label class="selected"> <input type="checkbox"
+										checked="true" /> <i class="fa fa-wrench fa-fw text-faded"></i>
+										cours d'histoire 10h30-12h00
+									</label> <label class="selected"> <input type="checkbox"
+										checked="true" /> <i class="fa fa-warning fa-fw text-orange"></i>
+										Exercice de Philo
+									</label> <label> <input type="checkbox" /> <i
+										class="fa fa-warning fa-fw text-orange"></i> Devoir surveille d'anglais
+									</label>
+
+								</div>
+							</div>
+							</div>
+							</div>							
+			
+
+										
+                                </div>
+                            </div>
                         </div>
-                        <div class="tile blue checklist-tile" style="height: 370px">
-                            <h4><i class="fa fa-check-square-o"></i> Agenda</h4>
-                            <div class="checklist">
-                                <label class="selected">
-                                    <input type="checkbox" checked="checked"/> <i class="fa fa-wrench fa-fw text-faded"/> préinscriptions
-                                  
-                                </label>
-                                <label class="selected">
-                                    <input type="checkbox" checked="checked"/> <i class="fa fa-wrench fa-fw text-faded"/> affecter les professeurs
-                                    
-                                </label>
-                                <label class="selected">
-                                    <input type="checkbox" checked="checked"/> <i class="fa fa-warning fa-fw text-orange"/> organiser les classes
-                                  
-                                </label>
-                                <label>
-                                    <input type="checkbox"/> <i class="fa fa-warning fa-fw text-orange"/> discipline
+							</div>
+							</div>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+							
+									<div class="row" style="height: 200px">
+										<div class="col-lg-12">
+											<div class="portlet portlet-default">
+												<div class="portlet-heading">
+													<div class="portlet-title">
+														<h4>
+															<i class="fa fa-circle text-green"></i> Duclos Ndanji
+														</h4>
+													</div>
+													<div class="portlet-widgets">
+														<div class="btn-group">
+															<button type="button"
+																class="btn btn-white dropdown-toggle btn-xs"
+																data-toggle="dropdown">
+																<i class="fa fa-circle text-green"></i> Status <span
+																	class="caret"></span>
+															</button>
+															<ul class="dropdown-menu" role="menu">
+																<li><a href="#"><i
+																		class="fa fa-circle text-green"></i> En ligne</a></li>
+																<li><a href="#"><i
+																		class="fa fa-circle text-orange"></i> Occupé</a></li>
+																<li><a href="#"><i
+																		class="fa fa-circle text-red"></i> hors ligne</a></li>
+															</ul>
+														</div>
+														<span class="divider"></span> <a data-toggle="collapse"
+															data-parent="#accordion" href="#chat"><i
+															class="fa fa-chevron-down"></i></a>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+												<div id="chat" class="panel-collapse collapse in">
+													<div class="portlet-body chat-widget">
+														<div class="row">
+															<div class="col-lg-12">
+																<p class="text-center text-muted small">1. Janvier
+																	2016, 14h 20</p>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<div class="media">
+																	<a class="pull-left" href="#"> <img
+																		class="media-object img-circle" src="img/Duclos.jpg"
+																		alt="" /></a>
+																	<div class="media-body">
+																		<h4 class="media-heading">
+																			Duclos Dandji <span class="small pull-right">12h
+																				23</span>
+																		</h4>
+																		<p>Salut tu es dispo? si oui rejoins-moi a la
+																			cafet</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<hr></hr>
 
-                                </label>
-                              
-                            </div>
-                        </div>
-                    </div>
+													</div>
+													<div class="portlet-footer">
+														<h:form role="form">
+															<div class="form-group">
+																<textarea class="form-control"
+																	placeholder="Enter message..."></textarea>
+															</div>
+															<div class="form-group">
+																<button type="submit" class="btn btn-default pull-right">Envoyer</button>
+																<div class="clearfix"></div>
+															</div>
+														</h:form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 
-                    <div class="col-lg-9">
-                        <div class="row">
-                            <div class="col-lg-9">
-                                <div class="tile light-gray" style="height: 320px">
-                                    <h4><font color="black"> Actualité <a href="javascript:;"><i class="fa fa-refresh pull-right"></i></a></font>
-                                    </h4>
-                                    <p class="small text-faded">
-                                        <font color="black">Ajourd'hui:
-                                        <strong>10 -</strong>
-                                        cette Semaine:
-                                        <strong>25</strong> 
-										</font>
-                                    </p>
-                                   
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="tile light-gray" style="height: 320px">
-                                    <h4><i class="fa fa-bolt"></i> Classement Prof. <a href="javascript:;"><i class="fa fa-refresh pull-right"></i></a>
-                                    </h4>
-                                    <p class="small text-faded">
-                                        <strong>130 GB </strong>of
-                                        <strong>1024 GB </strong>used
-                                    </p>
-                                    <div class="flot-chart flot-chart-dashboard">
-                                        <div class="flot-chart-content" id="flot-chart-moving-line"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="tile orange dash-demo-tile">
-                                    <h4><i class="fa fa-cloud fa-fw"></i> Utilisation des ressources</h4>
-                                    <div id="easy-pie-1" class="easy-pie-chart" data-percent="86">
-                                        <span class="percent"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="tile blue dash-demo-tile">
-                                    <h4><i class="fa fa-check fa-fw"></i> Taux de satisfaction</h4>
-                                    <div id="easy-pie-2" class="easy-pie-chart" data-percent="92">
-                                        <span class="percent"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="tile red dash-demo-tile">
-                                    <h4><i class="fa fa-arrow-circle-down fa-fw"></i> Taux d'exclusions</h4>
-                                    <div id="easy-pie-3" class="easy-pie-chart" data-percent="27">
-                                        <span class="percent"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="tile purple dash-demo-tile">
-                                    <h4><i class="fa fa-shopping-cart fa-fw"></i> Taux de retraits d'éleve</h4>
-                                    <div id="easy-pie-4" class="easy-pie-chart" data-percent="35">
-                                        <span class="percent"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+								</div>
+							</div>
 
-                </div>
+						</div>
+
+					</div>
+					<!-- /.row -->
+
+
+
 				</div>
-				<hr></hr>
-                <!-- /.row -->
+				<!-- /.page-content -->
 
-                <div class="row">
-                   <div class="col-lg-8">
-				    <div class="col-lg-12">
-                                <div class="portlet portlet-green">
-                                    <div class="portlet-heading">
-                                        <div class="portlet-title">
-                                            <h4><i class="fa fa-exchange fa-fw"></i> Transactions récentes</h4>
-                                        </div>
-                                        <div class="portlet-widgets">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#transactionsPortlet"><i class="fa fa-chevron-down"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div id="transactionsPortlet" class="panel-collapse collapse">
-                                        <div class="portlet-body">
-                                            <div class="table-responsive dashboard-demo-table">
-                                                <table class="table table-bordered table-striped table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Date</th>
-                                                            <th>Heure</th>
-                                                            <th>Montant</th>
-                                                            <th>Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1/31/14</td>
-                                                            <td>6:14 PM</td>
-                                                            <td>$12.07</td>
-                                                            <td><a class="btn btn-xs btn-orange disabled"><i class="fa fa-clock-o"></i> en cour</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>1/31/14</td>
-                                                            <td>6:02 PM</td>
-                                                            <td>$5.32</td>
-                                                            <td><a class="btn btn-xs btn-orange disabled"><i class="fa fa-clock-o"></i> en cour</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>1/31/14</td>
-                                                            <td>5:56 PM</td>
-                                                            <td>$6.58</td>
-                                                            <td><a class="btn btn-xs btn-green"><i class="fa fa-arrow-circle-right"></i> terminé</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>1/31/14</td>
-                                                            <td>5:12 PM</td>
-                                                            <td>$15.61</td>
-                                                            <td><a class="btn btn-xs btn-green"><i class="fa fa-arrow-circle-right"></i> Terminé</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>1/31/14</td>
-                                                            <td>5:02 PM</td>
-                                                            <td>$9.89</td>
-                                                            <td><a class="btn btn-xs btn-green"><i class="fa fa-arrow-circle-right"></i> Terminé</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>1/31/14</td>
-                                                            <td>4:47 PM</td>
-                                                            <td>$2.21</td>
-                                                            <td><a class="btn btn-xs btn-red"><i class="fa fa-warning"></i> Erreure</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>1/31/14</td>
-                                                            <td>4:32 PM</td>
-                                                            <td>5.17 FCFA</td>
-                                                            <td><a class="btn btn-xs btn-default"/><i class="fa fa-arrow-circle-right"></i> Terminé*>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <a class="btn btn-green">Voir toutes les  Transactions</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-				   </div>
-                    <div class="col-lg-4">
-                        <div class="row">
-                           
-                           
-                            <!-- /.col-lg-12 -->
-							 <div class="col-lg-12">
-                                <div class="portlet portlet-default">
-                                    <div class="portlet-heading">
-                                        <div class="portlet-title">
-                                            <h4><i class="fa fa-circle text-green"></i> Duclos Dandji</h4>
-                                        </div>
-                                        <div class="portlet-widgets">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-white dropdown-toggle btn-xs" data-toggle="dropdown">
-                                                    <i class="fa fa-circle text-green"></i> Status
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#"><i class="fa fa-circle text-green"></i> En ligne</a>
-                                                    </li>
-                                                    <li><a href="#"><i class="fa fa-circle text-orange"></i> Occupé</a>
-                                                    </li>
-                                                    <li><a href="#"><i class="fa fa-circle text-red"></i> hors ligne</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <span class="divider"></span>
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div id="chat" class="panel-collapse collapse ">
-                                        <div class="portlet-body chat-widget">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <p class="text-center text-muted small">1. Janvier 2016, 14h 20</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="media">
-                                                        <a class="pull-left" href="#">
-                                                            <img class="media-object img-circle" src="img/Duclos.jpg" alt=""/>
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <h4 class="media-heading">Duclos Dandji
-                                                                <span class="small pull-right">12h 23</span>
-                                                            </h4>
-                                                            <p>Salut tu es dispo? si oui rejoins-moi a la cafet</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <hr></hr>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="media">
-                                                        <a class="pull-left" href="#">
-                                                            <img class="media-object img-circle" src="img/MTA-1.jpg" alt=""/>
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <h4 class="media-heading">Thierry Mpouma
-                                                                <span class="small pull-right">12h 28</span>
-                                                            </h4>
-                                                            <p>Uoi biensur je peux me liberer</p>
-                                                            <p>tu me prends un café?</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <hr></hr>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="media">
-                                                        <a class="pull-left" href="#">
-                                                            <img class="media-object img-circle" src="img/user-profile-1.jpg" alt=""/>
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <h4 class="media-heading">Jane Smith
-                                                                <span class="small pull-right">12:39 PM</span>
-                                                            </h4>
-                                                            <p>No not yet, the transaction hasn't cleared yet. I will let you know as soon as everything goes through. Any idea where you want to get lunch today?</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <hr></hr>
-                                        </div>
-                                        <div class="portlet-footer">
-                                            <form role="form">
-                                                <div class="form-group">
-                                                    <textarea class="form-control" placeholder="Enter message..."></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-default pull-right">Envoyer</button>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            
 			</div>
-			</div>
-			</div>
-			</div>
-            <!-- /.page-content -->
-
-        </div>
-        <!-- /#page-wrapper -->
-        <!-- end MAIN PAGE CONTENT -->
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
 		</h:form>
+			<script type="text/javascript">
+//     PrimeFaces.locales['tr'] = {
+//         closeText: 'kapat',
+//         prevText: 'geri',
+//         nextText: 'ileri',
+//         currentText: 'bugün',
+//         monthNames: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran',
+//             'Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+//         monthNamesShort: ['Oca','Şub','Mar','Nis','May','Haz',
+//             'Tem','Ağu','Eyl','Eki','Kas','Ara'],
+//         dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
+//         dayNamesShort: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
+//         dayNamesMin: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
+//         weekHeader: 'Hf',
+//         firstDay: 1,
+//         isRTL: false,
+//         showMonthAfterYear: false,
+//         yearSuffix: '',
+//         month: 'Ay',
+//         week: 'Hafta',
+//         day: 'Gün',
+//         allDayText : 'Tüm Gün'
+//     };
+</script>
+<style type="text/css">
+    .value {
+        width: 1000px;
+    }
+</style>
 	</ui:composition>
+
 </body>
 </html>
