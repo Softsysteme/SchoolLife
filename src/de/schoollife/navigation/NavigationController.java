@@ -3,9 +3,10 @@ package de.schoollife.navigation;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "navigationController")
+@ManagedBean(name = "navigationController", eager = true)
 @SessionScoped
 public class NavigationController implements Serializable {
 
@@ -16,7 +17,7 @@ public class NavigationController implements Serializable {
 
 	public String moveToDashboard() {
 		System.out.println("moveToDashboard");
-		return "test-template?faces-redirect=true";
+		return "vue-admin?faces-redirect=true";
 	}
 
 	public String moveToMonCompte() {

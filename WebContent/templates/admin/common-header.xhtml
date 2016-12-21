@@ -14,12 +14,12 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle pull-right"
 					data-toggle="collapse" data-target=".sidebar-collapse">
-					<i class="fa fa-bars"></i> 
-							<h:outputText value="{msg['menu']}" />
+					<i class="fa fa-bars"></i>
+					<h:outputText value="{msg['menu']}" />
 				</button>
 				<div class="navbar-brand">
-					<a href="index.xhtml"> <font color="Yellow"> 
-							<h:outputText value="{msg['title']}" />
+					<a href="index.xhtml"> <font color="Yellow"> <h:outputText
+								value="{msg['title']}" />
 					</font>
 					</a>
 
@@ -42,7 +42,7 @@
 
 				<!-- begin MESSAGES/ALERTS/TASKS/USER ACTIONS DROPDOWNS -->
 				<ul class="nav navbar-right">
-					
+
 					<!-- begin MESSAGES DROPDOWN -->
 					<li class="dropdown"><a href="#"
 						class="messages-link dropdown-toggle" data-toggle="dropdown">
@@ -53,8 +53,7 @@
 
 							<!-- Messages Dropdown Heading -->
 							<li class="dropdown-header"><i class="fa fa-envelope"></i> 4
-							<h:outputText value="{msg['nveau_msg']}" />
-								</li>
+								<h:outputText value="{msg['nveau_msg']}" /></li>
 
 							<!-- Messages Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
 							<li id="messageScroll">
@@ -127,8 +126,8 @@
 							</li>
 
 							<!-- Messages Dropdown Footer -->
-							<li class="dropdown-footer"><a href="mailbox.html">
-							<h:outputText value="{msg['lire_ts_les_msg']}" />
+							<li class="dropdown-footer"><a href="mailbox.html"> <h:outputText
+										value="{msg['lire_ts_les_msg']}" />
 							</a></li>
 
 						</ul> <!-- /.dropdown-menu --></li>
@@ -144,9 +143,8 @@
 						<ul class="dropdown-menu dropdown-scroll dropdown-alerts">
 
 							<!-- Alerts Dropdown Heading -->
-							<li class="dropdown-header"><i class="fa fa-bell"></i> 9
-							<h:outputText value="{msg['nvlle_notification']}" />
-								</li>
+							<li class="dropdown-header"><i class="fa fa-bell"></i> 9 <h:outputText
+									value="{msg['nvlle_notification']}" /></li>
 
 							<!-- Alerts Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
 							<li id="alertScroll">
@@ -190,10 +188,9 @@
 							</li>
 
 							<!-- Alerts Dropdown Footer -->
-							<li class="dropdown-footer"><a href="#">
-											<h:outputText value="{msg['voire_alertes']}" />
-			</a>
-							</li>
+							<li class="dropdown-footer"><a href="#"> <h:outputText
+										value="{msg['voire_alertes']}" />
+							</a></li>
 
 						</ul> <!-- /.dropdown-menu --></li>
 					<!-- /.dropdown -->
@@ -345,33 +342,32 @@
 							class="fa fa-caret-down"></i>
 					</a>
 						<ul class="dropdown-menu dropdown-user">
-							<li><a href="profile.html"> <i class="fa fa-user"></i>
-							<h:outputText value="{msg['mon_profil']}" />
+							<li><a href="profile.html"> <i class="fa fa-user"></i> <h:outputText
+										value="{msg['mon_profil']}" />
 							</a></li>
 							<li><a href="mailbox.html"> <i class="fa fa-envelope"></i>
-							<h:outputText value="{msg['mes_msg']}" />
-									<span class="badge green pull-right">4</span>
+									<h:outputText value="{msg['mes_msg']}" /> <span
+									class="badge green pull-right">4</span>
 							</a></li>
-							<li><a href="#"> <i class="fa fa-bell"></i>
-							<h:outputText value="{msg['mes_alertes']}" />
-									<span class="badge orange pull-right">9</span>
+							<li><a href="#"> <i class="fa fa-bell"></i> <h:outputText
+										value="{msg['mes_alertes']}" /> <span
+									class="badge orange pull-right">9</span>
 							</a></li>
-							<li><a href="#"> <i class="fa fa-tasks"></i> 
-							<h:outputText value="{msg['mes_applications']}" />
-							<span class="badge blue pull-right">10</span>
+							<li><a href="#"> <i class="fa fa-tasks"></i> <h:outputText
+										value="{msg['mes_applications']}" /> <span
+									class="badge blue pull-right">10</span>
 							</a></li>
 							<li><a href="calendar.html"> <i class="fa fa-calendar"></i>
-							<h:outputText value="{msg['mon_calendrier']}" />
+									<h:outputText value="{msg['mon_calendrier']}" />
 							</a></li>
 							<li class="divider"></li>
-							<li><a href="#"> <i class="fa fa-gear"></i> 
-							<h:outputText value="{msg['parametres']}" />
+							<li><a href="#"> <i class="fa fa-gear"></i> <h:outputText
+										value="{msg['parametres']}" />
 							</a></li>
 							<li>
 								<!--class="logout_open"--> <a href="login.html"> <i
-									class="fa fa-sign-out"></i> 
-							<h:outputText value="{msg['deconnection']}" />
-									<strong>Thierry
+									class="fa fa-sign-out"></i> <h:outputText
+										value="{msg['deconnection']}" /> <strong>Thierry
 										Mpouma</strong>
 							</a>
 							</li>
@@ -386,10 +382,10 @@
 			</div>
 			<!-- /.nav-top --> </nav>
 			<!-- /.navbar-top -->
-			<!-- end TOP NAVIGATION -->
+		</h:form>
+		<!-- end TOP NAVIGATION -->
 
-			<!-- begin SIDE NAVIGATION -->
-
+		<!-- begin SIDE NAVIGATION -->
 			<nav class="navbar-side" role="navigation">
 			<div class="navbar-collapse sidebar-collapse collapse">
 				<ul id="side" class="nav navbar-nav side-nav">
@@ -397,7 +393,7 @@
 					<li class="side-user hidden-xs"><img class="img-circle"
 						src="img/profile-pic.jpg" alt=""></img>
 						<p class="welcome">
-							<i class="fa fa-key"></i> 
+							<i class="fa fa-key"></i>
 							<h:outputText value="{msg['connecte_en_tant_que']}" />
 						</p>
 						<p class="name tooltip-sidebar-logout">
@@ -421,13 +417,97 @@
 					<!-- end SIDE NAV SEARCH -->
 					<!-- begin DASHBOARD LINK -->
 
-					<li class="active"><h:commandLink
-							action="{navigationController.moveToDashboard}">
+					<li class="active"><p:commandLink
+							action="#{navigationController.moveToDashboard}">
 							<i class="fa fa-dashboard" />
-							<h:outputText value="{msg['dashboard']}" />
-						</h:commandLink></li>
+							<h:outputText value="{msg['Dashboard']}" />
+						</p:commandLink></li>
 
 					<!-- end DASHBOARD LINK -->
+
+					<!-- Begin Setting -->
+					<li class="panel"><a href="javascript:;" data-parent="#side"
+						data-toggle="collapse" class="accordion-toggle"
+						data-target="#settings"> <i class="fa fa-cogs"></i> <h:outputText
+								value="{msg['Settings']}" /> <i class="fa fa-caret-down"></i>
+					</a>
+						<ul class="collapse nav" id="settings">
+							<li><p:commandLink
+									action="#{navigationController.moveToMonCompte}">
+									<h:outputText value="{msg['Add institutio Details']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{autoCompleteView.moveToAgenda}">
+									<h:outputText value="{msg[Academic Details]}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Student Import']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Employee Import']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Privileges']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Assign Courses']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Users']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Enquiry List']}" />
+								</p:commandLink></li>
+						</ul></li>
+					<!-- End Settings -->
+
+					<!-- Begin Academic -->
+					<li class="panel"><a href="javascript:;" data-parent="#side"
+						data-toggle="collapse" class="accordion-toggle"
+						data-target="#academic"> <i class="fa fa-users"></i> <h:outputText
+								value="{msg['Academic']}" /> <i class="fa fa-caret-down"></i>
+					</a>
+						<ul class="collapse nav" id="academic">
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Cycle']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToMonCompte}">
+									<h:outputText value="{msg['Courses']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Classes Label']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{autoCompleteView.moveToAgenda}">
+									<h:outputText value="{msg[Classes]}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Section']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Planing']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Exams']}" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
+									<h:outputText value="{msg['Assignments and Notes']}" />
+								</p:commandLink></li>
+						</ul></li>
+					<!-- End Academic -->
 
 					<!-- begin Espace privé -->
 					<li class="panel"><a href="javascript:;" data-parent="#side"
@@ -436,21 +516,21 @@
 								value="{msg['espace_prive']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="forms">
-							<li><h:commandLink
-									action="{navigationController.moveToMonCompte}">
+							<li><p:commandLink
+									action="#{navigationController.moveToMonCompte}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['mon_compte']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToAgenda}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{autoCompleteView.moveToAgenda}">
 									<i class="fa fa-users"></i>
-									<h:outputText value="{msg['agenda']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToParametrage}">
+									<h:outputText value="agenda" />
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrage}">
 									<i class="fa fa-angle-double-right"></i>
 									<h:outputText value="{msg['parametrage']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 						</ul></li>
 					<!-- end Espace privé -->
 
@@ -461,27 +541,27 @@
 								value="{msg['messagerie']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="messagerie">
-							<li><h:commandLink
-									action="{navigationController.moveToReception}">
+							<li><p:commandLink
+									action="#{navigationController.moveToReception}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['reception']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToEcrire}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToEcrire}">
 
 									<i class="fa fa-users"></i>
 									<h:outputText value="{msg['ecrire']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToBrouillon}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToBrouillon}">
 									<i class="fa fa-angle-double-right"></i>
 									<h:outputText value="{msg['brouillon']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToEnvoye}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToEnvoye}">
 									<i class="fa fa-angle-double-right"></i>
 									<h:outputText value="{msg['message_envoye']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 						</ul></li>
 					<!-- end Messagerie -->
 
@@ -492,51 +572,51 @@
 								value="{msg['gestion']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="gestion">
-							<li><h:commandLink
-									action="{navigationController.moveToAnneeScolaire}">
+							<li><p:commandLink
+									action="#{navigationController.moveToAnneeScolaire}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['annee_scolaire']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToEnseignants}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToEnseignants}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['enseignants']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToPersonnel}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToPersonnel}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['personnel']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToPreinscription}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToPreinscription}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['preinscription']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToElearning}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToElearning}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['elearning']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToClasses}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToClasses}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['classes']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToMatieres}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToMatieres}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['matieres']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToFournitureScolaire}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToFournitureScolaire}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['fourniture_scolaire']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToGroupeScolaire}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToGroupeScolaire}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['groupe_scolaire']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 
 						</ul></li>
 					<!-- end Gestion -->
@@ -548,31 +628,31 @@
 								value="{msg['comptabilite']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="comptabilite">
-							<li><h:commandLink
-									action="{navigationController.moveToFicheEtat}">
+							<li><p:commandLink
+									action="#{navigationController.moveToFicheEtat}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['fiche_etat']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToEncaissement}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToEncaissement}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['encaissement']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToRappel}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToRappel}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['rappel']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToVacationEns}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToVacationEns}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['vacation_ens']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToBoursier}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToBoursier}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['boursier']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 						</ul></li>
 					<!-- end Comptabilité -->
 
@@ -583,37 +663,37 @@
 								value="{msg['finances']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="finance">
-							<li><h:commandLink
-									action="{navigationController.moveToInscription}">
+							<li><p:commandLink
+									action="#{navigationController.moveToInscription}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['inscription']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToParametrageFinance}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToParametrageFinance}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['parametrage']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToPaiement}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToPaiement}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['paiements']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 						</ul></li>
 					<!-- end Finance -->
 
 					<!-- begin Actualité -->
-					<li><h:commandLink
-							action="{navigationController.moveToActualite}">
+					<li><p:commandLink
+							action="#{navigationController.moveToActualite}">
 							<i class="fa fa-edit"></i>
 							<h:outputText value="{msg['actualite']}" />
-						</h:commandLink></li>
+						</p:commandLink></li>
 					<!-- end Actualité -->
 
 					<!-- begin News -->
-					<li><h:commandLink action="{navigationController.moveToNews}">
+					<li><p:commandLink action="#{navigationController.moveToNews}">
 							<i class="fa fa-edit"></i>
 							<h:outputText value="{msg['news']}" />
-						</h:commandLink></li>
+						</p:commandLink></li>
 					<!-- end News -->
 
 					<!-- begin Élève -->
@@ -623,31 +703,31 @@
 								value="{msg['eleves']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="eleve">
-							<li><h:commandLink
-									action="{navigationController.moveToListing}">
+							<li><p:commandLink
+									action="#{navigationController.moveToListing}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['listing']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToFicheTechnique}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToFicheTechnique}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['fiche_technique']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToCarnetNote}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToCarnetNote}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['carnet_note']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToCahierText}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToCahierText}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['cahier_texte']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToDossierMedical}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToDossierMedical}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['dossier_medical']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 						</ul></li>
 					<!-- end Élève -->
 
@@ -659,26 +739,26 @@
 								value="{msg['vie_scolaire']}" /> <i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="viescolaire">
-							<li><h:commandLink
-									action="{navigationController.moveToPlaning}">
+							<li><p:commandLink
+									action="#{navigationController.moveToPlaning}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['gestion_planing']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToAbsence}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToAbsence}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['absences']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToDiscipline}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToDiscipline}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['discipline']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToSanction}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToSanction}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['sanctions']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 						</ul></li>
 					<!-- end Vie scolaire -->
 
@@ -689,31 +769,31 @@
 								value="{msg['etablissement']}" /><i class="fa fa-caret-down"></i>
 					</a>
 						<ul class="collapse nav" id="etablissement">
-							<li><h:commandLink
-									action="{navigationController.moveToImporter}">
+							<li><p:commandLink
+									action="#{navigationController.moveToImporter}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['importer']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToExporter}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToExporter}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['exporter']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
-									action="{navigationController.moveToArchivage}">
+								</p:commandLink></li>
+							<li><p:commandLink
+									action="#{navigationController.moveToArchivage}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['archivage']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
+								</p:commandLink></li>
+							<li><p:commandLink
 									action="{navigationController.moveToPurgerInfos}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['purger_info']}" />
-								</h:commandLink></li>
-							<li><h:commandLink
+								</p:commandLink></li>
+							<li><p:commandLink
 									action="{navigationController.moveToNvlleAnnee}">
 									<i class="fa fa-home"></i>
 									<h:outputText value="{msg['nouvelle_annee']}" />
-								</h:commandLink></li>
+								</p:commandLink></li>
 						</ul></li>
 					<!-- end Etablissement -->
 
@@ -721,7 +801,7 @@
 				<!-- /.side-nav -->
 			</div>
 			<!-- /.navbar-collapse --> </nav>
-		</h:form>
+		
 
 		<!-- /.navbar-side -->
 		<!-- end SIDE NAVIGATION -->
