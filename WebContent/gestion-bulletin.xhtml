@@ -6,7 +6,8 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-	<ui:composition template="templates/admin/common-layout-primefaces.xhtml">
+	<ui:composition
+		template="templates/admin/common-layout-primefaces.xhtml">
 		<ui:define name="content">
 			<!-- begin MAIN PAGE CONTENT -->
 			<div id="page-wrapper">
@@ -113,9 +114,9 @@
 											<p:row>
 												<p:column headerText="Seq. 1" sortBy="#{team.note}" />
 												<p:column headerText="Seq. 2" sortBy="#{team.note}" />
+												<p:column headerText="Coef" />
 												<p:column headerText="Moyenne" sortBy="#{team.note}" />
-												<p:column colspan="4" headerText="Appreciation professeur" />
-												<p:column colspan="3" headerText="Appreciation parents" />
+												<p:column colspan="6" headerText="Appreciation professeur" />
 											</p:row>
 										</p:columnGroup>
 										<p:column colspan="2">
@@ -144,17 +145,10 @@
 										<p:column>
 											<h:outputText value="#{team.note}" />
 										</p:column>
-										<p:column colspan="4">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
+										<p:column>
+											<h:outputText value="#{team.note}" />
 										</p:column>
-										<p:column colspan="3">
+										<p:column colspan="6">
 											<p:cellEditor>
 												<f:facet name="output">
 													<h:outputText value="" />
@@ -169,6 +163,7 @@
 												<p:column colspan="2" footerText="Moyenne générale: "
 													style="text-align:right" />
 												<p:column footerText="#{team.allWins}" />
+												<p:column footerText="#{team.allLosses}" />
 												<p:column footerText="#{team.allLosses}" />
 												<p:column footerText="#{team.allLosses}" />
 											</p:row>
@@ -179,7 +174,35 @@
 
 									<!-- BEGIN TRIMESTRE 2 -->
 									<p:dataTable id="trimestre2" editable="true" editMode="cell"
-										var="team" value="#{dtSubTableView.teams}">
+										var="team" value="#{dtSubTableView.teams}" rows="20"
+										paginator="true"
+										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+										rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
+										<f:facet name="{Exporters}">
+											<h:commandLink>
+												<p:graphicImage name="/img/excel.png" width="24" />
+												<p:dataExporter type="xls" target="trimestre2"
+													fileName="cars" />
+											</h:commandLink>
+
+											<h:commandLink>
+												<p:graphicImage name="img/pdf.png" width="24" />
+												<p:dataExporter type="pdf" target="trimestre2"
+													fileName="cars" />
+											</h:commandLink>
+
+											<h:commandLink>
+												<p:graphicImage name="img/csv.png" width="24" />
+												<p:dataExporter type="csv" target="trimestre2"
+													fileName="cars" />
+											</h:commandLink>
+
+											<h:commandLink>
+												<p:graphicImage name="img/xml.png" width="24" />
+												<p:dataExporter type="xml" target="trimestre2"
+													fileName="cars" />
+											</h:commandLink>
+										</f:facet>
 
 										<f:facet name="header">
 								            Carnet de Notes 6M5 - 2eme.Trimestre
@@ -187,15 +210,16 @@
 
 										<p:columnGroup type="header">
 											<p:row>
-												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom" />
+												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom"
+													sortBy="#{team.name} " />
 												<p:column colspan="10" headerText="Notes" />
 											</p:row>
 											<p:row>
-												<p:column headerText="Seq. 1" />
-												<p:column headerText="Seq. 2" />
-												<p:column headerText="Moyenne" />
-												<p:column colspan="4" headerText="Appreciation professeur" />
-												<p:column colspan="3" headerText="Appreciation parents" />
+												<p:column headerText="Seq. 1" sortBy="#{team.note}" />
+												<p:column headerText="Seq. 2" sortBy="#{team.note}" />
+												<p:column headerText="Coef" />
+												<p:column headerText="Moyenne" sortBy="#{team.note}" />
+												<p:column colspan="6" headerText="Appreciation professeur" />
 											</p:row>
 										</p:columnGroup>
 										<p:column colspan="2">
@@ -224,17 +248,10 @@
 										<p:column>
 											<h:outputText value="#{team.note}" />
 										</p:column>
-										<p:column colspan="4">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
+										<p:column>
+											<h:outputText value="#{team.note}" />
 										</p:column>
-										<p:column colspan="3">
+										<p:column colspan="6">
 											<p:cellEditor>
 												<f:facet name="output">
 													<h:outputText value="" />
@@ -249,6 +266,7 @@
 												<p:column colspan="2" footerText="Moyenne générale: "
 													style="text-align:right" />
 												<p:column footerText="#{team.allWins}" />
+												<p:column footerText="#{team.allLosses}" />
 												<p:column footerText="#{team.allLosses}" />
 												<p:column footerText="#{team.allLosses}" />
 											</p:row>
@@ -259,23 +277,53 @@
 
 									<!-- BEGIN TRIMESTRE 3 -->
 									<p:dataTable id="trimestre3" editable="true" editMode="cell"
-										var="team" value="#{dtSubTableView.teams}">
+										var="team" value="#{dtSubTableView.teams}" rows="20"
+										paginator="true"
+										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+										rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
+										<f:facet name="{Exporters}">
+											<h:commandLink>
+												<p:graphicImage name="/img/excel.png" width="24" />
+												<p:dataExporter type="xls" target="trimestre3"
+													fileName="cars" />
+											</h:commandLink>
+
+											<h:commandLink>
+												<p:graphicImage name="img/pdf.png" width="24" />
+												<p:dataExporter type="pdf" target="trimestre3"
+													fileName="cars" />
+											</h:commandLink>
+
+
+											<h:commandLink>
+												<p:graphicImage name="img/csv.png" width="24" />
+												<p:dataExporter type="csv" target="trimestre3"
+													fileName="cars" />
+											</h:commandLink>
+
+											<h:commandLink>
+												<p:graphicImage name="img/xml.png" width="24" />
+												<p:dataExporter type="xml" target="trimestre3"
+													fileName="cars" />
+											</h:commandLink>
+										</f:facet>
 
 										<f:facet name="header">
-								            Carnet de Notes 6M5 - 3 eme.Trimestre
+								            Carnet de Notes 6M5 - 3eme.Trimestre
 								        </f:facet>
 
 										<p:columnGroup type="header">
 											<p:row>
-												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom" />
+												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom"
+													sortBy="#{team.name} " />
 												<p:column colspan="10" headerText="Notes" />
 											</p:row>
 											<p:row>
-												<p:column headerText="Seq. 1" />
-												<p:column headerText="Seq. 2" />
-												<p:column headerText="Moyenne" />
-												<p:column colspan="4" headerText="Appreciation professeur" />
-												<p:column colspan="3" headerText="Appreciation parents" />
+												<p:column headerText="Seq. 1" sortBy="#{team.note}" />
+												<p:column headerText="Seq. 2" sortBy="#{team.note}" />
+												<p:column headerText="Coef" />
+												<p:column headerText="Moyenne" sortBy="#{team.note}" />
+												<p:column colspan="6" headerText="Appreciation professeur" />
 											</p:row>
 										</p:columnGroup>
 										<p:column colspan="2">
@@ -304,17 +352,10 @@
 										<p:column>
 											<h:outputText value="#{team.note}" />
 										</p:column>
-										<p:column colspan="4">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
+										<p:column>
+											<h:outputText value="#{team.note}" />
 										</p:column>
-										<p:column colspan="3">
+										<p:column colspan="6">
 											<p:cellEditor>
 												<f:facet name="output">
 													<h:outputText value="" />
@@ -329,6 +370,7 @@
 												<p:column colspan="2" footerText="Moyenne générale: "
 													style="text-align:right" />
 												<p:column footerText="#{team.allWins}" />
+												<p:column footerText="#{team.allLosses}" />
 												<p:column footerText="#{team.allLosses}" />
 												<p:column footerText="#{team.allLosses}" />
 											</p:row>
@@ -340,7 +382,10 @@
 
 									<!-- BEGIN ANNUEL DETAILLE-->
 									<p:dataTable id="annuelDetaille" editable="true"
-										editMode="cell" var="team" value="#{dtSubTableView.teams}">
+										editMode="cell" var="team" value="#{dtSubTableView.teams}"
+										rows="20" paginator="true"
+										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+										rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
 
 										<f:facet name="header">
 								            Carnet de Notes 6M5 - Annuel détaillé
@@ -348,7 +393,7 @@
 
 										<p:columnGroup type="header">
 											<p:row>
-												<p:column rowspan="3" colspan="2" headerText="Nom, Prénom" />
+												<p:column rowspan="3" colspan="2" headerText="Nom, Prénom" sortBy="#{team.name}"/>
 												<p:column colspan="9" headerText="Notes" />
 											</p:row>
 											<p:row>
@@ -358,15 +403,15 @@
 											</p:row>
 
 											<p:row>
-												<p:column headerText="Seq. 1" />
-												<p:column headerText="Seq. 2" />
-												<p:column headerText="Moyenne" />
-												<p:column headerText="Seq. 3" />
-												<p:column headerText="Seq. 4" />
-												<p:column headerText="Moyenne" />
-												<p:column headerText="Seq. 5" />
-												<p:column headerText="Seq. 6" />
-												<p:column headerText="Moyenne" />
+												<p:column headerText="Seq. 1" sortBy="#{team.note}"/>
+												<p:column headerText="Seq. 2" sortBy="#{team.note}"/>
+												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
+												<p:column headerText="Seq. 3" sortBy="#{team.note}"/>
+												<p:column headerText="Seq. 4" sortBy="#{team.note}"/>
+												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
+												<p:column headerText="Seq. 5" sortBy="#{team.note}"/>
+												<p:column headerText="Seq. 6" sortBy="#{team.note}"/>
+												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
 											</p:row>
 										</p:columnGroup>
 										<p:column colspan="2">
@@ -483,16 +528,15 @@
 
 										<p:columnGroup type="header">
 											<p:row>
-												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom" />
+												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom" sortBy="#{team.name}" />
 												<p:column colspan="10" headerText="Notes" />
 											</p:row>
 											<p:row>
-												<p:column headerText="Trimestre 1" />
-												<p:column headerText="Trimestre 2" />
-												<p:column headerText="Trimestre 3" />
-												<p:column headerText="Moyenne" />
-												<p:column colspan="3" headerText="Appreciation professeur" />
-												<p:column colspan="3" headerText="Appreciation parents" />
+												<p:column headerText="Trimestre 1" sortBy="#{team.note}"/>
+												<p:column headerText="Trimestre 2" sortBy="#{team.note}"/>
+												<p:column headerText="Trimestre 3" sortBy="#{team.note}"/>
+												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
+												<p:column colspan="6" headerText="Appreciation professeur" />
 											</p:row>
 										</p:columnGroup>
 										<p:column colspan="2">
@@ -510,17 +554,8 @@
 										<p:column>
 											<h:outputText value="#{team.note}" />
 										</p:column>
-										<p:column colspan="3">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column colspan="3">
+
+										<p:column colspan="6">
 											<p:cellEditor>
 												<f:facet name="output">
 													<h:outputText value="" />
