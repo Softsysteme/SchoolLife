@@ -13,8 +13,21 @@
 
 				<div class="page-content">
 
-					<div class="green">Page Brouillon Ici sera placé le cotenu de
-						mes messages brouillons</div>
+					<br /> <br /> <br />
+					<div class="green">Page Agenda Ici sera placé le cotenu de
+						mon Agenda</div>
+					<p:commandLink
+							action="#{navigationController.moveToAgenda}">
+							<i class="fa fa-home"></i>
+							<h:outputText value="{msg['mon_compte']}" />
+						</p:commandLink>
+						<br></br>
+					<p:commandLink action="#{autoCompleteView.moveToAgenda}">
+							<i class="fa fa-users"></i>
+							<h:outputText value="agenda" />
+						</p:commandLink>
+
+
 
 				</div>
 				<!-- /.page-content -->
@@ -22,6 +35,7 @@
 			</div>
 			<!-- /#page-wrapper -->
 			<!-- end MAIN PAGE CONTENT -->
+
 		</ui:define>
 	</ui:composition>
 </h:body>

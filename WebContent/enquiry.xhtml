@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/admin/common-layout.xhtml">
+		<ui:define name="content">
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+					<!--Begin Pill Tabs -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="accordion">
+
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+
+												<h4>
+													<strong>Gestion des Admissions</strong>
+												</h4>
+
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<ul id="enquiry" class="nav nav-pills">
+												<li class="active"><a href="#enquiryList"
+													data-toggle="tab"><strong>Liste des Demandes</strong></a></li>
+												<li><a href="#enquiryApproved" data-toggle="tab"><strong>
+															Demandes Validées</strong></a></li>
+												<li><a href="#enquiryRejected" data-toggle="tab"><strong>
+															Demandes rejetées</strong></a></li>
+											</ul>
+											<div id="enquiryCotent" class="tab-content">
+												<!-- Begin Tab Enquiry List -->
+												<div class="tab-pane fade in active" id="enquiryList">
+													<br></br>
+													<!-- begin ADVANCED TABLES ROW -->
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="table-responsiv">
+																<p:dataTable var="enquiry" value="" rows="10"
+																	paginator="true"
+																	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+																	rowsPerPageTemplate="5,10,15">
+																	<p:column headerText="Id">
+																		<h:outputText value="{enquiry.id}" />
+																	</p:column>
+
+																	<p:column headerText="Student Name">
+																		<h:outputText value="{enquiry.student.name}" />
+																	</p:column>
+
+																	<p:column headerText="Gender">
+																		<h:outputText value="{enquiry.student.gender}" />
+																	</p:column>
+																	<p:column headerText="Enquiry Date">
+																		<h:outputText value="{enquiry.date}" />
+																	</p:column>
+
+																	<p:column headerText="Classe">
+																		<h:outputText value="{enquiry.student.classe}" />
+																	</p:column>
+																</p:dataTable>
+															</div>
+															<!-- /.table-responsive -->
+														</div>
+													</div>
+												</div>
+												<!-- End Tab Enquiry List -->
+												<!-- Begin Tab Approved Enquiry List -->
+												<div class="tab-pane fade" id="enquiryApproved">
+													<br></br>
+													<!-- begin ADVANCED TABLES ROW -->
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="table-responsiv">
+																<p:dataTable var="enquiry" value="" rows="10"
+																	paginator="true"
+																	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+																	rowsPerPageTemplate="5,10,15">
+																	<p:column headerText="Id">
+																		<h:outputText value="{enquiry.id}" />
+																	</p:column>
+
+																	<p:column headerText="Student Name">
+																		<h:outputText value="{enquiry.student.name}" />
+																	</p:column>
+
+																	<p:column headerText="Gender">
+																		<h:outputText value="{enquiry.student.gender}" />
+																	</p:column>
+																	<p:column headerText="Enquiry Date">
+																		<h:outputText value="{enquiry.date}" />
+																	</p:column>
+
+																	<p:column headerText="Classe">
+																		<h:outputText value="{enquiry.student.classe}" />
+																	</p:column>
+																</p:dataTable>
+															</div>
+															<!-- /.table-responsive -->
+														</div>
+													</div>
+												</div>
+												<!-- End Tab Approved Enquiry List -->
+												<!-- Begin Tab Rejected Enquiry List -->
+												<div class="tab-pane fade" id="enquiryRejected">
+													<br></br>
+													<!-- begin ADVANCED TABLES ROW -->
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="table-responsiv">
+																<p:dataTable var="enquiry" value="" rows="10"
+																	paginator="true"
+																	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+																	rowsPerPageTemplate="5,10,15">
+																	<p:column headerText="Id">
+																		<h:outputText value="{enquiry.id}" />
+																	</p:column>
+
+																	<p:column headerText="Student Name">
+																		<h:outputText value="{enquiry.student.name}" />
+																	</p:column>
+
+																	<p:column headerText="Gender">
+																		<h:outputText value="{enquiry.student.gender}" />
+																	</p:column>
+																	<p:column headerText="Enquiry Date">
+																		<h:outputText value="{enquiry.date}" />
+																	</p:column>
+
+																	<p:column headerText="Classe">
+																		<h:outputText value="{enquiry.student.classe}" />
+																	</p:column>
+																	<p:column headerText="Motif">
+																		<h:outputText value="{enquiry.student.motif}" />
+																	</p:column>
+																</p:dataTable>
+															</div>
+															<!-- /.table-responsive -->
+														</div>
+													</div>
+												</div>
+												<!-- End Tab Rejected Enquiry List -->
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!--End Pill Tabs -->
+				</div>
+				<!-- /.page-content -->
+			</div>
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

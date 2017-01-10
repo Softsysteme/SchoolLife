@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition
+		template="templates/admin/common-layout-primefaces.xhtml">
+		<ui:define name="content">
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+
+
+					<div class="row">
+						<div class="col-lg-12">
+
+							<br></br> <br></br>
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Planing</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+
+											<div class="row">
+												<div class="col-lg-6 ">
+													<div class="form-group">
+														<div class="col-lg-3 control-label">
+															<p:outputLabel value="Section:" for="section" />
+														</div>
+														<div class="col-lg-7">
+															<p:autoComplete id="section" dropdown="true"
+																value="#{autoCompleteView.txt5}"
+																completeMethod="#{autoCompleteView.completeSection}" />
+														</div>
+													</div>
+												</div>
+												<p:dialog header="Values" resizable="false"
+													showEffect="fade" widgetVar="dlg">
+													<p:panelGrid id="output" columns="2"
+														columnClasses="label, value">
+														<h:outputText value="Dropdown:" />
+														<h:outputText value="#{autoCompleteView.txt5}" />
+													</p:panelGrid>
+												</p:dialog>
+
+												<div class="col-lg-6 ">
+													<div class="form-group">
+														<div class="col-lg-3 control-label">
+															<p:outputLabel value="Classes:" for="classes" />
+														</div>
+														<div class="col-lg-7">
+															<p:autoComplete id="classes" dropdown="true"
+																value="#{autoCompleteView.txt6}"
+																completeMethod="#{autoCompleteView.completeClasse}" />
+														</div>
+													</div>
+												</div>
+												<p:dialog header="Values" resizable="false"
+													showEffect="fade" widgetVar="dlg">
+													<p:panelGrid id="outputClasse" columns="2"
+														columnClasses="label, value">
+														<h:outputText value="Dropdown:" />
+														<h:outputText value="#{autoCompleteView.txt6}" />
+													</p:panelGrid>
+												</p:dialog>
+											</div>
+
+											<br></br> <br></br>
+											<p:growl id="messages" showDetail="true" />
+
+											<h:panelGrid columnClasses="value">
+												<h3 style="margin-top: 0">Emploie de Temps 3eme M5</h3>
+												<p:schedule id="schedule" value="#{scheduleView.eventModel}"
+													widgetVar="myschedule" timeZone="GMT+2">
+
+													<p:ajax event="dateSelect"
+														listener="#{scheduleView.onDateSelect}"
+														update="eventDetails"
+														oncomplete="PF('eventDialog').show();" />
+													<p:ajax event="eventSelect"
+														listener="#{scheduleView.onEventSelect}"
+														update="eventDetails"
+														oncomplete="PF('eventDialog').show();" />
+													<p:ajax event="eventMove"
+														listener="#{scheduleView.onEventMove}" update="messages" />
+													<p:ajax event="eventResize"
+														listener="#{scheduleView.onEventResize}" update="messages" />
+
+												</p:schedule>
+
+											</h:panelGrid>
+
+											<p:dialog widgetVar="eventDialog" header="Event Details"
+												showEffect="clip" hideEffect="clip">
+												<h:panelGrid id="eventDetails" columns="2">
+													<p:outputLabel for="title" value="Titles:" />
+													<p:inputText id="title" value="#{scheduleView.event.title}"
+														required="true" />
+
+													<p:outputLabel for="from" value="From:" />
+													<p:calendar id="from"
+														value="#{scheduleView.event.startDate}" timeZone="GMT+2"
+														pattern="dd/MM/yyyy HH:mm" />
+
+													<p:outputLabel for="to" value="To:" />
+													<p:calendar id="to" value="#{scheduleView.event.endDate}"
+														timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm" />
+
+													<p:outputLabel for="allDay" value="All Day:" />
+													<h:selectBooleanCheckbox id="allDay"
+														value="#{scheduleView.event.allDay}" />
+
+													<p:commandButton type="reset" value="Reset" />
+													<p:commandButton id="addButton" value="Save"
+														actionListener="#{scheduleView.addEvent}"
+														oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
+												</h:panelGrid>
+											</p:dialog>
+										</div>
+									</div>
+								</div>
+
+							</h:form>
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+
+				</div>
+				<!-- /.page-content -->
+
+			</div>
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
