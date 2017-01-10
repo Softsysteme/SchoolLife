@@ -20,566 +20,585 @@
 
 							<br></br> <br></br>
 							<h:form>
-
-								<div class="row">
-
-									<div class="col-lg-4 ">
-										<div class="form-group">
-											<div class="col-lg-3 control-label">
-												<p:outputLabel value="Classes:" for="classes" />
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Notes</strong>
+												</h4>
 											</div>
-											<div class="col-lg-9">
-												<p:autoComplete id="classes" dropdown="true"
-													value="#{autoCompleteView.txt6}"
-													completeMethod="#{autoCompleteView.completeClasse}" />
-											</div>
+											<div class="clearfix"></div>
 										</div>
-									</div>
+										<div class="portlet-body">
+											<div class="row">
 
-									<div class="col-lg-4 ">
-										<div class="form-group">
-											<div class="col-lg-3 control-label">
-												<p:outputLabel value="Matières:" for="matieres" />
+
+												<div class="col-lg-4 ">
+													<div class="form-group">
+														<div class="col-lg-3 control-label">
+															<p:outputLabel value="Classes:" for="classes" />
+														</div>
+														<div class="col-lg-9">
+															<p:autoComplete id="classes" dropdown="true"
+																value="#{autoCompleteView.txt6}"
+																completeMethod="#{autoCompleteView.completeClasse}" />
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 ">
+													<div class="form-group">
+														<div class="col-lg-3 control-label">
+															<p:outputLabel value="Matières:" for="matieres" />
+														</div>
+														<div class="col-lg-9">
+															<p:autoComplete id="matieres" dropdown="true"
+																value="#{autoCompleteView.txt5}"
+																completeMethod="#{autoCompleteView.completeMatieres}" />
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 ">
+													<div class="form-group">
+														<div class="col-lg-3 control-label">
+															<p:outputLabel value="Trimestre:" for="trimestre" />
+														</div>
+														<div class="col-lg-9">
+															<p:autoComplete id="trimestre" dropdown="true"
+																value="#{autoCompleteView.txt6}"
+																completeMethod="#{autoCompleteView.completeTrimestre}" />
+														</div>
+													</div>
+												</div>
+
 											</div>
-											<div class="col-lg-9">
-												<p:autoComplete id="matieres" dropdown="true"
-													value="#{autoCompleteView.txt5}"
-													completeMethod="#{autoCompleteView.completeMatieres}" />
-											</div>
-										</div>
-									</div>
 
-									<div class="col-lg-4 ">
-										<div class="form-group">
-											<div class="col-lg-3 control-label">
-												<p:outputLabel value="Trimestre:" for="trimestre" />
-											</div>
-											<div class="col-lg-9">
-												<p:autoComplete id="trimestre" dropdown="true"
-													value="#{autoCompleteView.txt6}"
-													completeMethod="#{autoCompleteView.completeTrimestre}" />
-											</div>
-										</div>
-									</div>
+											<br></br> <br></br>
+											<div class="table-responsiv">
+												<!-- BEGIN TRIMESTRE 1 -->
+												<p:dataTable id="trimestre1" editable="true" editMode="cell"
+													var="team" value="#{dtSubTableView.teams}" rows="20"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+													rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
+													<f:facet name="{Exporters}">
+														<h:commandLink>
+															<p:graphicImage name="/img/excel.png" width="24" />
+															<p:dataExporter type="xls" target="trimestre1"
+																fileName="cars" />
+														</h:commandLink>
 
-								</div>
-
-								<br></br>
-
-								<br></br>
-								<div class="table-responsiv">
-									<!-- BEGIN TRIMESTRE 1 -->
-									<p:dataTable id="trimestre1" editable="true" editMode="cell"
-										var="team" value="#{dtSubTableView.teams}" rows="20"
-										paginator="true"
-										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
-										rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
-										<f:facet name="{Exporters}">
-											<h:commandLink>
-												<p:graphicImage name="/img/excel.png" width="24" />
-												<p:dataExporter type="xls" target="trimestre1"
-													fileName="cars" />
-											</h:commandLink>
-
-											<h:commandLink>
-												<p:graphicImage name="img/pdf.png" width="24" />
-												<p:dataExporter type="pdf" target="trimestre1"
-													fileName="cars" />
-											</h:commandLink>
+														<h:commandLink>
+															<p:graphicImage name="img/pdf.png" width="24" />
+															<p:dataExporter type="pdf" target="trimestre1"
+																fileName="cars" />
+														</h:commandLink>
 
 
-											<h:commandLink>
-												<p:graphicImage name="img/csv.png" width="24" />
-												<p:dataExporter type="csv" target="trimestre1"
-													fileName="cars" />
-											</h:commandLink>
+														<h:commandLink>
+															<p:graphicImage name="img/csv.png" width="24" />
+															<p:dataExporter type="csv" target="trimestre1"
+																fileName="cars" />
+														</h:commandLink>
 
-											<h:commandLink>
-												<p:graphicImage name="img/xml.png" width="24" />
-												<p:dataExporter type="xml" target="trimestre1"
-													fileName="cars" />
-											</h:commandLink>
-										</f:facet>
+														<h:commandLink>
+															<p:graphicImage name="img/xml.png" width="24" />
+															<p:dataExporter type="xml" target="trimestre1"
+																fileName="cars" />
+														</h:commandLink>
+													</f:facet>
 
-										<f:facet name="header">
+													<f:facet name="header">
 								            Carnet de Notes 6M5 - 1er.Trimestre
 								        </f:facet>
 
-										<p:columnGroup type="header">
-											<p:row>
-												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom"
-													sortBy="#{team.name} " />
-												<p:column colspan="10" headerText="Notes" />
-											</p:row>
-											<p:row>
-												<p:column headerText="Seq. 1" sortBy="#{team.note}" />
-												<p:column headerText="Seq. 2" sortBy="#{team.note}" />
-												<p:column headerText="Coef" />
-												<p:column headerText="Moyenne" sortBy="#{team.note}" />
-												<p:column colspan="6" headerText="Appreciation professeur" />
-											</p:row>
-										</p:columnGroup>
-										<p:column colspan="2">
-											<h:outputText value="#{team.name}" />
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText id="modelInput" value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column colspan="6">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:columnGroup type="footer">
-											<p:row>
-												<p:column colspan="2" footerText="Moyenne générale: "
-													style="text-align:right" />
-												<p:column footerText="#{team.allWins}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-											</p:row>
-										</p:columnGroup>
-									</p:dataTable>
-									<!-- END TRIMESTRE 1 -->
-									<br></br>
+													<p:columnGroup type="header">
+														<p:row>
+															<p:column rowspan="2" colspan="2"
+																headerText="Nom, Prénom" sortBy="#{team.name} " />
+															<p:column colspan="10" headerText="Notes" />
+														</p:row>
+														<p:row>
+															<p:column headerText="Seq. 1" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 2" sortBy="#{team.note}" />
+															<p:column headerText="Coef" />
+															<p:column headerText="Moyenne" sortBy="#{team.note}" />
+															<p:column colspan="6"
+																headerText="Appreciation professeur" />
+														</p:row>
+													</p:columnGroup>
+													<p:column colspan="2">
+														<h:outputText value="#{team.name}" />
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText id="modelInput" value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column colspan="6">
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="" style="width:100%" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:columnGroup type="footer">
+														<p:row>
+															<p:column colspan="2" footerText="Moyenne générale: "
+																style="text-align:right" />
+															<p:column footerText="#{team.allWins}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+														</p:row>
+													</p:columnGroup>
+												</p:dataTable>
+												<!-- END TRIMESTRE 1 -->
+												<br></br>
 
-									<!-- BEGIN TRIMESTRE 2 -->
-									<p:dataTable id="trimestre2" editable="true" editMode="cell"
-										var="team" value="#{dtSubTableView.teams}" rows="20"
-										paginator="true"
-										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
-										rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
-										<f:facet name="{Exporters}">
-											<h:commandLink>
-												<p:graphicImage name="/img/excel.png" width="24" />
-												<p:dataExporter type="xls" target="trimestre2"
-													fileName="cars" />
-											</h:commandLink>
+												<!-- BEGIN TRIMESTRE 2 -->
+												<p:dataTable id="trimestre2" editable="true" editMode="cell"
+													var="team" value="#{dtSubTableView.teams}" rows="20"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+													rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
+													<f:facet name="{Exporters}">
+														<h:commandLink>
+															<p:graphicImage name="/img/excel.png" width="24" />
+															<p:dataExporter type="xls" target="trimestre2"
+																fileName="cars" />
+														</h:commandLink>
 
-											<h:commandLink>
-												<p:graphicImage name="img/pdf.png" width="24" />
-												<p:dataExporter type="pdf" target="trimestre2"
-													fileName="cars" />
-											</h:commandLink>
+														<h:commandLink>
+															<p:graphicImage name="img/pdf.png" width="24" />
+															<p:dataExporter type="pdf" target="trimestre2"
+																fileName="cars" />
+														</h:commandLink>
 
-											<h:commandLink>
-												<p:graphicImage name="img/csv.png" width="24" />
-												<p:dataExporter type="csv" target="trimestre2"
-													fileName="cars" />
-											</h:commandLink>
+														<h:commandLink>
+															<p:graphicImage name="img/csv.png" width="24" />
+															<p:dataExporter type="csv" target="trimestre2"
+																fileName="cars" />
+														</h:commandLink>
 
-											<h:commandLink>
-												<p:graphicImage name="img/xml.png" width="24" />
-												<p:dataExporter type="xml" target="trimestre2"
-													fileName="cars" />
-											</h:commandLink>
-										</f:facet>
+														<h:commandLink>
+															<p:graphicImage name="img/xml.png" width="24" />
+															<p:dataExporter type="xml" target="trimestre2"
+																fileName="cars" />
+														</h:commandLink>
+													</f:facet>
 
-										<f:facet name="header">
+													<f:facet name="header">
 								            Carnet de Notes 6M5 - 2eme.Trimestre
 								        </f:facet>
 
-										<p:columnGroup type="header">
-											<p:row>
-												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom"
-													sortBy="#{team.name} " />
-												<p:column colspan="10" headerText="Notes" />
-											</p:row>
-											<p:row>
-												<p:column headerText="Seq. 1" sortBy="#{team.note}" />
-												<p:column headerText="Seq. 2" sortBy="#{team.note}" />
-												<p:column headerText="Coef" />
-												<p:column headerText="Moyenne" sortBy="#{team.note}" />
-												<p:column colspan="6" headerText="Appreciation professeur" />
-											</p:row>
-										</p:columnGroup>
-										<p:column colspan="2">
-											<h:outputText value="#{team.name}" />
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText id="modelInput" value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column colspan="6">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:columnGroup type="footer">
-											<p:row>
-												<p:column colspan="2" footerText="Moyenne générale: "
-													style="text-align:right" />
-												<p:column footerText="#{team.allWins}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-											</p:row>
-										</p:columnGroup>
-									</p:dataTable>
-									<!-- END TRIMESTRE 2 -->
-									<br></br>
+													<p:columnGroup type="header">
+														<p:row>
+															<p:column rowspan="2" colspan="2"
+																headerText="Nom, Prénom" sortBy="#{team.name} " />
+															<p:column colspan="10" headerText="Notes" />
+														</p:row>
+														<p:row>
+															<p:column headerText="Seq. 1" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 2" sortBy="#{team.note}" />
+															<p:column headerText="Coef" />
+															<p:column headerText="Moyenne" sortBy="#{team.note}" />
+															<p:column colspan="6"
+																headerText="Appreciation professeur" />
+														</p:row>
+													</p:columnGroup>
+													<p:column colspan="2">
+														<h:outputText value="#{team.name}" />
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText id="modelInput" value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column colspan="6">
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="" style="width:100%" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:columnGroup type="footer">
+														<p:row>
+															<p:column colspan="2" footerText="Moyenne générale: "
+																style="text-align:right" />
+															<p:column footerText="#{team.allWins}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+														</p:row>
+													</p:columnGroup>
+												</p:dataTable>
+												<!-- END TRIMESTRE 2 -->
+												<br></br>
 
-									<!-- BEGIN TRIMESTRE 3 -->
-									<p:dataTable id="trimestre3" editable="true" editMode="cell"
-										var="team" value="#{dtSubTableView.teams}" rows="20"
-										paginator="true"
-										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
-										rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
-										<f:facet name="{Exporters}">
-											<h:commandLink>
-												<p:graphicImage name="/img/excel.png" width="24" />
-												<p:dataExporter type="xls" target="trimestre3"
-													fileName="cars" />
-											</h:commandLink>
+												<!-- BEGIN TRIMESTRE 3 -->
+												<p:dataTable id="trimestre3" editable="true" editMode="cell"
+													var="team" value="#{dtSubTableView.teams}" rows="20"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+													rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
+													<f:facet name="{Exporters}">
+														<h:commandLink>
+															<p:graphicImage name="/img/excel.png" width="24" />
+															<p:dataExporter type="xls" target="trimestre3"
+																fileName="cars" />
+														</h:commandLink>
 
-											<h:commandLink>
-												<p:graphicImage name="img/pdf.png" width="24" />
-												<p:dataExporter type="pdf" target="trimestre3"
-													fileName="cars" />
-											</h:commandLink>
+														<h:commandLink>
+															<p:graphicImage name="img/pdf.png" width="24" />
+															<p:dataExporter type="pdf" target="trimestre3"
+																fileName="cars" />
+														</h:commandLink>
 
 
-											<h:commandLink>
-												<p:graphicImage name="img/csv.png" width="24" />
-												<p:dataExporter type="csv" target="trimestre3"
-													fileName="cars" />
-											</h:commandLink>
+														<h:commandLink>
+															<p:graphicImage name="img/csv.png" width="24" />
+															<p:dataExporter type="csv" target="trimestre3"
+																fileName="cars" />
+														</h:commandLink>
 
-											<h:commandLink>
-												<p:graphicImage name="img/xml.png" width="24" />
-												<p:dataExporter type="xml" target="trimestre3"
-													fileName="cars" />
-											</h:commandLink>
-										</f:facet>
+														<h:commandLink>
+															<p:graphicImage name="img/xml.png" width="24" />
+															<p:dataExporter type="xml" target="trimestre3"
+																fileName="cars" />
+														</h:commandLink>
+													</f:facet>
 
-										<f:facet name="header">
+													<f:facet name="header">
 								            Carnet de Notes 6M5 - 3eme.Trimestre
 								        </f:facet>
 
-										<p:columnGroup type="header">
-											<p:row>
-												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom"
-													sortBy="#{team.name} " />
-												<p:column colspan="10" headerText="Notes" />
-											</p:row>
-											<p:row>
-												<p:column headerText="Seq. 1" sortBy="#{team.note}" />
-												<p:column headerText="Seq. 2" sortBy="#{team.note}" />
-												<p:column headerText="Coef" />
-												<p:column headerText="Moyenne" sortBy="#{team.note}" />
-												<p:column colspan="6" headerText="Appreciation professeur" />
-											</p:row>
-										</p:columnGroup>
-										<p:column colspan="2">
-											<h:outputText value="#{team.name}" />
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText id="modelInput" value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column colspan="6">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:columnGroup type="footer">
-											<p:row>
-												<p:column colspan="2" footerText="Moyenne générale: "
-													style="text-align:right" />
-												<p:column footerText="#{team.allWins}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-											</p:row>
-										</p:columnGroup>
-									</p:dataTable>
-									<!-- END TRIMESTRE 3 -->
-									<br></br>
+													<p:columnGroup type="header">
+														<p:row>
+															<p:column rowspan="2" colspan="2"
+																headerText="Nom, Prénom" sortBy="#{team.name} " />
+															<p:column colspan="10" headerText="Notes" />
+														</p:row>
+														<p:row>
+															<p:column headerText="Seq. 1" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 2" sortBy="#{team.note}" />
+															<p:column headerText="Coef" />
+															<p:column headerText="Moyenne" sortBy="#{team.note}" />
+															<p:column colspan="6"
+																headerText="Appreciation professeur" />
+														</p:row>
+													</p:columnGroup>
+													<p:column colspan="2">
+														<h:outputText value="#{team.name}" />
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText id="modelInput" value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column colspan="6">
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="" style="width:100%" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:columnGroup type="footer">
+														<p:row>
+															<p:column colspan="2" footerText="Moyenne générale: "
+																style="text-align:right" />
+															<p:column footerText="#{team.allWins}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+														</p:row>
+													</p:columnGroup>
+												</p:dataTable>
+												<!-- END TRIMESTRE 3 -->
+												<br></br>
 
 
-									<!-- BEGIN ANNUEL DETAILLE-->
-									<p:dataTable id="annuelDetaille" editable="true"
-										editMode="cell" var="team" value="#{dtSubTableView.teams}"
-										rows="20" paginator="true"
-										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
-										rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
+												<!-- BEGIN ANNUEL DETAILLE-->
+												<p:dataTable id="annuelDetaille" editable="true"
+													editMode="cell" var="team" value="#{dtSubTableView.teams}"
+													rows="20" paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+													rowsPerPageTemplate="20,40,80,100" sortMode="multiple">
 
-										<f:facet name="header">
+													<f:facet name="header">
 								            Carnet de Notes 6M5 - Annuel détaillé
 								        </f:facet>
 
-										<p:columnGroup type="header">
-											<p:row>
-												<p:column rowspan="3" colspan="2" headerText="Nom, Prénom" sortBy="#{team.name}"/>
-												<p:column colspan="9" headerText="Notes" />
-											</p:row>
-											<p:row>
-												<p:column colspan="3" headerText="Trimestre 1" />
-												<p:column colspan="3" headerText="Trimestre 2" />
-												<p:column colspan="3" headerText="Trimestre 3" />
-											</p:row>
+													<p:columnGroup type="header">
+														<p:row>
+															<p:column rowspan="3" colspan="2"
+																headerText="Nom, Prénom" sortBy="#{team.name}" />
+															<p:column colspan="9" headerText="Notes" />
+														</p:row>
+														<p:row>
+															<p:column colspan="3" headerText="Trimestre 1" />
+															<p:column colspan="3" headerText="Trimestre 2" />
+															<p:column colspan="3" headerText="Trimestre 3" />
+														</p:row>
 
-											<p:row>
-												<p:column headerText="Seq. 1" sortBy="#{team.note}"/>
-												<p:column headerText="Seq. 2" sortBy="#{team.note}"/>
-												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
-												<p:column headerText="Seq. 3" sortBy="#{team.note}"/>
-												<p:column headerText="Seq. 4" sortBy="#{team.note}"/>
-												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
-												<p:column headerText="Seq. 5" sortBy="#{team.note}"/>
-												<p:column headerText="Seq. 6" sortBy="#{team.note}"/>
-												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
-											</p:row>
-										</p:columnGroup>
-										<p:column colspan="2">
-											<h:outputText value="#{team.name}" />
-										</p:column>
-										<!-- Trimestre 1 -->
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText id="modelInput" value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
+														<p:row>
+															<p:column headerText="Seq. 1" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 2" sortBy="#{team.note}" />
+															<p:column headerText="Moyenne" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 3" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 4" sortBy="#{team.note}" />
+															<p:column headerText="Moyenne" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 5" sortBy="#{team.note}" />
+															<p:column headerText="Seq. 6" sortBy="#{team.note}" />
+															<p:column headerText="Moyenne" sortBy="#{team.note}" />
+														</p:row>
+													</p:columnGroup>
+													<p:column colspan="2">
+														<h:outputText value="#{team.name}" />
+													</p:column>
+													<!-- Trimestre 1 -->
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText id="modelInput" value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
 
-										<!-- Trimestre 2 -->
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
+													<!-- Trimestre 2 -->
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
 
-										<!-- Trimestre 3 -->
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="#{team.note}" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="#{team.note}" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
+													<!-- Trimestre 3 -->
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="#{team.note}" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="#{team.note}" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
 
-										<p:columnGroup type="footer">
-											<p:row>
-												<p:column colspan="2" footerText="Moyenne générale: "
-													style="text-align:right" />
-												<p:column footerText="#{team.allWins}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allWins}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allWins}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-											</p:row>
-										</p:columnGroup>
-									</p:dataTable>
-									<!-- END DETAILLE -->
-									<br></br>
+													<p:columnGroup type="footer">
+														<p:row>
+															<p:column colspan="2" footerText="Moyenne générale: "
+																style="text-align:right" />
+															<p:column footerText="#{team.allWins}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allWins}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allWins}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+														</p:row>
+													</p:columnGroup>
+												</p:dataTable>
+												<!-- END DETAILLE -->
+												<br></br>
 
-									<!-- BEGIN ANNUEL -->
-									<p:dataTable id="annuel" editable="true" editMode="cell"
-										var="team" value="#{dtSubTableView.teams}">
+												<!-- BEGIN ANNUEL -->
+												<p:dataTable id="annuel" editable="true" editMode="cell"
+													var="team" value="#{dtSubTableView.teams}">
 
-										<f:facet name="header">
+													<f:facet name="header">
 								            Carnet de Notes 6M5 - Annuel
 								        </f:facet>
 
-										<p:columnGroup type="header">
-											<p:row>
-												<p:column rowspan="2" colspan="2" headerText="Nom, Prénom" sortBy="#{team.name}" />
-												<p:column colspan="10" headerText="Notes" />
-											</p:row>
-											<p:row>
-												<p:column headerText="Trimestre 1" sortBy="#{team.note}"/>
-												<p:column headerText="Trimestre 2" sortBy="#{team.note}"/>
-												<p:column headerText="Trimestre 3" sortBy="#{team.note}"/>
-												<p:column headerText="Moyenne" sortBy="#{team.note}"/>
-												<p:column colspan="6" headerText="Appreciation professeur" />
-											</p:row>
-										</p:columnGroup>
-										<p:column colspan="2">
-											<h:outputText value="#{team.name}" />
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
-										<p:column>
-											<h:outputText value="#{team.note}" />
-										</p:column>
+													<p:columnGroup type="header">
+														<p:row>
+															<p:column rowspan="2" colspan="2"
+																headerText="Nom, Prénom" sortBy="#{team.name}" />
+															<p:column colspan="10" headerText="Notes" />
+														</p:row>
+														<p:row>
+															<p:column headerText="Trimestre 1" sortBy="#{team.note}" />
+															<p:column headerText="Trimestre 2" sortBy="#{team.note}" />
+															<p:column headerText="Trimestre 3" sortBy="#{team.note}" />
+															<p:column headerText="Moyenne" sortBy="#{team.note}" />
+															<p:column colspan="6"
+																headerText="Appreciation professeur" />
+														</p:row>
+													</p:columnGroup>
+													<p:column colspan="2">
+														<h:outputText value="#{team.name}" />
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
+													<p:column>
+														<h:outputText value="#{team.note}" />
+													</p:column>
 
-										<p:column colspan="6">
-											<p:cellEditor>
-												<f:facet name="output">
-													<h:outputText value="" />
-												</f:facet>
-												<f:facet name="input">
-													<p:inputText value="" style="width:100%" />
-												</f:facet>
-											</p:cellEditor>
-										</p:column>
-										<p:columnGroup type="footer">
-											<p:row>
-												<p:column colspan="2" footerText="Moyenne générale: "
-													style="text-align:right" />
-												<p:column footerText="#{team.allWins}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allLosses}" />
-												<p:column footerText="#{team.allWins}" />
-											</p:row>
-										</p:columnGroup>
-									</p:dataTable>
-									<!-- END ANNUEL -->
-									<br></br>
+													<p:column colspan="6">
+														<p:cellEditor>
+															<f:facet name="output">
+																<h:outputText value="" />
+															</f:facet>
+															<f:facet name="input">
+																<p:inputText value="" style="width:100%" />
+															</f:facet>
+														</p:cellEditor>
+													</p:column>
+													<p:columnGroup type="footer">
+														<p:row>
+															<p:column colspan="2" footerText="Moyenne générale: "
+																style="text-align:right" />
+															<p:column footerText="#{team.allWins}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allLosses}" />
+															<p:column footerText="#{team.allWins}" />
+														</p:row>
+													</p:columnGroup>
+												</p:dataTable>
+												<!-- END ANNUEL -->
+												<br></br>
 
+											</div>
+										</div>
+									</div>
 								</div>
+
 							</h:form>
 
 						</div>

@@ -13,6 +13,24 @@
 
 				<div class="page-content">
 
+					<!-- begin PAGE TITLE ROW -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<h1>
+									SMS <small>Message Center</small>
+								</h1>
+								<ol class="breadcrumb">
+									<li><i class="fa fa-dashboard"></i> <a
+										href="vue-admin.xhtml">Dashboard</a></li>
+									<li class="active">SMS</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE ROW -->
 
 
 					<!-- Pill Tabs Example -->
@@ -22,185 +40,69 @@
 							<div class="portlet portlet-green">
 								<div class="portlet-heading">
 									<div class="portlet-title">
-										<h4>Gestion des Fournitures Scolaires</h4>
+										<h4>Envoie de SMS</h4>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 								<div class="portlet-body">
 									<ul id="myPills" class="nav nav-pills">
-										<li class="active"><a href="#pillCreer" data-toggle="tab"><strong>Creer
-													une fourniture scolaire</strong></a></li>
+										<li class="active"><a href="#pillCreer" data-toggle="tab"><strong>Envoyer
+													un SMS</strong></a></li>
 										<li><a href="#pillConsulter" data-toggle="tab"><strong>Consulter
-													les Fournitures Scolaires</strong></a></li>
+													les SMS envoyés</strong></a></li>
 									</ul>
 									<div id="myPillsContent" class="tab-content">
 										<div class="tab-pane fade in active" id="pillCreer">
 											<br></br>
 
 											<h:form>
-											
-																							<div class="row">
+												<div class="row">
+													<div class="col-lg-5 ">
+														<div class="form-group">
+															<label class="col-lg-4 control-label">Num. Tel.</label>
+															<div class="col-lg-8">
+																<input type="text"
+																			class="form-control" value=""
+																			placeholder="+2376456839"></input>
+															</div>
+															
+														</div>
+													</div>
+													<div class="col-lg-1">
+														<h:outputLabel>OU</h:outputLabel>
+													</div>
 													<div class="col-lg-6 ">
 														<div class="form-group">
-															<label class="col-lg-3 control-label">Classe</label>
+															<label class="col-lg-5 control-label">Broadcast for :</label>
 															<div class="col-lg-7">
 																<select class="form-control">
-																	<option>6eme</option>
-																	<option>5eme</option>
-																	<option>4eme</option>
-																	<option>3eme</option>
-																	<option>2nd</option>
-																	<option>1ere</option>
-																	<option>Tle</option>
+																	<option>Enseignant</option>
+																	<option>Eleves</option>
 																</select>
 															</div>
-															<div class="col-lg-2">
-																<button class="btn btn-green" data-toggle="modal"
-																	data-target="#sectionModal">
-																	<i class="fa fa-plus-square"></i>
-																</button>
-															</div>
 														</div>
 													</div>
-
-													<!-- Section Modal -->
-													<div class="modal modal-flex fade" id="sectionModal"
-														tabindex="-1" role="dialog"
-														aria-labelledby="flexModalLabel" aria-hidden="true">
-														<div class="modal-dialog">
-															<div class="modal-content">
-																<div class="modal-header">
-																	<button type="button" class="close"
-																		data-dismiss="modal" aria-hidden="true">&times;</button>
-																	<h4 class="modal-title" id="flexModalLabel">Créer
-																		une nouvelle Classe</h4>
-																</div>
-																<div class="modal-body">
-																	<div class="form-group">
-																		<label>Classe</label> <input type="text"
-																			class="form-control" value=""
-																			placeholder="Ce formulaire est temporaire"></input>
-																	</div>
-																</div>
-																<div class="modal-footer">
-																	<button type="button" class="btn btn-default"
-																		data-dismiss="modal">Close</button>
-																	<button type="button" class="btn btn-green">Save
-																	</button>
-																</div>
-															</div>
-															<!-- /.modal-content -->
-														</div>
-														<!-- /.modal-dialog -->
-													</div>
-													<!-- /.modal -->
-
-
-													<div class="col-lg-6 ">
-														<div class="form-group">
-															<label class="col-lg-3 control-label">Cycle</label>
-															<div class="col-lg-7">
-																<select class="form-control">
-																	<option>1er</option>
-																	<option>2nd</option>
-																</select>
-															</div>
-															<div class="col-lg-2">
-																<button class="btn btn-green" data-toggle="modal"
-																	data-target="#cycleModal">
-																	<i class="fa fa-plus-square"></i>
-																</button>
-															</div>
-														</div>
-													</div>
-
-													<!-- Section Modal -->
-													<div class="modal modal-flex fade" id="cycleModal"
-														tabindex="-1" role="dialog"
-														aria-labelledby="flexModalLabel" aria-hidden="true">
-														<div class="modal-dialog">
-															<div class="modal-content">
-																<div class="modal-header">
-																	<button type="button" class="close"
-																		data-dismiss="modal" aria-hidden="true">&times;</button>
-																	<h4 class="modal-title" id="flexModalLabel">Créer
-																		un nouveau Cycle</h4>
-																</div>
-																<div class="modal-body">
-																	<div class="form-group">
-																		<label>Cycle</label> <input type="text"
-																			class="form-control" value=""
-																			placeholder="Nom du cycle"></input>
-																	</div>
-																</div>
-																<div class="modal-footer">
-																	<button type="button" class="btn btn-default"
-																		data-dismiss="modal">Close</button>
-																	<button type="button" class="btn btn-green">Save
-																	</button>
-																</div>
-															</div>
-															<!-- /.modal-content -->
-														</div>
-														<!-- /.modal-dialog -->
-													</div>
-													<!-- /.modal -->
-
 
 												</div>
 
 												<br></br>
-											
+
 												<div class="row">
 													<div class="form-group">
-														<label class="col-lg-3 control-label"><i
-															class="fa fa-book fa-fw"></i> Livres</label>
+														<label class="col-lg-3 control-label">Message</label>
 														<div class="col-lg-12">
 															<textarea class="form-control" rows="4"
-																placeholder="Mathematiques Edition Les casseroles, Francais edition l armathan,...."></textarea>
+																placeholder="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus"></textarea>
 														</div>
 													</div>
 												</div>
 												<br></br>
 
-												<div class="row">
-													<div class="form-group">
-														<label class="col-lg-3 control-label"><i
-															class="fa fa-book fa-fw"></i> Cahiers</label>
-														<div class="col-lg-12">
-															<textarea class="form-control" rows="4"
-																placeholder="3xCahiers 300pages Mathematique, SVT, Hist. Geo. EC."></textarea>
-														</div>
-													</div>
-												</div>
-												<br></br>
-												<div class="row">
-													<div class="form-group">
-														<label class="col-lg-3 control-label"><i
-															class="fa fa-star fa-fw"></i> Extras</label>
-														<div class="col-lg-12">
-															<textarea class="form-control" rows="4"
-																placeholder="2 Bics bleues, une gourde, un sac, une ardoise, des crayons, une gomme"></textarea>
-														</div>
-													</div>
-												</div>
-												<br></br>
-
-												<div class="row">
-													<div class="form-group">
-														<label class="col-lg-3 control-label"><i
-															class="fa fa-info fa-fw"></i>Remarques</label>
-														<div class="col-lg-12">
-															<textarea class="form-control" rows="2"
-																placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis."></textarea>
-														</div>
-													</div>
-												</div>
 												<br></br>
 												<div class="row">
 													<div class="col-lg-6">
 														<div class="col-lg-9">
-															<button type="submit" class="btn btn-green">Creer</button>
+															<button type="submit" class="btn btn-green">Send</button>
 														</div>
 													</div>
 												</div>
