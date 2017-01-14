@@ -15,24 +15,35 @@
 
 				<div class="page-content">
 
-					<!-- begin PAGE TITLE ROW -->
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="page-title">
-								<h1>
-									Mailbox <small>Message Center</small>
-								</h1>
 								<ol class="breadcrumb">
-									<li><i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
+									<li class="active"><a href="vue-admin.xhtml"><i
+											class="fa fa-home"></i>
+										<h:outputText value="{msg['menu']}" /></a> <i
+										class="fa fa-angle-right"></i> <a href="#"> <h:outputText
+												value="{msg['Message/SMS']}" /></a> <i class="fa fa-angle-right"></i>
+										 <h:outputText
+												value="{msg['Mailbox']}" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
 									</li>
-									<li class="active">Mailbox</li>
 								</ol>
 							</div>
 						</div>
 						<!-- /.col-lg-12 -->
 					</div>
 					<!-- /.row -->
-					<!-- end PAGE TITLE ROW -->
+					<!-- end PAGE TITLE AREA -->
+
+					<!-- begin PAGE TITLE ROW -->
 
 					<div class="row">
 						<div class="col-lg-12">
@@ -107,7 +118,7 @@
 									<div id="mailbox">
 
 										<ul class="nav nav-pills nav-stacked mailbox-sidenav">
-											<li><a class="btn btn-white" href="compose-message.html"><i
+											<li><a class="btn btn-white" href="compose-message-admin.xhtml"><i
 													class="fa fa-edit"></i> Compose Message</a></li>
 											<li class="nav-divider"></li>
 											<li class="mailbox-menu-title text-muted">Folder</li>

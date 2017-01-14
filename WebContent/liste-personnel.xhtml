@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/admin/common-layout.xhtml">
+		<ui:define name="content">
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<ol class="breadcrumb">
+									<li class="active"><a href="vue-admin.xhtml"><i
+											class="fa fa-home"></i> <h:outputText value="{msg['menu']}" /></a>
+										<i class="fa fa-angle-right"></i> <a href="#"> <h:outputText
+												value="{msg['HR/Payroll']}" /></a><i class="fa fa-angle-right"></i>
+										<a href="#"> <h:outputText
+												value="{msg['Employee Management']}" /></a> <i
+										class="fa fa-angle-right"></i> <h:outputText
+											value="{msg['Liste Employee']}" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
+
+					<div class="row">
+						<div class="col-lg-12">
+												<div class="portlet portlet-green">
+													<div class="portlet-heading">
+														<div class="portlet-title">
+															<h4>Liste du personnel</h4>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+													<div class="portlet-body">
+														<div class="table-responsive">
+															<p:dataTable var="enquiry" value="" rows="10"
+																paginator="true"
+																paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+																rowsPerPageTemplate="5,10,15">
+																<p:column headerText="Employee Code">
+																	<h:outputText value="{GH56B}" />
+																</p:column>
+
+																<p:column headerText="Name">
+																	<h:outputText value="{John Doe}" />
+																</p:column>
+
+																<p:column headerText="Departement">
+																	<h:outputText value="{Mathematics}" />
+																</p:column>
+																<p:column headerText="Qualification">
+																	<h:outputText value="{M.Sc. Mathematics}" />
+																</p:column>
+
+																<p:column headerText="Designation">
+																	<h:outputText value="{Course-ordinator}" />
+																</p:column>
+																<p:column headerText="Email">
+																	<h:outputText value="{john.doe@schoolife.cm}" />
+																</p:column>
+															</p:dataTable>
+
+														</div>
+														<!-- /.table-responsive -->
+													</div>
+													<!-- /.portlet-body -->
+												</div>
+												<!-- /.portlet -->
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+
+				</div>
+				<!-- /.page-content -->
+
+			</div>
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

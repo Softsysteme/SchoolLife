@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/admin/common-layout.xhtml">
+		<ui:define name="content">
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<ol class="breadcrumb">
+									<li class="active"><a href="vue-admin.xhtml"><i
+											class="fa fa-home"></i> <h:outputText value="{msg['menu']}" /></a>
+										<i class="fa fa-angle-right"></i>
+										<a href="#"> <h:outputText
+												value="{msg['Student']}" /></a> <i
+										class="fa fa-angle-right"></i> <h:outputText
+											value="{msg['Student admission']}" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
+
+					<div class="row">
+						<div class="col-lg-12">
+
+							<div class="portlet portlet-default">
+								<div class="portlet-body">
+									<ul id="userTab" class="nav nav-tabs">
+										<li class="active"><a href="#creer-eleve"
+											data-toggle="tab"><strong>Enregistrer un eleve </strong></a></li>
+										<li><a href="#liste-eleve" data-toggle="tab"><strong>Consulter
+													la liste des eleves</strong></a></li>
+									</ul>
+									<div id="userTabContent" class="tab-content">
+										<div class="tab-pane fade in active" id="creer-eleve">
+
+											<div class="row">
+												<div class="col-md-12">
+													<div class="portlet-group" id="creer">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Personal Information</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+
+																<form role="form">
+
+																	<div class="row">
+																		<div class="col-lg-3 col-md-3">
+																			<label class="btn profile-edit btn-file">
+																				Edit <input type="file" style="display: none;" />
+																			</label> <img class="img-responsive img-profile"
+																				src="img/user-avatar.png" alt=""></img>
+																		</div>
+
+																	</div>
+																	<br></br>
+																	<div class="row">
+																		<div class="form-group col-md-6">
+																			<label>First Name</label> <input type="text"
+																				class="form-control" value="" placeholder="John"></input>
+																		</div>
+																		<div class="form-group col-md-6">
+																			<label>Last Name</label> <input type="text"
+																				class="form-control" value="" placeholder="Smith"></input>
+																		</div>
+																	</div>
+
+																	<div class="row">
+																		<div class="form-group col-md-6">
+																			<label>Annee scolaire</label> <select
+																				class="form-control">
+																				<option>2014-2015</option>
+																				<option>2015-2016</option>
+																				<option>2016-2017</option>
+																				<option>2017-2018</option>
+																			</select>
+																		</div>
+																		<div class="form-group col-md-6">
+																			<label>Classe</label> <select class="form-control">
+																				<option>6eme</option>
+																				<option>5eme</option>
+																				<option>4eme</option>
+																				<option>3eme</option>
+																				<option>2nd</option>
+																				<option>1ere</option>
+																				<option>Tle</option>
+																			</select>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="form-group col-md-6">
+																			<label>Sexe</label> <label class="radio-inline">
+																				<input type="radio" name="optionsInlineRadios"
+																				value="" checked="checked"> </input><i
+																				class="fa fa-male"></i>
+																			</label> <label class="radio-inline"> <input
+																				type="radio" name="optionsInlineRadios" value=""></input>
+																				<i class="fa fa-female"></i>
+																			</label>
+																		</div>
+																		<div class="form-group col-md-6">
+																			<label>Date de naissance</label>
+																			<div class="input-group">
+																				<div class="input-group-addon">
+																					<i class="fa fa-calendar"></i>
+																				</div>
+																				<div id="sandbox-container">
+																					<input class="form-control" type="text" />
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="form-group col-md-6">
+																			<label>Lieu de naissance</label>
+																			<div class="input-group">
+																				<div class="input-group-addon">
+																					<i class="fa fa-map-marker"></i>
+																				</div>
+
+																				<select class="form-control">
+																					<option>Yaounde</option>
+																					<option>Douala</option>
+																					<option>Fodjomekouet</option>
+																					<option>Bafoussam</option>
+																					<option>Kousseri</option>
+																					<option>Maroua</option>
+																					<option>Obala</option>
+																				</select>
+																			</div>
+																		</div>
+																		<div class="form-group col-md-6">
+																			<label>Nationalité</label> <select
+																				class="form-control">
+																				<option>Cameroun</option>
+																				<option>Allemangne</option>
+																				<option>Tchad</option>
+																				<option>Guinee</option>
+																				<option>RDC</option>
+																				<option>Malawi</option>
+																				<option>Niger</option>
+																			</select>
+																		</div>
+																	</div>
+																</form>
+
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="row">
+												<!-- BEGIN SCHOOL DETAILS -->
+												<div class="col-md-6">
+													<div class="portlet-group" id="employeeInfo">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Information scolaire</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+
+																<form role="form">
+																	<div class="form-group">
+																		<label>Employee Code</label> <input type="text"
+																			class="form-control" value="" placeholder="John"></input>
+																	</div>
+																	<div class="form-group">
+																		<label>Annee scolaire</label> <select
+																			class="form-control">
+																			<option>2014-2015</option>
+																			<option>2015-2016</option>
+																			<option>2016-2017</option>
+																			<option>2017-2018</option>
+																		</select>
+																	</div>
+																	<div class="form-group">
+																		<label>Classe</label> <select class="form-control">
+																			<option>6eme</option>
+																			<option>5eme</option>
+																			<option>4eme</option>
+																			<option>3eme</option>
+																			<option>2nd</option>
+																			<option>1ere</option>
+																			<option>Tle</option>
+																		</select>
+																	</div>
+																	<div class="form-group">
+																		<label>Joining Date</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-calendar"></i>
+																			</div>
+																			<div id="sandbox-container">
+																				<input class="form-control" type="text" />
+																			</div>
+																		</div>
+																	</div>
+
+																	<div class="form-group">
+																		<label>Old schoolname </label> <input type="text"
+																			class="form-control" value="" placeholder="Smith"></input>
+																	</div>
+																	<div class="form-group">
+																		<label>Qualification *</label> <input type="text"
+																			class="form-control" value="" placeholder="Smith"></input>
+																	</div>
+																</form>
+
+															</div>
+														</div>
+													</div>
+
+												</div>
+												<!-- END SCHOOL DETAILS -->
+												<!-- BEGIN CONTACT DETAILS -->
+												<div class="col-md-6">
+													<div class="portlet-group" id="contact">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Contact Details</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+
+																<form role="form">
+																	<div class="form-group">
+																		<label>Phone Number</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-phone"></i>
+																			</div>
+
+																			<input type="tel" class="form-control" value=""
+																				placeholder="1+(234) 555-2039"></input>
+																		</div>
+																	</div>
+
+																	<div class="form-group">
+																		<label>Mobile Number</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-mobile-phone"></i>
+																			</div>
+
+																			<input type="tel" class="form-control" value=""
+																				placeholder="1+(234) 555-2039"></input>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="form-group col-md-9">
+																			<label for="street">Street</label> <input type="text"
+																				class="form-control" id="street"
+																				placeholder="Rue Manguier"></input>
+																		</div>
+																		<div class="form-group col-md-3">
+																			<label for="housenumber">Housenumber</label> <input
+																				type="text" class="form-control" id="housenumber"
+																				placeholder="15a"></input>
+																		</div>
+																	</div>
+
+																	<div class="row">
+																		<div class="form-group col-md-9">
+																			<label for="city">City</label> <input type="text"
+																				class="form-control" id="city"
+																				placeholder="Fodjomekouet"></input>
+																		</div>
+																		<div class="form-group col-md-3">
+																			<label for="zip">Zip</label> <input type="text"
+																				class="form-control" id="zip" placeholder="43443"></input>
+																		</div>
+																	</div>
+
+																	<div class="form-group">
+																		<label> Email Address</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-envelope"></i>
+																			</div>
+
+																			<input type="email" class="form-control" value=""
+																				placeholder="jsmith@website.com"></input>
+																		</div>
+																	</div>
+																	<!-- BEGIN FAMILY INFORMATION -->
+																	<div class="tab-pane fade in" id="familyInformation">
+																		<form role="form">
+																			<div class="panel-group" id="accordion">
+																				<div class="panel panel-default">
+																					<div class="panel-heading">
+																						<h4 class="panel-title">
+																							<a data-toggle="collapse"
+																								data-parent="#accordion" href="#collapseFather">
+																								Father</a>
+																						</h4>
+																					</div>
+																					<div id="collapseFather"
+																						class="panel-collapse collapse">
+																						<div class="panel-body">
+																							<div class="form-group">
+																								<label for="father">Name</label> <input
+																									type="text" class="form-control" id="father"
+																									placeholder="Name Father"></input>
+																							</div>
+																							<div class="form-group">
+																								<label>Phone Number</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-phone"></i>
+																									</div>
+
+																									<input type="tel" class="form-control" value=""
+																										placeholder="1+(234) 555-2039"></input>
+																								</div>
+																							</div>
+
+																							<div class="form-group">
+																								<label>Mobile Number</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-mobile-phone"></i>
+																									</div>
+
+																									<input type="tel" class="form-control" value=""
+																										placeholder="1+(234) 555-2039"></input>
+																								</div>
+																							</div>
+																							<div class="row">
+																								<div class="form-group col-md-9">
+																									<label for="street">Street</label> <input
+																										type="text" class="form-control" id="street"
+																										placeholder="Rue Manguier"></input>
+																								</div>
+																								<div class="form-group col-md-3">
+																									<label for="housenumber">Housenumber</label> <input
+																										type="text" class="form-control"
+																										id="housenumber" placeholder="15a"></input>
+																								</div>
+																							</div>
+
+																							<div class="row">
+																								<div class="form-group col-md-9">
+																									<label for="city">City</label> <input
+																										type="text" class="form-control" id="city"
+																										placeholder="Fodjomekouet"></input>
+																								</div>
+																								<div class="form-group col-md-3">
+																									<label for="zip">Zip</label> <input type="text"
+																										class="form-control" id="zip"
+																										placeholder="43443"></input>
+																								</div>
+																							</div>
+
+																							<div class="form-group">
+																								<label> Email Address</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-envelope"></i>
+																									</div>
+
+																									<input type="email" class="form-control"
+																										value="" placeholder="jsmith@website.com"></input>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="panel panel-default">
+																					<div class="panel-heading">
+																						<h4 class="panel-title">
+																							<a data-toggle="collapse"
+																								data-parent="#accordion" href="#collapseMother">
+																								Mother</a>
+																						</h4>
+																					</div>
+																					<div id="collapseMother"
+																						class="panel-collapse collapse">
+																						<div class="panel-body">
+																							<div class="form-group">
+																								<label for="fathername">Name</label> <input
+																									type="text" class="form-control" id="mother"
+																									placeholder="Name Mother"></input>
+																							</div>
+																							<div class="form-group">
+																								<label>Phone Number</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-phone"></i>
+																									</div>
+
+																									<input type="tel" class="form-control" value=""
+																										placeholder="1+(234) 555-2039"></input>
+																								</div>
+																							</div>
+
+																							<div class="form-group">
+																								<label>Mobile Number</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-mobile-phone"></i>
+																									</div>
+
+																									<input type="tel" class="form-control" value=""
+																										placeholder="1+(234) 555-2039"></input>
+																								</div>
+																							</div>
+																							<div class="row">
+																								<div class="form-group col-md-9">
+																									<label for="street">Street</label> <input
+																										type="text" class="form-control" id="street"
+																										placeholder="Rue Manguier"></input>
+																								</div>
+																								<div class="form-group col-md-3">
+																									<label for="housenumber">Housenumber</label> <input
+																										type="text" class="form-control"
+																										id="housenumber" placeholder="15a"></input>
+																								</div>
+																							</div>
+
+																							<div class="row">
+																								<div class="form-group col-md-9">
+																									<label for="city">City</label> <input
+																										type="text" class="form-control" id="city"
+																										placeholder="Fodjomekouet"></input>
+																								</div>
+																								<div class="form-group col-md-3">
+																									<label for="zip">Zip</label> <input type="text"
+																										class="form-control" id="zip"
+																										placeholder="43443"></input>
+																								</div>
+																							</div>
+
+																							<div class="form-group">
+																								<label> Email Address</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-envelope"></i>
+																									</div>
+
+																									<input type="email" class="form-control"
+																										value="" placeholder="jsmith@website.com"></input>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="panel panel-default">
+																					<div class="panel-heading">
+																						<h4 class="panel-title">
+																							<a data-toggle="collapse"
+																								data-parent="#accordion" href="#collapseTutor">
+																								Tutor</a>
+																						</h4>
+																					</div>
+																					<div id="collapseTutor"
+																						class="panel-collapse collapse">
+																						<div class="panel-body">
+																							<div class="form-group">
+																								<label for="tutor">Name</label> <input
+																									type="text" class="form-control" id="tutor"
+																									placeholder="Name Tutor"></input>
+																							</div>
+																							<div class="form-group">
+																								<label>Phone Number</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-phone"></i>
+																									</div>
+
+																									<input type="tel" class="form-control" value=""
+																										placeholder="1+(234) 555-2039"></input>
+																								</div>
+																							</div>
+
+																							<div class="form-group">
+																								<label>Mobile Number</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-mobile-phone"></i>
+																									</div>
+
+																									<input type="tel" class="form-control" value=""
+																										placeholder="1+(234) 555-2039"></input>
+																								</div>
+																							</div>
+																							<div class="row">
+																								<div class="form-group col-md-9">
+																									<label for="street">Street</label> <input
+																										type="text" class="form-control" id="street"
+																										placeholder="Rue Manguier"></input>
+																								</div>
+																								<div class="form-group col-md-3">
+																									<label for="housenumber">Housenumber</label> <input
+																										type="text" class="form-control"
+																										id="housenumber" placeholder="15a"></input>
+																								</div>
+																							</div>
+
+																							<div class="row">
+																								<div class="form-group col-md-9">
+																									<label for="city">City</label> <input
+																										type="text" class="form-control" id="city"
+																										placeholder="Fodjomekouet"></input>
+																								</div>
+																								<div class="form-group col-md-3">
+																									<label for="zip">Zip</label> <input type="text"
+																										class="form-control" id="zip"
+																										placeholder="43443"></input>
+																								</div>
+																							</div>
+
+																							<div class="form-group">
+																								<label> Email Address</label>
+																								<div class="input-group">
+																									<div class="input-group-addon">
+																										<i class="fa fa-envelope"></i>
+																									</div>
+
+																									<input type="email" class="form-control"
+																										value="" placeholder="jsmith@website.com"></input>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</form>
+																	</div>
+																	<!--END FAMILY INFORMATION -->
+
+																</form>
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- END CONTACT DETAILS -->
+											</div>
+
+											<div class="row">
+												<!-- BEGIN MEDICAL INFORMATION -->
+												<div class="col-md-6">
+													<div class="portlet-group" id="medicalInfo">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Medical Information</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+																<div class="tab-pane fade in" id="medicalInformation">
+																	<form role="form">
+																		<div class="form-group">
+																			<label>Groupe sanguin</label> <select
+																				class="form-control">
+																				<option>A</option>
+																				<option>B</option>
+																				<option>C</option>
+																			</select>
+																		</div>
+																		<div class="form-group">
+																			<label><i class="fa fa-heart fa-fw"></i>
+																				Allergies</label>
+																			<textarea class="form-control" rows="3">Professeur, Mathematik,Patate, Manioc, Anglais </textarea>
+																		</div>
+
+																		<div class="form-group">
+																			<label><i class="fa fa-info fa-fw"></i> Note</label>
+																			<textarea class="form-control" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
+																		</div>
+																		<div class="panel-group" id="accordion">
+																			<div class="panel panel-default">
+																				<div class="panel-heading">
+																					<h4 class="panel-title">
+																						<a data-toggle="collapse" data-parent="#accordion"
+																							href="#collapseDoctor"><i
+																							class="fa fa-user-md fa-fw"></i> <strong>
+																								Doctor </strong></a>
+																					</h4>
+																				</div>
+																				<div id="collapseDoctor"
+																					class="panel-collapse collapse">
+																					<div class="panel-body">
+																						<div class="form-group">
+																							<label for="doctor">Name</label> <input
+																								type="text" class="form-control" id="doctor"
+																								placeholder="Name Doctor"></input>
+																						</div>
+																						<div class="form-group">
+																							<label>Phone Number</label>
+																							<div class="input-group">
+																								<div class="input-group-addon">
+																									<i class="fa fa-phone"></i>
+																								</div>
+
+																								<input type="tel" class="form-control" value=""
+																									placeholder="1+(234) 555-2039"></input>
+																							</div>
+																						</div>
+
+																						<div class="form-group">
+																							<label>Mobile Number</label>
+																							<div class="input-group">
+																								<div class="input-group-addon">
+																									<i class="fa fa-mobile-phone"></i>
+																								</div>
+
+																								<input type="tel" class="form-control" value=""
+																									placeholder="1+(234) 555-2039"></input>
+																							</div>
+																						</div>
+																						<div class="row">
+																							<div class="form-group col-md-9">
+																								<label for="street">Street</label> <input
+																									type="text" class="form-control" id="street"
+																									placeholder="Rue Manguier"></input>
+																							</div>
+																							<div class="form-group col-md-3">
+																								<label for="housenumber">Housenumber</label> <input
+																									type="text" class="form-control"
+																									id="housenumber" placeholder="15a"></input>
+																							</div>
+																						</div>
+
+																						<div class="row">
+																							<div class="form-group col-md-9">
+																								<label for="city">City</label> <input
+																									type="text" class="form-control" id="city"
+																									placeholder="Fodjomekouet"></input>
+																							</div>
+																							<div class="form-group col-md-3">
+																								<label for="zip">Zip</label> <input type="text"
+																									class="form-control" id="zip"
+																									placeholder="43443"></input>
+																							</div>
+																						</div>
+
+																						<div class="form-group">
+																							<label> Email Address</label>
+																							<div class="input-group">
+																								<div class="input-group-addon">
+																									<i class="fa fa-envelope"></i>
+																								</div>
+
+																								<input type="email" class="form-control"
+																									value="" placeholder="jsmith@website.com"></input>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+												<!-- END MEDICAL INFORMATION -->
+												<div class="col-md-6">
+													<form role="form">
+														<div class="form-group">
+															<label><i class="fa fa-info fa-fw"></i> Note</label>
+															<textarea class="form-control" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
+														</div>
+													</form>
+
+												</div>
+											</div>
+											<div class="row">
+												<br></br>
+												<form role="form">
+													<div class="col-md-3">
+														<button type="submit" class="btn btn-green">Save</button>
+													</div>
+													<div class="col-md-3">
+														<button class="btn btn-default">Cancel</button>
+													</div>
+												</form>
+											</div>
+										</div>
+
+										<!-- BEGIN STUDENTS LIST -->
+
+										<div class="tab-pane fade" id="liste-eleve">
+
+											<br></br>
+
+											<!-- begin ADVANCED TABLES ROW -->
+											<div class="row">
+
+												<div class="col-lg-12">
+
+													<div class="portlet portlet-green">
+														<div class="portlet-heading">
+															<div class="portlet-title">
+																<h4>Liste of Students</h4>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+														<div class="portlet-body">
+															<div class="table-responsive">
+																<p:dataTable var="enquiry" value="" rows="10"
+																	paginator="true"
+																	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+																	rowsPerPageTemplate="5,10,15">
+																	<p:column headerText="Employee Code">
+																		<h:outputText value="{GH56B}" />
+																	</p:column>
+
+																	<p:column headerText="Name">
+																		<h:outputText value="{John Doe}" />
+																	</p:column>
+
+																	<p:column headerText="Departement">
+																		<h:outputText value="{Mathematics}" />
+																	</p:column>
+																	<p:column headerText="Qualification">
+																		<h:outputText value="{M.Sc. Mathematics}" />
+																	</p:column>
+
+																	<p:column headerText="Designation">
+																		<h:outputText value="{Course-ordinator}" />
+																	</p:column>
+																	<p:column headerText="Email">
+																		<h:outputText value="{john.doe@schoolife.cm}" />
+																	</p:column>
+																</p:dataTable>
+
+															</div>
+															<!-- /.table-responsive -->
+														</div>
+														<!-- /.portlet-body -->
+													</div>
+													<!-- /.portlet -->
+
+												</div>
+												<!-- /.col-lg-12 -->
+
+											</div>
+											<!-- /.row -->
+
+										</div>
+									</div>
+								</div>
+								<!-- /.portlet-body -->
+							</div>
+							<!-- /.portlet -->
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+
+				</div>
+				<!-- /.page-content -->
+
+			</div>
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

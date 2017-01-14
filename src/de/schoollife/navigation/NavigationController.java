@@ -65,6 +65,11 @@ public class NavigationController implements Serializable {
 		return "gestion-eleves?faces-redirect=true";
 	}
 
+	public String moveToStudentAdmission1() {
+		System.out.println("moveToPlaning");
+		return "gestion-eleve1?faces-redirect=true";
+	}
+
 	public String moveToSchoolDetail() {
 		System.out.println("moveToSchoolDetail");
 		return "institution?faces-redirect=true";
@@ -73,6 +78,11 @@ public class NavigationController implements Serializable {
 	public String moveToAcademicDetail() {
 		System.out.println("moveToAcademicDetail");
 		return "academic-detail?faces-redirect=true";
+	}
+
+	public String moveToListPersonnel() {
+		System.out.println("moveToListPersonnel");
+		return "liste-personnel?faces-redirect=true";
 	}
 	
 	public String moveToPrivileges() {
