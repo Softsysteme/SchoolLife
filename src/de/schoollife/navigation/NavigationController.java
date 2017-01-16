@@ -29,7 +29,17 @@ public class NavigationController implements Serializable {
 		System.out.println("moveToSection");
 		return "gestion-section?faces-redirect=true";
 	}
-
+	
+	public String moveToScholarshipFee() {
+		System.out.println("moveToScholarshipFee");
+		return "scholarship-fee?faces-redirect=true";
+	}
+	
+	public String moveToMonCompte() {
+		System.out.println("moveToMonCompte");
+		return "cv-admin?faces-redirect=true";
+	}
+	
 	public String moveToLabel() {
 		System.out.println("moveToLabel");
 		return "gestion-label?faces-redirect=true";
@@ -64,7 +74,12 @@ public class NavigationController implements Serializable {
 		System.out.println("moveToPlaning");
 		return "gestion-eleves?faces-redirect=true";
 	}
-
+	
+	public String moveToAssignCourse() {
+		System.out.println("moveToAssignCourse");
+		return "assign-courses?faces-redirect=true";
+	}
+	
 	public String moveToStudentAdmission1() {
 		System.out.println("moveToPlaning");
 		return "gestion-eleve1?faces-redirect=true";
@@ -82,7 +97,12 @@ public class NavigationController implements Serializable {
 
 	public String moveToListPersonnel() {
 		System.out.println("moveToListPersonnel");
-		return "liste-personnel?faces-redirect=true";
+		return "list-personnel?faces-redirect=true";
+	}
+
+	public String moveToListStudent() {
+		System.out.println("moveToListStudent");
+		return "list-student?faces-redirect=true";
 	}
 	
 	public String moveToPrivileges() {
@@ -102,7 +122,7 @@ public class NavigationController implements Serializable {
 
 	public String moveToGroupeScolaire() {
 		System.out.println("moveToGroupeScolaire");
-		return "gestion-groupe-scolaire?faces-redirect=true";
+		return "groupe-scolaire?faces-redirect=true";
 	}
 
 	public String moveToUserType() {
@@ -110,6 +130,11 @@ public class NavigationController implements Serializable {
 		return "user-type?faces-redirect=true";
 	}
 
+	public String moveToSalarySetting() {
+		System.out.println("moveToSalarySetting");
+		return "salary-setting?faces-redirect=true";
+	}
+	
 	public String moveToMailboxAdmin() {
 		System.out.println("moveToMailboxAdmin");
 		return "mailbox-admin?faces-redirect=true";

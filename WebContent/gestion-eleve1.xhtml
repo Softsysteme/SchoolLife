@@ -6,7 +6,8 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-	<ui:composition template="templates/admin/common-layout.xhtml">
+	<ui:composition
+		template="templates/admin/common-layout-primefaces.xhtml">
 		<ui:define name="content">
 			<!-- begin MAIN PAGE CONTENT -->
 			<div id="page-wrapper">
@@ -20,11 +21,9 @@
 								<ol class="breadcrumb">
 									<li class="active"><a href="vue-admin.xhtml"><i
 											class="fa fa-home"></i> <h:outputText value="{msg['menu']}" /></a>
-										<i class="fa fa-angle-right"></i>
-										<a href="#"> <h:outputText
-												value="{msg['Student']}" /></a> <i
-										class="fa fa-angle-right"></i> <h:outputText
-											value="{msg['Student admission']}" /></li>
+										<i class="fa fa-angle-right"></i> <a href="#"> <h:outputText
+												value="{msg['Student']}" /></a> <i class="fa fa-angle-right"></i>
+										<h:outputText value="{msg['Student admission']}" /></li>
 									<li class="pull-right">
 										<div id="reportrange"
 											class="btn btn-green btn-square date-picker">
@@ -131,9 +130,11 @@
 																					<i class="fa fa-calendar"></i>
 																				</div>
 																				<div id="sandbox-container">
-																					<input class="form-control" type="text" />
+																					<p:calendar id="effect"
+																						value="#{calendarView.date8}" effect="fold" />
 																				</div>
 																			</div>
+
 																		</div>
 																	</div>
 																	<div class="row">
@@ -193,8 +194,8 @@
 
 																<form role="form">
 																	<div class="form-group">
-																		<label>Employee Code</label> <input type="text"
-																			class="form-control" value="" placeholder="John"></input>
+																		<label>Matricul</label> <input type="text"
+																			class="form-control" value="" placeholder="Mat234"></input>
 																	</div>
 																	<div class="form-group">
 																		<label>Annee scolaire</label> <select
@@ -744,7 +745,7 @@
 																	paginator="true"
 																	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 																	rowsPerPageTemplate="5,10,15">
-																	<p:column headerText="Employee Code">
+																	<p:column headerText="Matricul">
 																		<h:outputText value="{GH56B}" />
 																	</p:column>
 
@@ -752,15 +753,8 @@
 																		<h:outputText value="{John Doe}" />
 																	</p:column>
 
-																	<p:column headerText="Departement">
-																		<h:outputText value="{Mathematics}" />
-																	</p:column>
-																	<p:column headerText="Qualification">
-																		<h:outputText value="{M.Sc. Mathematics}" />
-																	</p:column>
-
-																	<p:column headerText="Designation">
-																		<h:outputText value="{Course-ordinator}" />
+																	<p:column headerText="Calsse">
+																		<h:outputText value="{6eme M4}" />
 																	</p:column>
 																	<p:column headerText="Email">
 																		<h:outputText value="{john.doe@schoolife.cm}" />
