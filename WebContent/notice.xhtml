@@ -6,7 +6,8 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-	<ui:composition template="templates/prof/common-layout.xhtml">
+	<ui:composition
+		template="templates/prof/common-layout-primefaces.xhtml">
 		<ui:define name="content">
 
 
@@ -35,105 +36,115 @@
 
 
 
-					<div class="row">
-						<div class="col-lg-12">
-
-							<div class="portlet portlet-blue">
-							  <div class="portlet-heading">
-                                <div class="portlet-title">
-                                    <h4>Prendre des notes</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-								<div class="portlet-body">
-
-									<!-- 									<div class="col-lg-7 col-md-5"> -->
-
-									<h:form>
-										<p:editor id="editor" widgetVar="editorWidget"
-											value="#{editorView.text}" />
-
-										<h:panelGrid columns="2" style="margin.top:10px">
-											<p:commandButton value="Enregistrer" update="display"
-												oncomplete="PF('dlg').show()" icons="ui-icon-disk"
-												class="btn btn-blue" />
-											<p:commandButton value="Effacer" type="button"
-												onclick="PF('editorWidget').clear()" icons="ui-icon-close"
-												class="btn btn-default" />
-										</h:panelGrid>
+					<div>
+						<div>
 
 
-										<p:dialog header="Content" widgetVar="dlg" shoeEffect="fade"
-											hideEffect="fade">
-											<h:outputText id="display" value="#{editorView.text}"
-												escape="false" />
-										</p:dialog>
-									</h:form>
+
+							<!-- 	
+																	<div class="col-lg-7 col-md-5"> -->
+							<div class="table-responsive">
+
+								<tbody>
+									<tr>
+										<th>
+											<div class="col-lg-8">
+												<div class="portlet portlet-blue">
+													<div class="portlet-heading">
+														<div class="portlet-title">
+															<h4>Prendre des notes</h4>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+													<div class="portlet-body">
+
+														<h:form>
+															<p:editor id="editor" widgetVar="editorWidget"
+																value="#{editorView.text}" />
+
+															<h:panelGrid columns="2" style="margin.top:10px">
+																<p:commandButton value="Enregistrer" update="display"
+																	oncomplete="PF('dlg').show()" icons="ui-icon-disk"
+																	class="btn btn-blue" />
+																<p:commandButton value="Effacer" type="button"
+																	onclick="PF('editorWidget').clear()"
+																	icons="ui-icon-close" class="btn btn-default" />
+															</h:panelGrid>
 
 
-									<!-- 									</div> -->
+															<p:dialog header="Content" widgetVar="dlg"
+																shoeEffect="fade" hideEffect="fade">
+																<h:outputText id="display" value="#{editorView.text}"
+																	escape="false" />
+															</p:dialog>
+														</h:form>
+													</div>
+												</div>
 
-									<!-- 									<div class="col-lg-3 col-md-4"> -->
+											</div> <!-- 									</div> --> <!-- 									<div class="col-lg-3 col-md-4"> -->
 
-									<br /> <br /> <br />
-									<br /> <br /> <br />
-							
-									<hr/>
-									<hr />
-								<div class="portlet portlet-blue">
-									  <div class="portlet-heading">
-                                <div class="portlet-title">
-                                    <h4>Notes enregistrees</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
+											<div class="col-lg-4">
 
-									<div class="table-responsive">
-										<table class="table table-hover"  editable="true">
-											<thead>
-												<tr>
-													<th>#</th>
-													<th>Date</th>
-													<th>Heure</th>
-													<th>Titre</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>1</td>
-													<td>25.01.2016</td>
-													<td>20:15</td>
-													<td>Maths Brouillon</td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>01.12.1999</td>
-													<td>08:20</td>
-													<td>dessin</td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>23.02.2017</td>
-													<td>14:15</td>
-													<td>Lettre a Tina</td>
-												</tr>
-												
-											</tbody>
-										</table>
-									</div>
+												<div class="portlet portlet-blue">
+													<div class="portlet-heading">
+														<div class="portlet-title">
+															<h4>Notes enregistrees</h4>
+														</div>
+														<div class="clearfix"></div>
+													</div>
 
-								</div>
-								</div>
+													<div class="table-responsive">
+														<table class="table table-hover" editable="true">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>Date</th>
+																	<th>Heure</th>
+																	<th>Titre</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>1</td>
+																	<td>25.01.2016</td>
+																	<td>20:15</td>
+																	<td>Maths Brouillon</td>
+																</tr>
+																<tr>
+																	<td>2</td>
+																	<td>01.12.1999</td>
+																	<td>08:20</td>
+																	<td>dessin</td>
+																</tr>
+																<tr>
+																	<td>3</td>
+																	<td>23.02.2017</td>
+																	<td>14:15</td>
+																	<td>Lettre a Tina</td>
+																</tr>
 
+															</tbody>
+														</table>
+													</div>
+
+												</div>
+											</div>
+										</th>
+									</tr>
+								</tbody>
 							</div>
-
 						</div>
+
 
 					</div>
 
 				</div>
 
 			</div>
+
+
+
+			<!-- 			</div> -->
 			<!-- 			</div> -->
 
 

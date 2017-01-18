@@ -6,7 +6,8 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-	<ui:composition template="templates/prof/common-layout.xhtml">
+	<ui:composition
+		template="templates/prof/common-layout-primefaces.xhtml">
 		<ui:define name="content">
 			<!-- begin MAIN PAGE CONTENT -->
 			<br />
@@ -83,7 +84,9 @@
 															<td>cet outil vous permet de constituer et editer le
 																cahier de texte de la classe.</td>
 															<td><button class="btn btn-green"
-																	onclick="PF('dlg3').show();">ouvrir</button></td>
+																	data-toggle="modal" data-target="#dlg3">ouvrir</button></td>
+
+
 
 														</tr>
 														<tr>
@@ -95,8 +98,7 @@
 																notes de chaque eleve de la classe classe, ainsi que les
 																apprciations.</td>
 															<td><button class="btn btn-green"
-																	onclick="PF('dlg2').show();">ouvrir</button></td>
-
+																	data-toggle="modal" data-target="#dlg3">ouvrir</button></td>
 														</tr>
 
 
@@ -250,87 +252,130 @@
 							</div>
 						</div>
 
-						<p:dialog header="parametrer" widgetVar="dlg2" modal="true"
-							color="green" >
-
-							<form role="form">
-								<div class="form-group">
-
-									<label for="textArea" class="col-sm-3 control-label"><h4>themes
-										abordes:</h4> </label>
-									<div class="col-sm-10">
-										<p:inputTextarea class="form-control" id="textArea2"
-											placeholder="Placeholder Text"></p:inputTextarea>
+						<div class="modal modal-flex fade" id="dlg2" tabindex="-1"
+							role="dialog" aria-labelledby="flexModalLabel" aria-hidden="true"
+							resizable="true" width="800">
+							<div class="modal-dialog">
+								<div class="modal-content" width="800">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">&times;</button>
+										<h4 class="modal-title" id="flexModalLabel">Remplir le
+											Cahier de Texte</h4>
 									</div>
+									<div class="modal-body">
+
+										<form role="form">
 
 
-									<br /> <br /><br /> <br />
-									<hr />
+											<div class="form-group">
+
+												<label for="textArea" class="col-sm-3 control-label"><h5>
+														<strong>themes abordes:</strong>
+													</h5> </label>
+												<div class="col-sm-10">
+													<p:inputTextarea class="form-control" id="textArea2"
+														placeholder="Placeholder Text"></p:inputTextarea>
+												</div>
 
 
-									<label for="textArea" class="col-sm-3 control-label"><h4>Travail
-										a faire: </h4></label>
-									<div class="col-sm-10">
-										<p:inputTextarea class="form-control" id="textArea"
-											placeholder="Placeholder Text"></p:inputTextarea>
+												<br /> <br /> <br /> <br />
+												<hr />
+
+
+												<label for="textArea" class="col-sm-3 control-label"><h5>
+														<strong>Travail a faire:</strong>
+													</h5></label>
+												<div class="col-sm-10">
+													<p:inputTextarea class="form-control" id="textArea"
+														placeholder="Placeholder Text"></p:inputTextarea>
+												</div>
+
+												<br /> <br /> <br />
+												<hr />
+												<hr />
+
+												<label for="exampleInputFile"><h5>importer un
+
+
+														fichier</h5></label> <input type="file" id="exampleInputFile"></input>
+
+												<br />
+												<hr />
+												<div>
+													<button type="button" class="btn btn-default"
+														data-dismiss="modal">Close</button>
+													<button type="button" class="btn btn-green">Save</button>
+
+												</div>
+											</div>
+										</form>
 									</div>
-
-                           <br/><br /> <br />
-                           <hr/><hr/>
-
-								  <label
-										for="exampleInputFile"><h4>importer un fichier</h4></label> <input type="file"
-										id="exampleInputFile"></input>
-									
-
-									
-									
 								</div>
-
-							</form>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-green">Save</button>
-
 							</div>
+						</div>
 
-						</p:dialog>
 
 
-						<p:dialog header="para" widgetVar="dlg3" modal="true"
-							color="green" height="400" width="800">
 
-							<ul id="userTab" class="nav nav-tabs">
-								<li class="active"><button class="btn btn-green"
-										onclick="PF('dlg2').show();">Maths</button></li>
-								<li><button class="btn btn-orange"
-										onclick="PF('dlg2').show();">Histoire</button></li>
-								<li><button class="btn btn-blue"
-										onclick="PF('dlg2').show();">Francais</button></li>
-								<li><button class="btn btn-default"
-										onclick="PF('dlg2').show();">Geographie</button></li>
-								<li><button class="btn btn-red"
-										onclick="PF('dlg2').show();">Sport</button></li>
-								<li><button class="btn btn-grey"
-										onclick="PF('dlg2').show();">Svt</button></li>
 
-								<li class="active"><button class="btn btn-green"
-										onclick="PF('dlg2').show();">EC</button></li>
-								<li><button class="btn btn-orange"
-										onclick="PF('dlg2').show();">Physiques</button></li>
-								<li><button class="btn btn-blue"
-										onclick="PF('dlg2').show();">Chimie</button></li>
-								<li><button class="btn btn-default"
-										onclick="PF('dlg2').show();">Anglais</button></li>
-								<li><button class="btn btn-red"
-										onclick="PF('dlg2').show();">Phylo</button></li>
-								<li><button class="btn btn-grey"
-										onclick="PF('dlg2').show();">Bassa</button></li>
+						<div class="modal modal-flex fade" id="dlg3" tabindex="-1"
+							role="dialog" aria-labelledby="flexModalLabel" aria-hidden="true"
+							resizable="true" width="800">
+							<div class="modal-dialog">
+								<div class="modal-content" width="800">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">&times;</button>
+										<h4 class="modal-title" id="flexModalLabel">Choix de la
+											Matiere</h4>
+									</div>
+									<div class="modal-body">
+										<form role="form">
 
-							</ul>
 
-						</p:dialog>
+											<div class="form-group">
+
+
+
+
+												<ul id="userTab" class="nav nav-tabs">
+													<li class="active"><button class="btn btn-green"
+															data-toggle="modal" data-target="#dlg2">Maths</button></li>
+													<li><button class="btn btn-orange" data-toggle="modal"
+															data-target="#dlg2">Histoire</button></li>
+													<li><button class="btn btn-blue" data-toggle="modal"
+															data-target="#dlg2">Francais</button></li>
+													<li><button class="btn btn-default"
+															data-toggle="modal" data-target="#dlg2">Geographie</button></li>
+													<li><button class="btn btn-red" data-toggle="modal"
+															data-target="#dlg2">Sport</button></li>
+													<li><button class="btn btn-purple" data-toggle="modal"
+															data-target="#dlg2">Science</button></li>
+
+													<li class="active"><button class="btn btn-green"
+															data-toggle="modal" data-target="#dlg2">EC</button></li>
+													<li><button class="btn btn-orange" data-toggle="modal"
+															data-target="#dlg2">Physiques</button></li>
+													<li><button class="btn btn-blue" data-toggle="modal"
+															data-target="#dlg2">Chimie</button></li>
+													<li><button class="btn btn-default"
+															data-toggle="modal" data-target="#dlg2">Anglais</button></li>
+													<li><button class="btn btn-red" data-toggle="modal"
+															data-target="#dlg2">Phylo</button></li>
+													<li><button class="btn btn-grey" odata-toggle="modal"
+															data-target="#dlg2">Bassa</button></li>
+
+												</ul>
+
+											</div>
+										</form>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
 
 						<!-- /.row -->
 						<hr></hr>
@@ -358,8 +403,8 @@
 
 			<!-- /#page-wrapper -->
 			<!-- end MAIN PAGE CONTENT -->
-			<!-- 			<script -->
-			<!-- 				src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+			<script
+				src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		</ui:define>
 	</ui:composition>
 </h:body>

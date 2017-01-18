@@ -153,17 +153,16 @@
 						</div>
 					</div>
 					<!-- end DASHBOARD CIRCLE TILES -->
-<br/>
-<br/>
+					<br /> <br />
 
 					<div class="row">
 
-						
+
 
 						<div class="col-lg-12">
 							<div class="row">
 								<div class="col-lg-8">
-										<div class="row">
+									<div class="row">
 										<div class="col-lg-4">
 											<div class="circle-tile" style="height: 200px">
 												<a href="notice.xhtml">
@@ -181,8 +180,8 @@
 															value="consulter" /> <i
 														class="fa fa-chevron-circle-right"></i></a>
 												</div>
-									
-												
+
+
 											</div>
 										</div>
 										<div class="col-lg-4">
@@ -204,107 +203,116 @@
 											</div>
 										</div>
 										<div class="col-lg-4">
-													<div class="circle-tile" style="height: 200px">
-								<a href="#">
-									<div class="circle-tile-heading dark-blue">
-										<i class="fa fa-envelope fa-fw fa-3x"></i>
+											<div class="circle-tile" style="height: 200px">
+												<a href="#">
+													<div class="circle-tile-heading dark-blue">
+														<i class="fa fa-envelope fa-fw fa-3x"></i>
+													</div>
+												</a>
+												<div class="circle-tile-content dark-blue">
+													<div class="circle-tile-description text-faded">Messages
+														recus</div>
+													<div class="circle-tile-number text-faded">
+														265 <span id="sparklineA"></span>
+													</div>
+													<a href="#" class="circle-tile-footer"><h:outputText
+															value="voir" /> <i class="fa fa-chevron-circle-right"></i></a>
+												</div>
+											</div>
+										</div>
 									</div>
-								</a>
-								<div class="circle-tile-content dark-blue">
-									<div class="circle-tile-description text-faded">Messages recus</div>
-									<div class="circle-tile-number text-faded">
-										265 <span id="sparklineA"></span>
-									</div>
-									<a href="#" class="circle-tile-footer"><h:outputText
-											value="voir" /> <i
-										class="fa fa-chevron-circle-right"></i></a>
-								</div>
-							</div>
-									</div>
-									</div>
-									<br/>
-									<br/>
+									<br /> <br />
 									<div class="row">
-									
-									
-									
-									
-									<div class="col-lg-12">
-                        <div class="portlet portlet-green">
-                            <div class="portlet-heading">
-                                <div class="portlet-title">
-                                 <h4 >Calendrier</h4>
-                                </div>
-                                <div class="portlet-widgets">
-                                    <a href="#"><i class="fa fa-gear"></i></a>
-                                    <span class="divider"></span>
-                                    <a href="javascript:;"><i class="fa fa-refresh"></i></a>
-                                    <span class="divider"></span>
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#redPortlet"><i class="fa fa-chevron-down"></i></a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div id="redPortlet" class="panel-collapse collapse in">
-                                <div class="portlet-body">
-                                    							
-											<h:form>
-												<p:growl id="messages" showDetail="true" />
 
-												<h:panelGrid columnClasses="value">
-										
-													<p:schedule id="schedule"
-														value="#{scheduleView.eventModel}" widgetVar="myschedule"
-														timeZone="GMT+2">
 
-														<p:ajax event="dateSelect"
-															listener="#{scheduleView.onDateSelect}"
-															update="eventDetails"
-															oncomplete="PF('eventDialog').show();" />
-														<p:ajax event="eventSelect"
-															listener="#{scheduleView.onEventSelect}"
-															update="eventDetails"
-															oncomplete="PF('eventDialog').show();" />
-														<p:ajax event="eventMove"
-															listener="#{scheduleView.onEventMove}" update="messages" />
-														<p:ajax event="eventResize"
-															listener="#{scheduleView.onEventResize}"
-															update="messages" />
 
-													</p:schedule>
-													 </h:panelGrid>
-													 
-													  <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="clip" hideEffect="clip">
-        <h:panelGrid id="eventDetails" columns="2">
-            <p:outputLabel for="title" value="Titles:" />
-            <p:inputText id="title" value="#{scheduleView.event.title}" required="true" />
- 
-            <p:outputLabel for="from" value="From:" />
-            <p:calendar id="from" value="#{scheduleView.event.startDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
- 
-            <p:outputLabel for="to" value="To:" />
-            <p:calendar id="to" value="#{scheduleView.event.endDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
- 
-            <p:outputLabel for="allDay" value="All Day:" />
-            <h:selectBooleanCheckbox id="allDay" value="#{scheduleView.event.allDay}" />
- 
-            <p:commandButton type="reset" value="Reset" />
-            <p:commandButton id="addButton" value="Save" actionListener="#{scheduleView.addEvent}" oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
-        </h:panelGrid>
-    </p:dialog> 
-													
-											</h:form>
 
-										
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-									
+										<div class="col-lg-12">
+											<div class="portlet portlet-green">
+												<div class="portlet-heading">
+													<div class="portlet-title">
+														<h4>Calendrier</h4>
+													</div>
+													<div class="portlet-widgets">
+														<a href="#"><i class="fa fa-gear"></i></a> <span
+															class="divider"></span> <a href="javascript:;"><i
+															class="fa fa-refresh"></i></a> <span class="divider"></span>
+														<a data-toggle="collapse" data-parent="#accordion"
+															href="#redPortlet"><i class="fa fa-chevron-down"></i></a>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+												<div id="redPortlet" class="panel-collapse collapse in">
+													<div class="portlet-body">
 
-			
+														<h:form>
+															<p:growl id="messages" showDetail="true" />
+
+															<h:panelGrid columnClasses="value">
+
+																<p:schedule id="schedule"
+																	value="#{scheduleView.eventModel}"
+																	widgetVar="myschedule" timeZone="GMT+2">
+
+																	<p:ajax event="dateSelect"
+																		listener="#{scheduleView.onDateSelect}"
+																		update="eventDetails"
+																		oncomplete="PF('eventDialog').show();" />
+																	<p:ajax event="eventSelect"
+																		listener="#{scheduleView.onEventSelect}"
+																		update="eventDetails"
+																		oncomplete="PF('eventDialog').show();" />
+																	<p:ajax event="eventMove"
+																		listener="#{scheduleView.onEventMove}"
+																		update="messages" />
+																	<p:ajax event="eventResize"
+																		listener="#{scheduleView.onEventResize}"
+																		update="messages" />
+
+																</p:schedule>
+															</h:panelGrid>
+
+															<p:dialog widgetVar="eventDialog" header="Event Details"
+																showEffect="clip" hideEffect="clip">
+																<h:panelGrid id="eventDetails" columns="2">
+																	<p:outputLabel for="title" value="Titles:" />
+																	<p:inputText id="title"
+																		value="#{scheduleView.event.title}" required="true" />
+
+																	<p:outputLabel for="from" value="From:" />
+																	<p:calendar id="from"
+																		value="#{scheduleView.event.startDate}"
+																		timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm" />
+
+																	<p:outputLabel for="to" value="To:" />
+																	<p:calendar id="to"
+																		value="#{scheduleView.event.endDate}" timeZone="GMT+2"
+																		pattern="dd/MM/yyyy HH:mm" />
+
+																	<p:outputLabel for="allDay" value="All Day:" />
+																	<h:selectBooleanCheckbox id="allDay"
+																		value="#{scheduleView.event.allDay}" />
+
+																	<p:commandButton type="reset" value="Reset" />
+																	<p:commandButton id="addButton" value="Save"
+																		actionListener="#{scheduleView.addEvent}"
+																		oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
+																</h:panelGrid>
+															</p:dialog>
+
+														</h:form>
+
+
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+
 									</div>
 
-							
+
 
 								</div>
 								<div class="col-lg-4">
@@ -325,104 +333,120 @@
 
 										</div>
 									</div>
-									
-									<div class="row" >
-										<div class="col-lg-12">
-									 <div class="portlet portlet-green">
-                            <div class="portlet-heading">
-                                <div class="portlet-title">
-                                 <h4 >Check Liste</h4>
-                                </div>
-                                <div class="portlet-widgets">
-<!--                                     <a href="#"><i class="fa fa-gear"></i></a> -->
-                                    <button class="btn btn-green" data-toggle="collapse" onclick="PF('dlg3').show();"
-																	>
-																	<i class="fa fa-plus-square"></i>
-																</button>
-									<p:dialog header="parametrer" widgetVar="dlg3" modal="true" color="green" >
-							
-																
-																<div class="modal-body">
-																	<div class="form-group">
-																		 <input type="text"
-																			class="form-control" value=""
-																			placeholder="nom de l'activite"></input>
-																					
-														
-											
 
-									
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="portlet portlet-green">
+												<div class="portlet-heading">
+													<div class="portlet-title">
+														<h4>Check Liste</h4>
+													</div>
+													<div class="portlet-widgets">
+														<!--                                     <a href="#"><i class="fa fa-gear"></i></a> -->
+														<button class="btn btn-green" data-toggle="modal"
+															data-target="#dlg3"><i class="fa fa-plus-square"></i></button>
+
+														<div class="modal modal-flex fade" id="dlg3" tabindex="-1"
+															role="dialog" aria-labelledby="flexModalLabel"
+															aria-hidden="true" resizable="true">
+															<div class="modal-dialog">
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<button type="button" class="close"
+																			data-dismiss="modal" aria-hidden="true">&times;</button>
+																		<h4 class="modal-title" id="flexModalLabel">Ajouter
+																			une tache</h4>
+																	</div>
+																	<div class="modal-body">
+
+																		<div class="form-group">
+																			<input type="text" class="form-control" value=""
+																				placeholder="nom de l'activite"></input>
+
+
+
+
+
+																		</div>
+																	</div>
+																	<div class="modal-footer">
+																		<button type="button" class="btn btn-default"
+																			data-dismiss="modal">Close</button>
+																		<button type="button" class="btn btn-green">Save
+																		</button>
+
+																	</div>
+
+
+
+
+
+
+																</div>
+															</div>
+														</div>
+
+														<span class="divider"></span> <a href="javascript:;"><i
+															class="fa fa-refresh"></i></a> <span class="divider"></span>
+														<a data-toggle="collapse" data-parent="#accordion"
+															href="#Portlet"><i class="fa fa-chevron-down"></i></a>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+
+												<div id="Portlet" class="panel-collapse collapse in">
+													<div class="portlet-body">
+														<div class="row">
+															<div class="col-lg-12">
+																<div class=" checklist-tile">
+																	<h4>
+																		<i class="fa fa-check-square-o"></i> Agenda
+																	</h4>
+																	<div class="checklist">
+																		<label class="selected"> <input
+																			type="checkbox" checked="true" /> <i
+																			class="fa fa-wrench fa-fw text-faded"></i> cours de
+																			maths 7h30-10h00
+
+																		</label> <label class="selected"> <input
+																			type="checkbox" checked="true" /> <i
+																			class="fa fa-wrench fa-fw text-faded"></i> cours
+																			d'histoire 10h30-12h00
+																		</label> <label class="selected"> <input
+																			type="checkbox" checked="true" /> <i
+																			class="fa fa-warning fa-fw text-orange"></i> Exercice
+																			de Philo
+																		</label> <label> <input type="checkbox" /> <i
+																			class="fa fa-warning fa-fw text-orange"></i> Devoir
+																			surveille d'anglais
+																		</label>
+
 																	</div>
 																</div>
-																<div class="modal-footer">
-																	<button type="button" class="btn btn-default"
-																		data-dismiss="modal">Close</button>
-																	<button type="button" class="btn btn-green">Save
-																	</button>
-																	
-																</div>
-														
-																
-																
-													
-									
-									</p:dialog>
-                                    <span class="divider"></span>
-                                    <a href="javascript:;"><i class="fa fa-refresh"></i></a>
-                                    <span class="divider"></span>
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#Portlet"><i class="fa fa-chevron-down"></i></a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div id="Portlet" class="panel-collapse collapse in">
-                                <div class="portlet-body">
-                                <div class="row">
-				                     <div class="col-lg-12">
-                                  <div class=" checklist-tile" >
-								<h4>
-									<i class="fa fa-check-square-o"></i> Agenda
-								</h4>
-								<div class="checklist">
-									<label class="selected"> <input type="checkbox"
-										checked="true" /> <i class="fa fa-wrench fa-fw text-faded"></i>
-										cours de maths 7h30-10h00
+															</div>
+														</div>
 
-									</label> <label class="selected"> <input type="checkbox"
-										checked="true" /> <i class="fa fa-wrench fa-fw text-faded"></i>
-										cours d'histoire 10h30-12h00
-									</label> <label class="selected"> <input type="checkbox"
-										checked="true" /> <i class="fa fa-warning fa-fw text-orange"></i>
-										Exercice de Philo
-									</label> <label> <input type="checkbox" /> <i
-										class="fa fa-warning fa-fw text-orange"></i> Devoir surveille d'anglais
-									</label>
 
-								</div>
-							</div>
-							</div>
-							</div>							
-			
 
-										
-                                </div>
-                            </div>
-                        </div>
-							</div>
-							</div>
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-							
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 									<div class="row" style="height: 200px">
 										<div class="col-lg-12">
 											<div class="portlet portlet-default">
@@ -517,7 +541,7 @@
 			<!-- /#page-wrapper -->
 			<!-- end MAIN PAGE CONTENT -->
 		</h:form>
-			<script type="text/javascript">
+		<script type="text/javascript">
 //     PrimeFaces.locales['tr'] = {
 //         closeText: 'kapat',
 //         prevText: 'geri',
@@ -541,10 +565,10 @@
 //         allDayText : 'Tüm Gün'
 //     };
 </script>
-<style type="text/css">
-    .value {
-        width: 1000px;
-    }
+		<style type="text/css">
+.value {
+	width: 1000px;
+}
 </style>
 	</ui:composition>
 
