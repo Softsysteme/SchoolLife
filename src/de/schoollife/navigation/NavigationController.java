@@ -34,6 +34,16 @@ public class NavigationController implements Serializable {
 		System.out.println("moveToScholarshipFee");
 		return "scholarship-fee?faces-redirect=true";
 	}
+
+	public String moveToBookCategory() {
+		System.out.println("moveToBookCategory");
+		return "book-category?faces-redirect=true";
+	}
+
+	public String moveToCreateBook() {
+		System.out.println("moveToCreateBook");
+		return "create-book?faces-redirect=true";
+	}
 	
 	public String moveToMonCompte() {
 		System.out.println("moveToMonCompte");
