@@ -22,9 +22,9 @@
 											class="fa fa-home"></i>
 										<h:outputText value="{msg['menu']}" /></a> <i
 										class="fa fa-angle-right"></i> <a href="#"> <h:outputText
-												value="{msg['Academic']}" /></a> <i class="fa fa-angle-right"></i>
+												value="{msg['Library']}" /></a> <i class="fa fa-angle-right"></i>
 										<h:outputText
-												value="{msg['Classes Label']}"/></li>
+												value="{msg['Add Category']}"/></li>
 									<li class="pull-right">
 										<div id="reportrange"
 											class="btn btn-green btn-square date-picker">
@@ -39,7 +39,7 @@
 					</div>
 					<!-- /.row -->
 					<!-- end PAGE TITLE AREA -->
-
+	
 					<!-- Pill Tabs Example -->
 					<div class="row">
 						<div class="col-lg-12">
@@ -49,7 +49,7 @@
 										<div class="portlet-heading">
 											<div class="portlet-title">
 												<h4>
-													<strong>Gestion Label</strong>
+													<strong>Manage Books Category</strong>
 												</h4>
 											</div>
 											<div class="clearfix"></div>
@@ -62,34 +62,32 @@
 															<div class="portlet-heading">
 																<div class="portlet-title">
 																	<h4>
-																		<strong>Creer un Label</strong>
+																		<strong>Creer une Categorie</strong>
 																	</h4>
 																</div>
 																<div class="clearfix"></div>
 															</div>
 															<div class="portlet-body">
 																<div class="row">
-																	<div class="col-lg-6 ">
 																		<div class="form-group">
-																			<label class="col-lg-3 control-label">Name</label>
+																			<label class="col-lg-3 control-label">Category Name</label>
 																			<div class="col-lg-9">
 																				<input type="text" class="form-control" value=""
-																					placeholder="2. nd"></input>
+																					placeholder="Bassa"></input>
 																			</div>
 																		</div>
-																	</div>
 																</div>
 																<br></br>
 																<div class="form-group">
 																	<label><i class="fa fa-info fa-fw"></i>
-																		Description du Label</label>
+																		Description de la Categorie</label>
 																	<textarea class="form-control" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
 																</div>
 
 																<br></br>
 																<div class="row">
 																	<div class="col-lg-6">
-																		<button type="submit" class="btn btn-green">Creer</button>
+																		<button type="submit" class="btn btn-green">Store</button>
 																	</div>
 																</div>
 															</div>
@@ -101,18 +99,18 @@
 												<!-- /.col-md-6 -->
 												<div class="col-md-6">
 													<div class="table-responsiv">
-														<p:dataTable var="label" value="" rows="10"
+														<p:dataTable var="category" value="" rows="10"
 															style="background-color:green;">
-															<p:column headerText="Id">
-																<h:outputText value="{Label.id}" />
+															<p:column headerText="Code">
+																<h:outputText value="{category.code}" />
 															</p:column>
 
 															<p:column headerText="Name">
-																<h:outputText value="{Label.name}" />
+																<h:outputText value="Bassa" />
 															</p:column>
 
 															<p:column headerText="Description">
-																<h:outputText value="{Label.description}" />
+																<h:outputText value="{Bassa.description}" />
 															</p:column>
 														</p:dataTable>
 													</div>

@@ -453,6 +453,10 @@
 								<h:outputText value="{msg[Academic Details]}" />
 							</p:commandLink></li>
 						<li><p:commandLink
+								action="#{navigationController.moveToScholarshipFee}">
+								<h:outputText value="{msg['Scholarship Fee']}" />
+							</p:commandLink></li>
+						<li><p:commandLink
 								action="#{navigationController.moveToParametrage}">
 								<h:outputText value="{msg['Student Import']}" />
 							</p:commandLink></li>
@@ -465,20 +469,16 @@
 								<h:outputText value="{msg['Privileges']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToParametrage}">
+								action="#{navigationController.moveToAssignCourse}">
 								<h:outputText value="{msg['Assign Courses']}" />
-							</p:commandLink></li>
+							</p:commandLink></li>						
 						<li><p:commandLink
-								action="#{navigationController.moveToParametrage}">
-								<h:outputText value="{msg['Users']}" />
+								action="#{navigationController.moveToEnquiry}">
+								<h:outputText value="{msg['Enquiry List']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
 								action="#{navigationController.moveToMonCompte}">
 								<h:outputText value="{msg['Mon Compte']}" />
-							</p:commandLink></li>
-						<li><p:commandLink
-								action="#{navigationController.moveToEnquiry}">
-								<h:outputText value="{msg['Enquiry List']}" />
 							</p:commandLink></li>
 					</ul></li>
 				<!-- End Settings -->
@@ -576,12 +576,8 @@
 										<h:outputText value="{msg['Add Employee']}" />
 									</p:commandLink></li>
 								<li><p:commandLink
-										action="#{navigationController.moveToParametrage}">
+										action="#{navigationController.moveToListPersonnel}">
 										<h:outputText value="{msg['Employee List']}" />
-									</p:commandLink></li>
-								<li><p:commandLink
-										action="#{navigationController.moveToParametrage}">
-										<h:outputText value="{msg['Add Bank Details']}" />
 									</p:commandLink></li>
 								<li><p:commandLink
 										action="#{navigationController.moveToParametrage}">
@@ -595,20 +591,8 @@
 						</a>
 							<ul class="collapse nav" id="payroll">
 								<li><p:commandLink
-										action="#{navigationController.moveToParametrage}">
-										<h:outputText value="{msg['Pay Head']}" />
-									</p:commandLink></li>
-								<li><p:commandLink
-										action="#{navigationController.moveToParametrage}">
-										<h:outputText value="{msg['Payment Types']}" />
-									</p:commandLink></li>
-								<li><p:commandLink
-										action="#{navigationController.moveToParametrage}">
+										action="#{navigationController.moveToSalarySetting}">
 										<h:outputText value="{msg['Salary Settings']}" />
-									</p:commandLink></li>
-								<li><p:commandLink
-										action="#{navigationController.moveToParametrage}">
-										<h:outputText value="{msg['Generate Pay Slip']}" />
 									</p:commandLink></li>
 							</ul></li>
 					</ul></li>
@@ -622,7 +606,7 @@
 				</a>
 					<ul class="collapse nav" id="student">
 						<li><p:commandLink
-								action="#{navigationController.moveToPreinscription}">
+								action="#{navigationController.moveToStudentAdmission}">
 								<h:outputText value="{msg['Preinscription']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
@@ -630,7 +614,7 @@
 								<h:outputText value="{msg['Student Admission']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToMonCompte}">
+								action="#{navigationController.moveToListStudent}">
 								<h:outputText value="{msg['Student List']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
@@ -681,32 +665,32 @@
 				<!-- Begin Library -->
 				<li class="panel"><a href="javascript:;" data-parent="#side"
 					data-toggle="collapse" class="accordion-toggle"
-					data-target="#liTransport"> <i class="fa fa-book"></i> <h:outputText
+					data-target="#library"> <i class="fa fa-book"></i> <h:outputText
 							value="{msg['Library']}" /> <i class="fa fa-caret-down"></i>
 				</a>
 					<ul class="collapse nav" id="library">
 						<li><p:commandLink
-								action="#{navigationController.moveToParametrage}">
+								action="#{navigationController.moveToBookCategory}">
 								<h:outputText value="{msg['Add Category']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToMonCompte}">
+								action="#{navigationController.moveToCreateBook}">
 								<h:outputText value="{msg['Add Books']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToParametrage}">
+								action="#{navigationController.moveToBookIssue}">
 								<h:outputText value="{msg['Issue Book']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToMonCompte}">
+								action="#{navigationController.moveToRequestedBook}">
 								<h:outputText value="{msg['Request Details']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToParametrage}">
+								action="#{navigationController.moveToReturnBook}">
 								<h:outputText value="{msg['Book Return']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToMonCompte}">
+								action="#{navigationController.moveToBookReport}">
 								<h:outputText value="{msg['Reports']}" />
 							</p:commandLink></li>
 					</ul></li>

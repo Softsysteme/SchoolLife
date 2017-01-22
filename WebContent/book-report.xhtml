@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/admin/common-layout.xhtml">
+		<ui:define name="content">
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<ol class="breadcrumb">
+									<li class="active"><a href="vue-admin.xhtml"><i
+											class="fa fa-home"></i> <h:outputText value="{msg['menu']}" /></a>
+										<i class="fa fa-angle-right"></i> <a href="#"> <h:outputText
+												value="{msg['Library']}" /></a><i class="fa fa-angle-right"></i>
+										<h:outputText value="{msg['Reports']}" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
+
+					<!-- Pill Tabs Example -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Book Reports</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<div class="row">
+												<div class="form-group col-md-6">
+													<label>Report for *</label> <select class="form-control">
+														<option selected="selected">Select Option</option>
+														<option>Available Books</option>
+														<option>Issued Books</option>
+														<option>Recovery Books</option>
+														<option>Condition wise</option>
+														<option>Student wise</option>
+														<option>Employee wise</option>
+													</select>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group col-md-3">
+													<button type="submit" class="btn btn-red">Print</button>
+												</div>
+											</div>
+
+											<br></br>
+											<h3>When Issued Books selected in Report for</h3>
+											<div class="row">
+												<div class="form-group col-md-6">
+													<label>Start Date</label>
+													<div class="input-group">
+														<div class="input-group-addon">
+															<i class="fa fa-calendar"></i>
+														</div>
+														<div id="sandbox-container">
+															<p:calendar id="effect2" value="#{calendarView.date8}"
+																effect="fold" />
+														</div>
+													</div>
+												</div>
+												<div class="form-group col-md-6">
+													<label>End Date</label>
+													<div class="input-group">
+														<div class="input-group-addon">
+															<i class="fa fa-calendar"></i>
+														</div>
+														<div id="sandbox-container">
+															<p:calendar id="effect3" value="#{calendarView.date8}"
+																effect="fold" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<br></br>
+											<h3>When Condition wise selected in Report for</h3>
+											<div class="row">
+												<div class="form-group col-md-6">
+													<label>Coditions *</label> <select class="form-control">
+														<option selected="selected">Select Option</option>
+														<option>As New</option>
+														<option>Fine</option>
+														<option>Very Good</option>
+														<option>Good</option>
+														<option>Fair</option>
+														<option>Poor</option>
+														<option>Missing</option>
+														<option>Lost</option>
+													</select>
+												</div>
+											</div>
+
+											<br></br>
+											<h3>When Student wise selected in Report for</h3>
+											<div class="row"></div>
+
+											<div class="row">
+												<div class="form-group col-md-6">
+													<label>Student</label> <input type="text"
+														class="form-control" value="" placeholder="Search Student"></input>
+												</div>
+												<div class="form-group col-md-6">
+													<label>Issued/Returned *</label> <select
+														class="form-control">
+														<option selected="selected">Select Option</option>
+														<option>Issued Report</option>
+														<option>Returned Report</option>
+													</select>
+												</div>
+											</div>
+
+											<br></br>
+											<h3>When Employee wise selected in Report for</h3>
+
+											<div class="row">
+												<div class="form-group col-md-6">
+													<label>Employee</label> <input type="text"
+														class="form-control" value=""
+														placeholder="Search Employee"></input>
+												</div>
+												<div class="form-group col-md-6">
+													<label>Issued/Returned *</label> <select
+														class="form-control">
+														<option selected="selected">Select Option</option>
+														<option>Issued Report</option>
+														<option>Returned Report</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /.portlet-body -->
+
+
+								</div>
+
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+
+					<!-- BEGIN AVAILABLE BOOKS -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Available Books</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<div class="table-responsive">
+												<p:dataTable var="enquiry" value="" rows="10"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+													rowsPerPageTemplate="5,10,15">
+													<p:column headerText="SI. No.">
+														<h:outputText value="{GH56B}" />
+													</p:column>
+
+													<p:column headerText="ISBN No.">
+														<h:outputText value="{ISBN786}" />
+													</p:column>
+
+													<p:column headerText="Book No.">
+														<h:outputText value="{M787}" />
+													</p:column>
+
+													<p:column headerText="Title">
+														<h:outputText value="{Carrefour}" />
+													</p:column>
+													<p:column headerText="Author">
+														<h:outputText value="{Mongo Beti}" />
+													</p:column>
+
+													<p:column headerText="Edition">
+														<h:outputText value="{1}" />
+													</p:column>
+
+												</p:dataTable>
+
+											</div>
+											<!-- /.table-responsive -->
+
+										</div>
+										<!-- /.portlet-body -->
+
+
+									</div>
+
+								</div>
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- END AVAILABLE BOOKS -->
+
+					<!-- BEGIN ISSUED BOOKS -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Issued Books</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<div class="table-responsive">
+												<p:dataTable var="enquiry" value="" rows="10"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+													rowsPerPageTemplate="5,10,15">
+													<p:column headerText="SI. No.">
+														<h:outputText value="{GH56B}" />
+													</p:column>
+
+													<p:column headerText="ISBN No.">
+														<h:outputText value="{ISBN786}" />
+													</p:column>
+
+													<p:column headerText="Book No.">
+														<h:outputText value="{M787}" />
+													</p:column>
+
+													<p:column headerText="Title">
+														<h:outputText value="{Carrefour}" />
+													</p:column>
+													<p:column headerText="User Type">
+														<h:outputText value="{Student}" />
+													</p:column>
+
+													<p:column headerText="User">
+														<h:outputText value="{Pascal Otomo}" />
+													</p:column>
+
+													<p:column headerText="Issue Date">
+														<h:outputText value="{12.12.2015}" />
+													</p:column>
+
+													<p:column headerText="Due Date">
+														<h:outputText value="{12.12.2015}" />
+													</p:column>
+												</p:dataTable>
+
+											</div>
+											<!-- /.table-responsive -->
+
+										</div>
+										<!-- /.portlet-body -->
+
+
+									</div>
+
+								</div>
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- END ISSUED BOOKS -->
+
+					<!-- BEGIN RECOVERY BOOKS -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Recovery Books</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<div class="table-responsive">
+												<p:dataTable var="enquiry" value="" rows="10"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+													rowsPerPageTemplate="5,10,15">
+													<p:column headerText="SI. No.">
+														<h:outputText value="{GH56B}" />
+													</p:column>
+
+													<p:column headerText="ISBN No.">
+														<h:outputText value="{ISBN786}" />
+													</p:column>
+
+													<p:column headerText="Book No.">
+														<h:outputText value="{M787}" />
+													</p:column>
+
+													<p:column headerText="Title">
+														<h:outputText value="{Carrefour}" />
+													</p:column>
+													<p:column headerText="User Type">
+														<h:outputText value="{Student}" />
+													</p:column>
+
+													<p:column headerText="User">
+														<h:outputText value="{Pascal Otomo}" />
+													</p:column>
+
+													<p:column headerText="Issue Date">
+														<h:outputText value="{12.12.2015}" />
+													</p:column>
+
+													<p:column headerText="Due Date">
+														<h:outputText value="{12.12.2015}" />
+													</p:column>
+												</p:dataTable>
+
+											</div>
+											<!-- /.table-responsive -->
+
+										</div>
+										<!-- /.portlet-body -->
+
+
+									</div>
+
+								</div>
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- END RECOVERY BOOKS -->
+
+					<!-- BEGIN CONDITION WISE BOOKS -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Condition wise Books</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<div class="table-responsive">
+												<p:dataTable var="enquiry" value="" rows="10"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+													rowsPerPageTemplate="5,10,15">
+													<p:column headerText="SI. No.">
+														<h:outputText value="{GH56B}" />
+													</p:column>
+
+													<p:column headerText="ISBN No.">
+														<h:outputText value="{ISBN786}" />
+													</p:column>
+
+													<p:column headerText="Book No.">
+														<h:outputText value="{M787}" />
+													</p:column>
+
+													<p:column headerText="Title">
+														<h:outputText value="{Carrefour}" />
+													</p:column>
+													<p:column headerText="Author">
+														<h:outputText value="{Mongo Beti}" />
+													</p:column>
+
+													<p:column headerText="Edition">
+														<h:outputText value="{3}" />
+													</p:column>
+
+													<p:column headerText="Category">
+														<h:outputText value="{Literature}" />
+													</p:column>
+
+													<p:column headerText="Language">
+														<h:outputText value="{Boulo}" />
+													</p:column>
+												</p:dataTable>
+
+											</div>
+											<!-- /.table-responsive -->
+
+										</div>
+										<!-- /.portlet-body -->
+
+
+									</div>
+
+								</div>
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- END CONDITION WISE BOOKS -->
+
+					<!-- BEGIN STUDENT/EMPLOYEE WISE BOOKS -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong> [Student Name] / [Employee Name]</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<div class="table-responsive">
+												<p:dataTable var="enquiry" value="" rows="10"
+													paginator="true"
+													paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+													rowsPerPageTemplate="5,10,15">
+													<p:column headerText="SI. No.">
+														<h:outputText value="{GH56B}" />
+													</p:column>
+
+													<p:column headerText="ISBN No.">
+														<h:outputText value="{ISBN786}" />
+													</p:column>
+
+													<p:column headerText="Book No.">
+														<h:outputText value="{M787}" />
+													</p:column>
+
+													<p:column headerText="Title">
+														<h:outputText value="{Carrefour}" />
+													</p:column>
+
+													<p:column headerText="Issue/Return Date">
+														<h:outputText value="{12.12.2015}" />
+													</p:column>
+
+													<p:column headerText="Due Date">
+														<h:outputText value="{12.12.2015}" />
+													</p:column>
+												</p:dataTable>
+
+											</div>
+											<!-- /.table-responsive -->
+
+										</div>
+										<!-- /.portlet-body -->
+
+
+									</div>
+
+								</div>
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- END STUDENT WISE BOOKS -->
+
+				</div>
+				<!-- /.page-content -->
+
+			</div>
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

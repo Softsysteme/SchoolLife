@@ -10,7 +10,6 @@
 		<ui:define name="content">
 			<!-- begin MAIN PAGE CONTENT -->
 			<div id="page-wrapper">
-
 				<div class="page-content">
 					<!-- begin PAGE TITLE AREA -->
 					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
@@ -19,12 +18,10 @@
 							<div class="page-title">
 								<ol class="breadcrumb">
 									<li class="active"><a href="vue-admin.xhtml"><i
-											class="fa fa-home"></i>
-										<h:outputText value="{msg['menu']}" /></a> <i
-										class="fa fa-angle-right"></i> <a href="#"> <h:outputText
-												value="{msg['Academic']}" /></a> <i class="fa fa-angle-right"></i>
-										<h:outputText
-												value="{msg['Classes Label']}"/></li>
+											class="fa fa-home"></i> <h:outputText value="{msg['menu']}" /></a>
+										<i class="fa fa-angle-right"></i> <a href="#"> <h:outputText
+												value="{msg['Settings']}" /></a><i class="fa fa-angle-right"></i>
+										<h:outputText value="{msg['Assign Courses']}" /></li>
 									<li class="pull-right">
 										<div id="reportrange"
 											class="btn btn-green btn-square date-picker">
@@ -49,7 +46,7 @@
 										<div class="portlet-heading">
 											<div class="portlet-title">
 												<h4>
-													<strong>Gestion Label</strong>
+													<strong>Manage Courses</strong>
 												</h4>
 											</div>
 											<div class="clearfix"></div>
@@ -62,34 +59,52 @@
 															<div class="portlet-heading">
 																<div class="portlet-title">
 																	<h4>
-																		<strong>Creer un Label</strong>
+																		<strong>Assign courses</strong>
 																	</h4>
 																</div>
 																<div class="clearfix"></div>
 															</div>
 															<div class="portlet-body">
-																<div class="row">
-																	<div class="col-lg-6 ">
-																		<div class="form-group">
-																			<label class="col-lg-3 control-label">Name</label>
-																			<div class="col-lg-9">
-																				<input type="text" class="form-control" value=""
-																					placeholder="2. nd"></input>
-																			</div>
-																		</div>
-																	</div>
+																<div class="form-group">
+																	<label>Professeur</label> <select class="form-control">
+																		<option>Jean Miché Nkan Nkan</option>
+																		<option>Thomas Mbouga</option>
+																		<option>Leo Ambassa</option>
+																		<option>Clementine Mbongo</option>
+																	</select>
+																</div>
+																<div class="form-group">
+																	<label>Section</label> <select class="form-control">
+																		<option>Anglophone</option>
+																		<option>Douala</option>
+																		<option>Bassa</option>
+																	</select>
+																</div>
+																<div class="form-group">
+																	<label>Classes</label> <select class="form-control">
+																		<option>6eme M7</option>
+																		<option>3eme M6</option>
+																		<option>Tle A4</option>
+																	</select>
+																</div>
+																<div class="form-group">
+																	<label>Matieres</label> <select class="form-control">
+																		<option>Maths</option>
+																		<option>Anglais</option>
+																		<option>EC</option>
+																		<option>Travail manuel</option>
+																	</select>
 																</div>
 																<br></br>
 																<div class="form-group">
-																	<label><i class="fa fa-info fa-fw"></i>
-																		Description du Label</label>
+																	<label><i class="fa fa-info fa-fw"></i> Note</label>
 																	<textarea class="form-control" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
 																</div>
 
 																<br></br>
 																<div class="row">
 																	<div class="col-lg-6">
-																		<button type="submit" class="btn btn-green">Creer</button>
+																		<button type="submit" class="btn btn-green">Assign</button>
 																	</div>
 																</div>
 															</div>
@@ -101,19 +116,28 @@
 												<!-- /.col-md-6 -->
 												<div class="col-md-6">
 													<div class="table-responsiv">
-														<p:dataTable var="label" value="" rows="10"
+														<p:dataTable var="enquiry" value="" rows="10"
 															style="background-color:green;">
 															<p:column headerText="Id">
-																<h:outputText value="{Label.id}" />
+																<h:outputText value="{id}" />
 															</p:column>
 
-															<p:column headerText="Name">
-																<h:outputText value="{Label.name}" />
+															<p:column headerText="Nom">
+																<h:outputText value="Clementine Ambassa" />
 															</p:column>
 
-															<p:column headerText="Description">
-																<h:outputText value="{Label.description}" />
+															<p:column headerText="Courses">
+																<h:outputText value="{Anglais Facil}" />
 															</p:column>
+
+															<p:column headerText="Classe">
+																<h:outputText value="{Bassa Facil}" />
+															</p:column>
+
+															<p:column headerText="Section">
+																<h:outputText value="{Bassa}" />
+															</p:column>
+
 														</p:dataTable>
 													</div>
 													<!-- /.table-responsive -->

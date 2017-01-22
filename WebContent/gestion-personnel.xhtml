@@ -6,13 +6,40 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-	<ui:composition template="templates/admin/common-layout.xhtml">
+	<ui:composition template="templates/admin/common-layout-primefaces.xhtml">
 		<ui:define name="content">
 			<!-- begin MAIN PAGE CONTENT -->
 			<div id="page-wrapper">
 
 				<div class="page-content">
-
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<ol class="breadcrumb">
+									<li class="active"><a href="vue-admin.xhtml"><i
+											class="fa fa-home"></i> <h:outputText value="{msg['menu']}" /></a>
+										<i class="fa fa-angle-right"></i> <a href="#"> <h:outputText
+												value="{msg['HR/Payroll']}" /></a><i class="fa fa-angle-right"></i>
+										<a href="#"> <h:outputText
+												value="{msg['Employee Management']}" /></a> <i
+										class="fa fa-angle-right"></i> <h:outputText
+											value="{msg['Add Employee']}" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
 
 					<div class="row">
 						<div class="col-lg-12">
@@ -30,440 +57,323 @@
 										<div class="tab-pane fade in active" id="creer-eleve">
 
 											<div class="row">
-												<div class="col-sm-3">
-													<ul id="userSettings" class="nav nav-pills nav-stacked">
-														<li class="active"><a href="#basicInformation"
-															data-toggle="tab"><i class="fa fa-user fa-fw"></i>
-																Basic Informations</a></li>
-														<li><a href="#responsabilities" data-toggle="tab"><i
-																class="fa fa-user fa-cogs"></i> Responsabilities</a></li>
-														<li><a href="#createStudent" data-toggle="tab"><i
-																class="fa fa-lock fa-fw"></i> Enregistrer</a></li>
-													</ul>
-												</div>
-												<div class="col-sm-9">
-													<div id="userSettingsContent" class="tab-content">
-														<div class="tab-pane fade in active" id="basicInformation">
-															<form role="form">
-																<h4 class="page-header">Personal Information:</h4>
+												<div class="col-md-12">
+													<div class="portlet-group" id="creer">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Personal Information</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
 
+																<form role="form">
+
+																	<div class="row">
+																		<div class="col-lg-3 col-md-3">
+																			<label class="btn profile-edit btn-file">
+																				Edit <input type="file" style="display: none;" />
+																			</label> <img class="img-responsive img-profile"
+																				src="img/user-avatar.png" alt=""></img>
+																		</div>
+
+																	</div>
 																<div class="row">
-																	<div class="col-lg-3 col-md-3">
-																		<label class="btn profile-edit btn-file"> Edit
-																			<input type="file" style="display: none;" />
-																		</label> <img class="img-responsive img-profile"
-																			src="img/user-avatar.png" alt=""></img>
+																	<div class="form-group col-md-6">
+																		<label>First Name</label> <input type="text"
+																			class="form-control" value="" placeholder="John"></input>
 																	</div>
-
-																</div>
-																<div class="form-group">
-																	<label>First Name</label> <input type="text"
-																		class="form-control" value="" placeholder="John"></input>
-																</div>
-																<div class="form-group">
-																	<label>Last Name</label> <input type="text"
-																		class="form-control" value="" placeholder="Smith"></input>
-																</div>
-																<div class="form-group">
-																	<label>Situation familiale</label> <select
-																		class="form-control">
-																		<option>Marié(e)</option>
-																		<option>Célibataire</option>
-																		<option>Divorcé(e)</option>
-																		<option>Veuf(ve)</option>
-																	</select>
-																</div>
-																<div class="form-group">
-																	<label>Sexe</label> <label class="radio-inline">
-																		<input type="radio" name="optionsInlineRadios"
-																		value="" checked="checked"> </input><i
-																		class="fa fa-male"></i>
-																	</label> <label class="radio-inline"> <input
-																		type="radio" name="optionsInlineRadios" value=""></input>
-																		<i class="fa fa-female"></i>
-																	</label>
-																</div>
-																<div class="form-group">
-																	<label>Date de naissance</label>
-																	<div class="input-group">
-																		<div class="input-group-addon">
-																			<i class="fa fa-calendar"></i>
-																		</div>
-																		<div id="sandbox-container">
-																			<input class="form-control" type="text" />
-																		</div>
+																	<div class="form-group col-md-6">
+																		<label>Last Name</label> <input type="text"
+																			class="form-control" value="" placeholder="Smith"></input>
 																	</div>
 																</div>
-																<div class="form-group">
-																	<label>Lieu de naissance</label>
-																	<div class="input-group">
-																		<div class="input-group-addon">
-																			<i class="fa fa-map-marker"></i>
-																		</div>
-
-																		<select class="form-control">
-																			<option>Yaounde</option>
-																			<option>Douala</option>
-																			<option>Fodjomekouet</option>
-																			<option>Bafoussam</option>
-																			<option>Kousseri</option>
-																			<option>Maroua</option>
-																			<option>Obala</option>
+																<div class="row">
+																	<div class="form-group col-md-6">
+																		<label>Situation familiale</label> <select
+																			class="form-control">
+																			<option>Marié(e)</option>
+																			<option>Célibataire</option>
+																			<option>Divorcé(e)</option>
+																			<option>Veuf(ve)</option>
 																		</select>
 																	</div>
-																</div>
-																<div class="form-group">
-																	<label>Nationalité</label> <select class="form-control">
-																		<option>Cameroun</option>
-																		<option>Allemangne</option>
-																		<option>Tchad</option>
-																		<option>Guinee</option>
-																		<option>RDC</option>
-																		<option>Malawi</option>
-																		<option>Niger</option>
-																	</select>
-																</div>
-
-																<h4 class="page-header">Contact Details:</h4>
-
-																<div class="form-group">
-																	<label>Phone Number</label>
-																	<div class="input-group">
-																		<div class="input-group-addon">
-																			<i class="fa fa-phone"></i>
-																		</div>
-
-																		<input type="tel" class="form-control" value=""
-																			placeholder="1+(234) 555-2039"></input>
+																	<div class="form-group col-md-6">
+																		<label>Sexe</label> <label class="radio-inline">
+																			<input type="radio" name="optionsInlineRadios"
+																			value="" checked="checked"> </input><i
+																			class="fa fa-male"></i>
+																		</label> <label class="radio-inline"> <input
+																			type="radio" name="optionsInlineRadios" value=""></input>
+																			<i class="fa fa-female"></i>
+																		</label>
 																	</div>
 																</div>
 																<div class="row">
-																	<div class="form-group col-md-9">
-																		<label for="street">Street</label> <input type="text"
-																			class="form-control" id="street"
-																			placeholder="Rue Manguier"></input>
+																	<div class="form-group col-md-6">
+																		<label>Nationalité</label> <select
+																			class="form-control">
+																			<option>Cameroun</option>
+																			<option>Allemangne</option>
+																			<option>Tchad</option>
+																			<option>Guinee</option>
+																			<option>RDC</option>
+																			<option>Malawi</option>
+																			<option>Niger</option>
+																		</select>
 																	</div>
-																	<div class="form-group col-md-3">
-																		<label for="housenumber">Housenumber</label> <input
-																			type="text" class="form-control" id="housenumber"
-																			placeholder="15a"></input>
-																	</div>
-																</div>
-
-																<div class="row">
-																	<div class="form-group col-md-9">
-																		<label for="city">City</label> <input type="text"
-																			class="form-control" id="city"
-																			placeholder="Fodjomekouet"></input>
-																	</div>
-																	<div class="form-group col-md-3">
-																		<label for="zip">Zip</label> <input
-																			type="text" class="form-control" id="zip"
-																			placeholder="43443"></input>
-																	</div>
-																</div>
-																
-																<div class="form-group">
-																	<label> Email Address</label>
-																	<div class="input-group">
-																		<div class="input-group-addon">
-																			<i class="fa fa-envelope"></i>
+																	<div class="form-group col-md-6">
+																		<label>Date de naissance</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-calendar"></i>
+																			</div>
+																			<div id="sandbox-container">
+																				<p:calendar id="effect"
+																					value="#{calendarView.date8}" effect="fold" />
+																			</div>
 																		</div>
-
-																		<input type="email" class="form-control" value=""
-																			placeholder="jsmith@website.com"></input>
 																	</div>
 																</div>
-																<div class="form-group">
-																	<label><i class="fa fa-info fa-fw"></i> Note</label>
-																	<textarea class="form-control" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
+																<div class="row">
+																	<div class="form-group col-md-6">
+																		<label>Lieu de naissance</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-map-marker"></i>
+																			</div>
+
+																			<select class="form-control">
+																				<option>Yaounde</option>
+																				<option>Douala</option>
+																				<option>Fodjomekouet</option>
+																				<option>Bafoussam</option>
+																				<option>Kousseri</option>
+																				<option>Maroua</option>
+																				<option>Obala</option>
+																			</select>
+																		</div>
+																	</div>
 																</div>
-															</form>
+
+																</form>
+
+															</div>
 														</div>
-
-														<!--BEGIN RESPONSABILITIES INFORMATION -->
-
-														<div class="tab-pane fade in" id="responsabilities">
-															<h:form role="form">
-																<br></br>
-																<div class="row">
-																	<div class="col-lg-6 ">
-																		<div class="form-group">
-																			<label class="col-lg-3 control-label">Fonction</label>
-																			<div class="col-lg-7">
-																				<select class="form-control">
-																					<option>Professeur</option>
-																					<option>Directeur</option>
-																					<option>Censeur</option>
-																					<option>Maitresse</option>
-																					<option>Gardien</option>
-																					<option>Menage</option>
-																				</select>
-																			</div>
-																			<div class="col-lg-2">
-																				<h:commandLink class="btn btn-default "
-																					action="#{formController.newField()}">
-																					<i class="fa fa-plus-square"></i>
-																					<f:ajax render="responsabilities" />
-																				</h:commandLink>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<br></br>
-																<div class="row">
-																	<div class="col-lg-6 ">
-																		<div class="form-group">
-																			<label class="col-lg-3 control-label">Fonction</label>
-																			<div class="col-lg-7">
-																				<select class="form-control">
-																					<option>Professeur</option>
-																					<option>Directeur</option>
-																					<option>Censeur</option>
-																					<option>Maitresse</option>
-																					<option>Gardien</option>
-																					<option>Menage</option>
-																				</select>
-																			</div>
-																			<div class="col-lg-2">
-																				<h:commandLink class="btn btn-danger"
-																					action="#{formController.hideField('5')}">
-																					<i class="fa fa-times"></i>
-																					<f:ajax execute="tokenfield-matieres"
-																						render="responsabilities" />
-																				</h:commandLink>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<br></br>
-																<div class="row">
-																	<div class="col-lg-5 ">
-																		<div class="form-group">
-																			<label class="col-lg-3 control-label">Matiere</label>
-																			<div class="col-lg-9">
-																				<input type="text" class="form-control"
-																					id="tokenfield-matieres" value=""
-																					placeholder="Choose a matiere from the dropdown!" />
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col-lg-5 ">
-																		<div class="form-group">
-																			<label class="col-lg-3 control-label">Classe</label>
-																			<div class="col-lg-9">
-																				<input type="text" class="form-control"
-																					id="tokenfield-classes"
-																					value="#{formController.classe1}"
-																					placeholder="#{formController.classe1}" />
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col-lg-2">
-																		<h:commandLink class="btn btn-default "
-																			action="#{formController.newField()}">
-																			<i class="fa fa-plus-square"></i>
-																			<f:ajax render="responsabilities" />
-																		</h:commandLink>
-																	</div>
-
-																</div>
-																<br></br>
-																<h:panelGroup layout="block"
-																	rendered="#{formController.classe1}">
-
-																	<div class="row">
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Matiere</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-matieres" value=""
-																						placeholder="Choose a matiere from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Classe</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-classes" value=""
-																						placeholder="Choose a classe from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-2">
-																			<h:commandLink class="btn btn-danger"
-																				action="#{formController.hideField('1')}">
-																				<i class="fa fa-times"></i>
-																				<f:ajax render="responsabilities" />
-																			</h:commandLink>
-																		</div>
-
-																	</div>
-																</h:panelGroup>
-																<br></br>
-
-																<h:panelGroup layout="block"
-																	rendered="#{formController.classe2}">
-
-																	<div class="row">
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Matiere</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-matieres" value=""
-																						placeholder="Choose a matiere from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Classe</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-classes" value=""
-																						placeholder="Choose a classe from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-2">
-																			<h:commandLink class="btn btn-danger"
-																				action="#{formController.hideField(2)}">
-																				<i class="fa fa-times"></i>
-																				<f:ajax render="responsabilities" />
-																			</h:commandLink>
-																		</div>
-
-																	</div>
-																</h:panelGroup>
-																<br></br>
-																<h:panelGroup layout="block"
-																	rendered="#{formController.classe3}">
-
-																	<div class="row">
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Matiere</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-matieres" value=""
-																						placeholder="Choose a matiere from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Classe</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-classes" value=""
-																						placeholder="Choose a classe from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-2">
-																			<h:commandLink class="btn btn-danger"
-																				action="#{formController.hideField(3)}">
-																				<i class="fa fa-times"></i>
-																				<f:ajax render="responsabilities" />
-																			</h:commandLink>
-																		</div>
-
-																	</div>
-																</h:panelGroup>
-																<br></br>
-																<h:panelGroup layout="block"
-																	rendered="#{formController.classe4}">
-
-																	<div class="row">
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Matiere</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-matieres" value=""
-																						placeholder="Choose a matiere from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Classe</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-classes" value=""
-																						placeholder="Choose a classe from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-2">
-																			<h:commandLink class="btn btn-danger"
-																				action="#{formController.hideField(4)}">
-																				<i class="fa fa-times"></i>
-																				<f:ajax render="responsabilities" />
-																			</h:commandLink>
-																		</div>
-
-																	</div>
-																</h:panelGroup>
-																<br></br>
-																<h:panelGroup layout="block"
-																	rendered="#{formController.classe5}">
-
-																	<div class="row">
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Matiere</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-matieres" value=""
-																						placeholder="Choose a matiere from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-5">
-																			<div class="form-group">
-																				<label class="col-lg-3 control-label">Classe</label>
-																				<div class="col-lg-9">
-																					<input type="text" class="form-control"
-																						id="tokenfield-classes" value=""
-																						placeholder="Choose a classe from the dropdown!" />
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-lg-2">
-																			<h:commandLink class="btn btn-danger"
-																				action="#{formController.hideField('5')}">
-																				<i class="fa fa-times"></i>
-																				<f:ajax execute="tokenfield-matieres"
-																					render="responsabilities" />
-																			</h:commandLink>
-																		</div>
-
-																	</div>
-																</h:panelGroup>
-															</h:form>
-														</div>
-														<!--END RESPONSABILITIES INFORMATION -->
-
-														<div class="tab-pane fade in" id="createStudent">
-															<h3>Store new Teacher</h3>
-															<br></br>
-															<form role="form">
-																<div class="form-inline">
-																	<div class="col-md-3">
-																		<button type="submit" class="btn btn-default">Save</button>
-																	</div>
-																	<button class="btn btn-green">Cancel</button>
-																</div>
-															</form>
-														</div>
-														<!-- END TEACHER INFORMATION STORAGE -->
 													</div>
 												</div>
+
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="portlet-group" id="employeeInfo">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Employee Details</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+
+																<form role="form">
+																	<div class="form-group">
+																		<label>Employee Code</label> <input type="text"
+																			class="form-control" value="" placeholder="John"></input>
+																	</div>
+																	<div class="form-group">
+																		<label>Joining Date</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-calendar"></i>
+																			</div>
+																			<div id="sandbox-container">
+																				<p:calendar id="joiningid"
+																					value="#{calendarView.date8}" effect="fold" />
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<label>Departement</label> <select
+																			class="form-control">
+																			<option>Math</option>
+																			<option>Langue</option>
+																			<option>Histoire</option>
+																			<option>Informatique</option>
+																		</select>
+																	</div>
+																	<div class="form-group">
+																		<label>Designation</label> <select
+																			class="form-control">
+																			<option>Principal</option>
+																			<option>HR Manager</option>
+																			<option>Enseignant</option>
+																		</select>
+																	</div>
+
+																	<div class="form-group">
+																		<label>Qualification *</label> <input type="text"
+																			class="form-control" value="" placeholder="Smith"></input>
+																	</div>
+																	<div class="form-group">
+																		<label>Total Experience *</label> <input type="text"
+																			class="form-control" value="" placeholder="Smith"></input>
+																	</div>
+																	<div class="form-group">
+																		<label>User Type</label> <select class="form-control">
+																			<option>Admin</option>
+																			<option>Employee</option>
+																			<option>Enseignant</option>
+																		</select>
+																	</div>
+																</form>
+
+															</div>
+														</div>
+													</div>
+													<form role="form">
+														<div class="form-group">
+															<label><i class="fa fa-info fa-fw"></i> Note</label>
+															<textarea class="form-control" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
+														</div>
+													</form>
+
+												</div>
+												<div class="col-md-6">
+													<div class="portlet-group" id="contact">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Contact Details</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+
+																<form role="form">
+																	<div class="form-group">
+																		<label>Phone Number</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-phone"></i>
+																			</div>
+
+																			<input type="tel" class="form-control" value=""
+																				placeholder="1+(234) 555-2039"></input>
+																		</div>
+																	</div>
+
+																	<div class="form-group">
+																		<label>Mobile Number</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-mobile-phone"></i>
+																			</div>
+
+																			<input type="tel" class="form-control" value=""
+																				placeholder="1+(234) 555-2039"></input>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="form-group col-md-9">
+																			<label for="street">Street</label> <input type="text"
+																				class="form-control" id="street"
+																				placeholder="Rue Manguier"></input>
+																		</div>
+																		<div class="form-group col-md-3">
+																			<label for="housenumber">Housenumber</label> <input
+																				type="text" class="form-control" id="housenumber"
+																				placeholder="15a"></input>
+																		</div>
+																	</div>
+
+																	<div class="row">
+																		<div class="form-group col-md-9">
+																			<label for="city">City</label> <input type="text"
+																				class="form-control" id="city"
+																				placeholder="Fodjomekouet"></input>
+																		</div>
+																		<div class="form-group col-md-3">
+																			<label for="zip">Zip</label> <input type="text"
+																				class="form-control" id="zip" placeholder="43443"></input>
+																		</div>
+																	</div>
+
+																	<div class="form-group">
+																		<label> Email Address</label>
+																		<div class="input-group">
+																			<div class="input-group-addon">
+																				<i class="fa fa-envelope"></i>
+																			</div>
+
+																			<input type="email" class="form-control" value=""
+																				placeholder="jsmith@website.com"></input>
+																		</div>
+																	</div>
+																</form>
+
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="col-md-6">
+													<div class="portlet-group" id="bankInfo">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Bank Info</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+
+																<form role="form">
+																	<div class="form-group">
+																		<label>Bank Name</label> <input type="text"
+																			class="form-control" value=""
+																			placeholder="Afriland First Bank"></input>
+																	</div>
+
+																	<div class="form-group">
+																		<label>Account No.</label> <input type="text"
+																			class="form-control" value=""
+																			placeholder="Account No."></input>
+																	</div>
+																	<div class="form-group">
+																		<label>BIC.</label> <input type="text"
+																			class="form-control" value="" placeholder="BIC"></input>
+																	</div>
+																</form>
+
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="col-md-12">
+													<br></br>
+													<form role="form">
+														<div class="col-md-3">
+															<button type="submit" class="btn btn-green">Save</button>
+														</div>
+														<div class="col-md-3">
+															<button class="btn btn-default">Cancel</button>
+														</div>
+													</form>
+												</div>
+
 											</div>
 
 										</div>
@@ -479,429 +389,42 @@
 
 												<div class="col-lg-12">
 
-													<div class="portlet portlet-default">
+													<div class="portlet portlet-green">
 														<div class="portlet-heading">
 															<div class="portlet-title">
-																<h4>Liste des Eleves</h4>
+																<h4>Liste du personnel</h4>
 															</div>
 															<div class="clearfix"></div>
 														</div>
 														<div class="portlet-body">
 															<div class="table-responsive">
-																<table id="example-table"
-																	class="table table-striped table-bordered table-hover table-green">
-																	<thead>
-																		<tr>
-																			<th>Matricule</th>
-																			<th>Nom, Prenom</th>
-																			<th>Classes</th>
-																			<th>Matières</th>
-																			<th>Function</th>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<tr class="odd gradeX">
-																			<td>Trident</td>
-																			<td>Internet Explorer 4.0</td>
-																			<td>Win 95+</td>
-																			<td class="center">4</td>
-																			<td class="center">X</td>
-																		</tr>
-																		<tr class="even gradeC">
-																			<td>Trident</td>
-																			<td>Internet Explorer 5.0</td>
-																			<td>Win 95+</td>
-																			<td class="center">5</td>
-																			<td class="center">C</td>
-																		</tr>
-																		<tr class="odd gradeA">
-																			<td>Trident</td>
-																			<td>Internet Explorer 5.5</td>
-																			<td>Win 95+</td>
-																			<td class="center">5.5</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="even gradeA">
-																			<td>Trident</td>
-																			<td>Internet Explorer 6</td>
-																			<td>Win 98+</td>
-																			<td class="center">6</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="odd gradeA">
-																			<td>Trident</td>
-																			<td>Internet Explorer 7</td>
-																			<td>Win XP SP2+</td>
-																			<td class="center">7</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="even gradeA">
-																			<td>Trident</td>
-																			<td>AOL browser (AOL desktop)</td>
-																			<td>Win XP</td>
-																			<td class="center">6</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Firefox 1.0</td>
-																			<td>Win 98+ / OSX.2+</td>
-																			<td class="center">1.7</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Firefox 1.5</td>
-																			<td>Win 98+ / OSX.2+</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Firefox 2.0</td>
-																			<td>Win 98+ / OSX.2+</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Firefox 3.0</td>
-																			<td>Win 2k+ / OSX.3+</td>
-																			<td class="center">1.9</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Camino 1.0</td>
-																			<td>OSX.2+</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Camino 1.5</td>
-																			<td>OSX.3+</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Netscape 7.2</td>
-																			<td>Win 95+ / Mac OS 8.6-9.2</td>
-																			<td class="center">1.7</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Netscape Browser 8</td>
-																			<td>Win 98SE+</td>
-																			<td class="center">1.7</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Netscape Navigator 9</td>
-																			<td>Win 98+ / OSX.2+</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.0</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">1</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.1</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">1.1</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.2</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">1.2</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.3</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">1.3</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.4</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">1.4</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.5</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">1.5</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.6</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">1.6</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.7</td>
-																			<td>Win 98+ / OSX.1+</td>
-																			<td class="center">1.7</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Mozilla 1.8</td>
-																			<td>Win 98+ / OSX.1+</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Seamonkey 1.1</td>
-																			<td>Win 98+ / OSX.2+</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Gecko</td>
-																			<td>Epiphany 2.20</td>
-																			<td>Gnome</td>
-																			<td class="center">1.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Webkit</td>
-																			<td>Safari 1.2</td>
-																			<td>OSX.3</td>
-																			<td class="center">125.5</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Webkit</td>
-																			<td>Safari 1.3</td>
-																			<td>OSX.3</td>
-																			<td class="center">312.8</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Webkit</td>
-																			<td>Safari 2.0</td>
-																			<td>OSX.4+</td>
-																			<td class="center">419.3</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Webkit</td>
-																			<td>Safari 3.0</td>
-																			<td>OSX.4+</td>
-																			<td class="center">522.1</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Webkit</td>
-																			<td>OmniWeb 5.5</td>
-																			<td>OSX.4+</td>
-																			<td class="center">420</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Webkit</td>
-																			<td>iPod Touch / iPhone</td>
-																			<td>iPod</td>
-																			<td class="center">420.1</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Webkit</td>
-																			<td>S60</td>
-																			<td>S60</td>
-																			<td class="center">413</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera 7.0</td>
-																			<td>Win 95+ / OSX.1+</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera 7.5</td>
-																			<td>Win 95+ / OSX.2+</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera 8.0</td>
-																			<td>Win 95+ / OSX.2+</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera 8.5</td>
-																			<td>Win 95+ / OSX.2+</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera 9.0</td>
-																			<td>Win 95+ / OSX.3+</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera 9.2</td>
-																			<td>Win 88+ / OSX.3+</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera 9.5</td>
-																			<td>Win 88+ / OSX.3+</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Opera for Wii</td>
-																			<td>Wii</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Nokia N800</td>
-																			<td>N800</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Presto</td>
-																			<td>Nintendo DS browser</td>
-																			<td>Nintendo DS</td>
-																			<td class="center">8.5</td>
-																			<td class="center">C/A<sup>1</sup>
-																			</td>
-																		</tr>
-																		<tr class="gradeC">
-																			<td>KHTML</td>
-																			<td>Konqureror 3.1</td>
-																			<td>KDE 3.1</td>
-																			<td class="center">3.1</td>
-																			<td class="center">C</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>KHTML</td>
-																			<td>Konqureror 3.3</td>
-																			<td>KDE 3.3</td>
-																			<td class="center">3.3</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>KHTML</td>
-																			<td>Konqureror 3.5</td>
-																			<td>KDE 3.5</td>
-																			<td class="center">3.5</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeX">
-																			<td>Tasman</td>
-																			<td>Internet Explorer 4.5</td>
-																			<td>Mac OS 8-9</td>
-																			<td class="center">-</td>
-																			<td class="center">X</td>
-																		</tr>
-																		<tr class="gradeC">
-																			<td>Tasman</td>
-																			<td>Internet Explorer 5.1</td>
-																			<td>Mac OS 7.6-9</td>
-																			<td class="center">1</td>
-																			<td class="center">C</td>
-																		</tr>
-																		<tr class="gradeC">
-																			<td>Tasman</td>
-																			<td>Internet Explorer 5.2</td>
-																			<td>Mac OS 8-X</td>
-																			<td class="center">1</td>
-																			<td class="center">C</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Misc</td>
-																			<td>NetFront 3.1</td>
-																			<td>Embedded devices</td>
-																			<td class="center">-</td>
-																			<td class="center">C</td>
-																		</tr>
-																		<tr class="gradeA">
-																			<td>Misc</td>
-																			<td>NetFront 3.4</td>
-																			<td>Embedded devices</td>
-																			<td class="center">-</td>
-																			<td class="center">A</td>
-																		</tr>
-																		<tr class="gradeX">
-																			<td>Misc</td>
-																			<td>Dillo 0.8</td>
-																			<td>Embedded devices</td>
-																			<td class="center">-</td>
-																			<td class="center">X</td>
-																		</tr>
-																		<tr class="gradeX">
-																			<td>Misc</td>
-																			<td>Links</td>
-																			<td>Text only</td>
-																			<td class="center">-</td>
-																			<td class="center">X</td>
-																		</tr>
-																		<tr class="gradeX">
-																			<td>Misc</td>
-																			<td>Lynx</td>
-																			<td>Text only</td>
-																			<td class="center">-</td>
-																			<td class="center">X</td>
-																		</tr>
-																		<tr class="gradeC">
-																			<td>Misc</td>
-																			<td>IE Mobile</td>
-																			<td>Windows Mobile 6</td>
-																			<td class="center">-</td>
-																			<td class="center">C</td>
-																		</tr>
-																		<tr class="gradeC">
-																			<td>Misc</td>
-																			<td>PSP browser</td>
-																			<td>PSP</td>
-																			<td class="center">-</td>
-																			<td class="center">C</td>
-																		</tr>
-																		<tr class="gradeU">
-																			<td>Other browsers</td>
-																			<td>All others</td>
-																			<td>-</td>
-																			<td class="center">-</td>
-																			<td class="center">U</td>
-																		</tr>
-																	</tbody>
-																</table>
+																<p:dataTable var="enquiry" value="" rows="10"
+																	paginator="true"
+																	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+																	rowsPerPageTemplate="5,10,15">
+																	<p:column headerText="Employee Code">
+																		<h:outputText value="{GH56B}" />
+																	</p:column>
+
+																	<p:column headerText="Name">
+																		<h:outputText value="{John Doe}" />
+																	</p:column>
+
+																	<p:column headerText="Departement">
+																		<h:outputText value="{Mathematics}" />
+																	</p:column>
+																	<p:column headerText="Qualification">
+																		<h:outputText value="{M.Sc. Mathematics}" />
+																	</p:column>
+
+																	<p:column headerText="Designation">
+																		<h:outputText value="{Course-ordinator}" />
+																	</p:column>
+																	<p:column headerText="Email">
+																		<h:outputText value="{john.doe@schoolife.cm}" />
+																	</p:column>
+																</p:dataTable>
+
 															</div>
 															<!-- /.table-responsive -->
 														</div>
@@ -934,7 +457,6 @@
 			</div>
 			<!-- /#page-wrapper -->
 			<!-- end MAIN PAGE CONTENT -->
-
 		</ui:define>
 	</ui:composition>
 </h:body>

@@ -10,7 +10,6 @@
 		<ui:define name="content">
 			<!-- begin MAIN PAGE CONTENT -->
 			<div id="page-wrapper">
-
 				<div class="page-content">
 					<!-- begin PAGE TITLE AREA -->
 					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
@@ -22,9 +21,9 @@
 											class="fa fa-home"></i>
 										<h:outputText value="{msg['menu']}" /></a> <i
 										class="fa fa-angle-right"></i> <a href="#"> <h:outputText
-												value="{msg['Academic']}" /></a> <i class="fa fa-angle-right"></i>
-										<h:outputText
-												value="{msg['Classes Label']}"/></li>
+												value="{msg['Academic']}" /></a><i
+										class="fa fa-angle-right"></i> <h:outputText
+												value="{msg['Groupe scolaire']}" /></li>
 									<li class="pull-right">
 										<div id="reportrange"
 											class="btn btn-green btn-square date-picker">
@@ -49,7 +48,7 @@
 										<div class="portlet-heading">
 											<div class="portlet-title">
 												<h4>
-													<strong>Gestion Label</strong>
+													<strong>Manage Groupe scolaire</strong>
 												</h4>
 											</div>
 											<div class="clearfix"></div>
@@ -62,27 +61,25 @@
 															<div class="portlet-heading">
 																<div class="portlet-title">
 																	<h4>
-																		<strong>Creer un Label</strong>
+																		<strong>Create a Scholar Group</strong>
 																	</h4>
 																</div>
 																<div class="clearfix"></div>
 															</div>
 															<div class="portlet-body">
 																<div class="row">
-																	<div class="col-lg-6 ">
 																		<div class="form-group">
-																			<label class="col-lg-3 control-label">Name</label>
-																			<div class="col-lg-9">
+																			<label class="col-lg-5 control-label">Name *</label>
+																			<div class="col-lg-7">
 																				<input type="text" class="form-control" value=""
-																					placeholder="2. nd"></input>
+																					placeholder="Physics"></input>
 																			</div>
 																		</div>
-																	</div>
 																</div>
 																<br></br>
 																<div class="form-group">
 																	<label><i class="fa fa-info fa-fw"></i>
-																		Description du Label</label>
+																		Description of the Group</label>
 																	<textarea class="form-control" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</textarea>
 																</div>
 
@@ -101,18 +98,18 @@
 												<!-- /.col-md-6 -->
 												<div class="col-md-6">
 													<div class="table-responsiv">
-														<p:dataTable var="label" value="" rows="10"
+														<p:dataTable var="enquiry" value="" rows="10"
 															style="background-color:green;">
 															<p:column headerText="Id">
-																<h:outputText value="{Label.id}" />
+																<h:outputText value="{id}" />
 															</p:column>
 
-															<p:column headerText="Name">
-																<h:outputText value="{Label.name}" />
+															<p:column headerText="Nom">
+																<h:outputText value="Coca Cola" />
 															</p:column>
 
 															<p:column headerText="Description">
-																<h:outputText value="{Label.description}" />
+																<h:outputText value="{groupe.description}" />
 															</p:column>
 														</p:dataTable>
 													</div>

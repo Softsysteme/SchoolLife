@@ -29,7 +29,47 @@ public class NavigationController implements Serializable {
 		System.out.println("moveToSection");
 		return "gestion-section?faces-redirect=true";
 	}
+	
+	public String moveToScholarshipFee() {
+		System.out.println("moveToScholarshipFee");
+		return "scholarship-fee?faces-redirect=true";
+	}
 
+	public String moveToBookCategory() {
+		System.out.println("moveToBookCategory");
+		return "book-category?faces-redirect=true";
+	}
+
+	public String moveToCreateBook() {
+		System.out.println("moveToCreateBook");
+		return "book-create?faces-redirect=true";
+	}
+
+	public String moveToBookIssue() {
+		System.out.println("moveToBookIssue");
+		return "book-issue?faces-redirect=true";
+	}
+
+	public String moveToRequestedBook() {
+		System.out.println("moveToBookIssue");
+		return "list-request-book?faces-redirect=true";
+	}
+
+	public String moveToReturnBook() {
+		System.out.println("moveToReturnBook");
+		return "book-return?faces-redirect=true";
+	}
+	
+	public String moveToBookReport() {
+		System.out.println("moveToBookReport");
+		return "book-report?faces-redirect=true";
+	}
+	
+	public String moveToMonCompte() {
+		System.out.println("moveToMonCompte");
+		return "cv-admin?faces-redirect=true";
+	}
+	
 	public String moveToLabel() {
 		System.out.println("moveToLabel");
 		return "gestion-label?faces-redirect=true";
@@ -60,9 +100,14 @@ public class NavigationController implements Serializable {
 		return "gestion-personnel?faces-redirect=true";
 	}
 
+	public String moveToAssignCourse() {
+		System.out.println("moveToAssignCourse");
+		return "assign-courses?faces-redirect=true";
+	}
+	
 	public String moveToStudentAdmission() {
 		System.out.println("moveToPlaning");
-		return "gestion-eleves?faces-redirect=true";
+		return "gestion-eleve?faces-redirect=true";
 	}
 
 	public String moveToSchoolDetail() {
@@ -73,6 +118,16 @@ public class NavigationController implements Serializable {
 	public String moveToAcademicDetail() {
 		System.out.println("moveToAcademicDetail");
 		return "academic-detail?faces-redirect=true";
+	}
+
+	public String moveToListPersonnel() {
+		System.out.println("moveToListPersonnel");
+		return "list-personnel?faces-redirect=true";
+	}
+
+	public String moveToListStudent() {
+		System.out.println("moveToListStudent");
+		return "list-student?faces-redirect=true";
 	}
 	
 	public String moveToPrivileges() {
@@ -92,7 +147,7 @@ public class NavigationController implements Serializable {
 
 	public String moveToGroupeScolaire() {
 		System.out.println("moveToGroupeScolaire");
-		return "gestion-groupe-scolaire?faces-redirect=true";
+		return "groupe-scolaire?faces-redirect=true";
 	}
 
 	public String moveToUserType() {
@@ -100,6 +155,11 @@ public class NavigationController implements Serializable {
 		return "user-type?faces-redirect=true";
 	}
 
+	public String moveToSalarySetting() {
+		System.out.println("moveToSalarySetting");
+		return "salary-setting?faces-redirect=true";
+	}
+	
 	public String moveToMailboxAdmin() {
 		System.out.println("moveToMailboxAdmin");
 		return "mailbox-admin?faces-redirect=true";
