@@ -42,7 +42,27 @@ public class NavigationController implements Serializable {
 
 	public String moveToCreateBook() {
 		System.out.println("moveToCreateBook");
-		return "create-book?faces-redirect=true";
+		return "book-create?faces-redirect=true";
+	}
+
+	public String moveToBookIssue() {
+		System.out.println("moveToBookIssue");
+		return "book-issue?faces-redirect=true";
+	}
+
+	public String moveToRequestedBook() {
+		System.out.println("moveToBookIssue");
+		return "list-request-book?faces-redirect=true";
+	}
+
+	public String moveToReturnBook() {
+		System.out.println("moveToReturnBook");
+		return "book-return?faces-redirect=true";
+	}
+	
+	public String moveToBookReport() {
+		System.out.println("moveToBookReport");
+		return "book-report?faces-redirect=true";
 	}
 	
 	public String moveToMonCompte() {
@@ -80,19 +100,14 @@ public class NavigationController implements Serializable {
 		return "gestion-personnel?faces-redirect=true";
 	}
 
-	public String moveToStudentAdmission() {
-		System.out.println("moveToPlaning");
-		return "gestion-eleves?faces-redirect=true";
-	}
-	
 	public String moveToAssignCourse() {
 		System.out.println("moveToAssignCourse");
 		return "assign-courses?faces-redirect=true";
 	}
 	
-	public String moveToStudentAdmission1() {
+	public String moveToStudentAdmission() {
 		System.out.println("moveToPlaning");
-		return "gestion-eleve1?faces-redirect=true";
+		return "gestion-eleve?faces-redirect=true";
 	}
 
 	public String moveToSchoolDetail() {

@@ -606,7 +606,7 @@
 				</a>
 					<ul class="collapse nav" id="student">
 						<li><p:commandLink
-								action="#{navigationController.moveToStudentAdmission1}">
+								action="#{navigationController.moveToStudentAdmission}">
 								<h:outputText value="{msg['Preinscription']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
@@ -678,19 +678,19 @@
 								<h:outputText value="{msg['Add Books']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToParametrage}">
+								action="#{navigationController.moveToBookIssue}">
 								<h:outputText value="{msg['Issue Book']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToMonCompte}">
+								action="#{navigationController.moveToRequestedBook}">
 								<h:outputText value="{msg['Request Details']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToParametrage}">
+								action="#{navigationController.moveToReturnBook}">
 								<h:outputText value="{msg['Book Return']}" />
 							</p:commandLink></li>
 						<li><p:commandLink
-								action="#{navigationController.moveToMonCompte}">
+								action="#{navigationController.moveToBookReport}">
 								<h:outputText value="{msg['Reports']}" />
 							</p:commandLink></li>
 					</ul></li>

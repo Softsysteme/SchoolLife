@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/admin/common-layout.xhtml">
+		<ui:define name="content">
+			<!-- begin MAIN PAGE CONTENT -->
+			<div id="page-wrapper">
+
+				<div class="page-content">
+					<!-- begin PAGE TITLE AREA -->
+					<!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="page-title">
+								<ol class="breadcrumb">
+									<li class="active"><a href="vue-admin.xhtml"><i
+											class="fa fa-home"></i> <h:outputText value="{msg['menu']}" /></a>
+										<i class="fa fa-angle-right"></i> <a href="#"> <h:outputText
+												value="{msg['Library']}" /></a><i class="fa fa-angle-right"></i>
+										<h:outputText value="{msg['Return Book']}" /></li>
+									<li class="pull-right">
+										<div id="reportrange"
+											class="btn btn-green btn-square date-picker">
+											<i class="fa fa-calendar"></i> <span class="date-range"></span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+					<!-- end PAGE TITLE AREA -->
+
+					<!-- Pill Tabs Example -->
+					<div class="row">
+						<div class="col-lg-12">
+							<h:form>
+								<div class="portlet-group" id="page">
+									<div class="portlet portlet-green">
+										<div class="portlet-heading">
+											<div class="portlet-title">
+												<h4>
+													<strong>Manage Book Return</strong>
+												</h4>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="portlet-body">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="portlet-group" id="creer">
+														<div class="portlet portlet-green">
+															<div class="portlet-heading">
+																<div class="portlet-title">
+																	<h4>
+																		<strong>Book Return</strong>
+																	</h4>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+															<div class="portlet-body">
+																<div class="form-group">
+																	<input type="text" class="form-control" value=""
+																		placeholder="Search by Book No./ISBN No./Book Title/Author "></input>
+																</div>
+																<div class="form-group">
+																	<label>Return/Renewal</label> <select
+																		class="form-control">
+																		<option selected="selected">Select Option</option>
+																		<option>Return</option>
+																		<option>Renewal</option>
+																	</select>
+																</div>
+																<div class="form-group">
+																	<label>Return Date</label>
+																	<div class="input-group">
+																		<div class="input-group-addon">
+																			<i class="fa fa-calendar"></i>
+																		</div>
+																		<div id="sandbox-container">
+																			<p:calendar id="effect" value="#{calendarView.date8}"
+																				effect="fold" />
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label>Fine Amount</label> <input type="text"
+																		class="form-control" value="" placeholder="20.000"></input>
+																</div>
+
+																<div class="form-group">
+																	<label><i class="fa fa-info fa-fw"></i> Remark</label>
+																	<textarea class="form-control" rows="3"
+																		placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis."></textarea>
+																</div>
+
+
+																<br></br>
+																<div class="row">
+																	<div class="col-lg-6">
+																		<button type="submit" class="btn btn-green">Save</button>
+																	</div>
+																</div>
+															</div>
+															<!-- /.portlet-body -->
+
+														</div>
+													</div>
+												</div>
+												<!-- /.col-md-6 -->
+												<div class="col-md-6">
+													<div class="table-responsiv">
+														<p:dataTable var="enquiry" value="" rows="10"
+															style="background-color:green;">
+															<p:column headerText="SI. No.">
+																<h:outputText value="{238h}" />
+															</p:column>
+
+															<p:column headerText="Book No.">
+																<h:outputText value="{Bghh7}" />
+															</p:column>
+
+															<p:column headerText="Fine Amount">
+																<h:outputText value="{}" />
+															</p:column>
+
+															<p:column headerText="Remarks">
+																<h:outputText value="{Remarks}" />
+															</p:column>
+
+														</p:dataTable>
+													</div>
+													<!-- /.table-responsive -->
+
+												</div>
+												<!-- /.col-md-6 -->
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</h:form>
+
+
+						</div>
+						<!-- /.col-lg-12 -->
+					</div>
+					<!-- /.row -->
+
+
+				</div>
+				<!-- /.page-content -->
+
+			</div>
+			<!-- /#page-wrapper -->
+			<!-- end MAIN PAGE CONTENT -->
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
